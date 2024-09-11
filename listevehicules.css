@@ -1,0 +1,242 @@
+* {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif !important;
+  background-color: #f4f4f4;
+}
+
+:root {
+  --primary-color: rgb(235, 171, 35);
+  --button-color: rgb(22, 22, 157) ;
+}
+
+header {
+  height: 15vh;
+  padding: 30px 15%;
+  background-color: var(--button-color);
+  color: #f4f4f4;
+}
+header .langue {
+  border-radius: 50%;
+  font-size: 20px;
+  width: 30px;
+  text-align: center;
+}
+
+section {
+  padding: 0px 15%;
+}
+
+.divCordoneLV {
+  border: 2px solid var(--primary-color);
+  padding: 15px 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  margin: 15px 0px;
+  text-align: center;
+}
+.divCordoneLV h5 {
+  margin: 0px;
+}
+
+.addisplay {
+  height: 70%;
+  width: 15%;
+  margin-left: 140px;
+  position: fixed;
+  background-image: url(img/full-shot-adults-traveling-with-kid.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.info-card {
+  padding: 0px 15%;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0px;
+}
+.info-card button {
+  border: none;
+  border-radius: 3px;
+}
+.info-card .Contain1 {
+  border: 1px solid gray;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  height: 100%;
+  width: 70%;
+  border-radius: 10px;
+  padding: 10px;
+}
+.info-card .hautDiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  height: 100%;
+}
+.info-card .hautDiv div {
+  height: 100%;
+}
+.info-card .hautDiv .img {
+  width: 25%;
+  background-color: rgb(255, 255, 255);
+  background-image: url(img/compact-car-dacia-sport-utility-vehicle-renault-renault-duster-removebg-preview.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%; /* Adjust size to make the image smaller */
+}
+.info-card .hautDiv .infoauto {
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+.info-card .hautDiv .infoauto .infosDiv2 {
+  width: 100%;
+  border-left: 3px solid var(--button-color);
+  padding-left: 3px;
+}
+.info-card .hautDiv .infoauto .infosDiv2 h3 span {
+  font-size: small;
+}
+.info-card .hautDiv .infoauto .infosDiv2 button {
+  color: #ffffff;
+  padding: 2px;
+  font-size: small;
+}
+.info-card .hautDiv .infoauto .detailsAuto {
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  font-size: smaller;
+}
+.info-card .hautDiv .prixAuto {
+  display: flex;
+  align-items: start;
+  justify-content: end;
+  flex-direction: column;
+}
+.info-card .hautDiv .prixAuto button {
+  background-color: var(--button-color);
+  color: #f4f4f4;
+  padding: 2px 5px;
+  width: 100%;
+}
+
+svg {
+  width: 20px;
+  height: 20px;
+  opacity: 0.8;
+  font-weight: 100;
+  left: 20px;
+  margin-left: 20px;
+}
+svg path {
+  font-weight: 100;
+}
+
+@media (max-width: 480px) {
+  header {
+    height: 10%;
+    padding: 10px 15px;
+  }
+  .sec1LV {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+  }
+  .sec1LV .divCordoneLV {
+    width: 100%;
+    min-width: 135%;
+    text-align: left;
+    padding: 10px 5px;
+  }
+  .sec1LV .divCordoneLV h5 {
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .info-card {
+    height: 100%;
+    margin-top: 10px;
+  }
+  .info-card .Contain1 {
+    min-width: 130%;
+    margin: 0px !important;
+    border: none;
+    box-shadow: 0 0px 25px rgb(156, 156, 156);
+  }
+  .info-card .Contain1 .hautDiv {
+    flex-direction: column;
+    height: 100%;
+  }
+  .info-card .Contain1 .hautDiv .img {
+    height: 120px;
+    width: 100%;
+    background-size: contain;
+  }
+  .info-card .Contain1 .hautDiv .infoauto {
+    flex-direction: row;
+    align-items: start;
+  }
+  .info-card .Contain1 .hautDiv .infoauto .detailsAuto {
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 15px;
+  }
+  .info-card .Contain1 .hautDiv .infoauto .detailsAuto p {
+    margin: 7px 0px;
+  }
+  .info-card .Contain1 .hautDiv .infoauto .infosDiv2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 120px;
+    text-align: left;
+  }
+  .info-card .Contain1 .hautDiv .infoauto .infosDiv2 button {
+    width: 50%;
+    color: rgb(255, 255, 255);
+    border-radius: 3px;
+  }
+  .info-card .Contain1 .hautDiv .infoauto .infosDiv2 h3 {
+    font-size: 20px;
+  }
+  .info-card .Contain1 .hautDiv .infoauto .detailsAuto p {
+    padding: 0px;
+  }
+  .info-card .Contain1 .hautDiv .infoauto .detailsAuto svg {
+    margin: 0;
+  }
+  .info-card .Contain1 .hautDiv .prixAuto {
+    width: 100%;
+    flex-wrap: wrap;
+    border-top: 1px solid gray;
+    margin-top: 15px;
+  }
+  .info-card .Contain1 .hautDiv .prixAuto button {
+    padding: 10px;
+  }
+  .info-card .Contain1 .hautDiv .prixAuto label {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .info-card .Contain1 .hautDiv .prixAuto label h3, .info-card .Contain1 .hautDiv .prixAuto label p {
+    display: inline;
+  }
+}/*# sourceMappingURL=listevehicules.css.map */

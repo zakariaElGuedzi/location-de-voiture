@@ -1,0 +1,278 @@
+* {
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    // border: 1px solid;
+}
+body {
+    font-family: "Poppins", sans-serif !important;
+    background-color: #f4f4f4;
+    // background: linear-gradient(153deg, rgba(255, 255, 255, 1) 42%, rgba(7, 14, 25, 0.48) 99%);
+}
+:root {
+    --primary-color: rgb(235, 171, 35);
+    --button-color : rgb(22, 22, 157) ;
+}
+// header
+header {
+    height: 15vh;
+    padding: 30px 15%;
+    // background: rgb(22,65,222);
+    // background: linear-gradient(180deg, rgba(22,65,222,1) 0%, rgba(20,62,242,1) 0%, rgba(255,255,255,1) 96%);    
+    .langue {
+        border-radius: 50%;
+        font-size: 20px;
+        width: 30px;
+        text-align: center;
+    }
+    background-color: var(--button-color);
+    color: #f4f4f4;
+}
+
+// second sec filtr
+section {
+    padding: 0px 15%;
+}
+.divCordoneLV {
+    border: 2px solid var(--primary-color);
+    padding: 15px 2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    margin: 15px 0px;
+    text-align: center;
+    h5 {
+        margin: 0px;
+    }
+}
+
+// ad display
+.addisplay {
+    height: 70%;
+    width: 15%;
+    margin-left: 140px;
+    position: fixed;
+    background-image: url(img/full-shot-adults-traveling-with-kid.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+
+
+//ofre section 
+.info-card {
+    padding: 0px 15%;
+    // background-color: red;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0px;
+    
+    button {
+        border: none;
+        border-radius: 3px;
+    }
+    .Contain1  {
+        border: 1px solid gray;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        height: 100%;
+        width: 70%;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    .hautDiv {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        height: 100%;
+        // background-color: rgb(57, 166, 40);
+        div {
+            height: 100%;
+        }
+        .img {
+            width: 25%;
+            background-color: rgb(255, 255, 255);
+            background-image: url(img/compact-car-dacia-sport-utility-vehicle-renault-renault-duster-removebg-preview.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%; /* Adjust size to make the image smaller */
+        }
+        .infoauto {
+            box-sizing: border-box;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            // width: 100%;
+            position: relative;
+            .infosDiv2 {
+            width: 100%;
+            border-left: 3px solid var(--button-color);
+            padding-left: 3px;
+            // background-color: aqua;
+                h3 span {
+                    font-size: small;
+                }
+                button {
+                    color: #ffffff;
+                    padding: 2px;
+                    font-size: small;
+                }
+            }
+            
+            .detailsAuto {
+                // background-color: aqua;
+                box-sizing: border-box;
+                position: relative;
+                // height: 50px;
+                // max-height: fit-content;
+                // height: 50%;
+                width: 100%;
+                font-size: smaller;
+            }
+        }
+        // prixinfo
+        .prixAuto {
+            display: flex;
+            align-items: start;
+            justify-content: end;
+            flex-direction: column;
+            button {
+                background-color: var(--button-color);
+                color: #f4f4f4;
+                padding: 2px 5px;
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+svg {
+    // background-color: red;
+    width: 20px;
+    height: 20px;
+    opacity: 0.8;
+    font-weight: 100;
+    left: 20px;
+    margin-left: 20px;
+    // padding-left: 20p;
+
+    path {
+        font-weight: 100;
+    }
+}
+
+
+
+
+
+// query
+@media (max-width: 480px) { 
+header {
+    height: 10%;
+    padding: 10px 15px;
+}
+.sec1LV {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+    .divCordoneLV {
+        width: 100%;
+        min-width: 135%;
+        // background-color: rebeccapurple;
+        text-align: left;
+        padding: 10px 5px;
+        h5 {
+            font-size: 13px;
+            font-weight: 600;
+        }
+    }
+}
+.info-card {
+    // background-color: yellow ;
+    height: 100%;
+    margin-top: 10px;
+    .Contain1 {
+        // background-color: rgb(51, 206, 183) ;
+        min-width: 130%;
+        margin: 0px !important;
+        border: none;
+        box-shadow: 0 0px 25px rgb(156, 156, 156);
+
+        .hautDiv {
+            flex-direction: column;
+            height: 100%;
+            .img {
+                height: 120px;
+                width: 100%;
+                background-size: contain;
+                // background-color: #e70909;
+            }
+            .infoauto  {
+                flex-direction: row;
+                align-items:start;
+                // background-color: #098ee7;
+                .detailsAuto {
+                    min-height: 120px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    padding-left: 15px;
+                    p {
+                        margin: 7px 0px;
+                    }
+                }
+                .infosDiv2 {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    min-height: 120px;
+                    text-align: left;
+                    button {
+                        width: 50%;
+                        color: rgb(255, 255, 255);
+                        border-radius: 3px;
+                    }
+                }
+                .infosDiv2 h3 {
+                    font-size: 20px;
+                }
+                .detailsAuto {
+                    p {
+                        padding: 0px;
+                    }
+                    svg {
+                        margin: 0;
+                    }
+                }
+            }
+            .prixAuto {
+                width: 100%;
+                flex-wrap: wrap;
+                border-top: 1px solid gray;
+                margin-top: 15px;
+                button {
+                    padding: 10px;                   
+                }
+                label {   
+                    width: 100%;
+                    flex-wrap: wrap;
+                    h3 , p {
+                        display: inline;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+}
