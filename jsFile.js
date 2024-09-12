@@ -65,7 +65,7 @@ document.addEventListener('scroll', function() {
 });
 
 
-
+// FAQ Question Home page
    // Sélectionne tous les éléments avec la classe faq-question
    const questions = document.querySelectorAll('.faq-question');
 

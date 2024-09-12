@@ -281,10 +281,33 @@ svg path {
   font-weight: bold;
   color: #444;
   margin-bottom: 10px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.faq-question:hover {
+  color: #007bff;
 }
 
 .faq-answer {
   font-size: 16px;
   color: #666;
   line-height: 1.6;
+  display: none; /* Cache les réponses par défaut */
+  margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .faq-title {
+      font-size: 20px;
+  }
+
+  .faq-question {
+      font-size: 16px;
+  }
+
+  .faq-answer {
+      font-size: 14px;
+  }
 }
