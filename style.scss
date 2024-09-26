@@ -39,9 +39,13 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    // position: relative;
     z-index: 1;
-    // width: 100%;
+    .contact-info .langHead {
+        height: 30px;
+        width: 30px;
+        border: 0px;
+        border-radius: 20px;
+    }
 }
 .callToActionHeader {
     border: none;
@@ -56,6 +60,7 @@ header {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    
 }
 
 header .logo h1 {
@@ -379,6 +384,78 @@ nav ul li a:hover {
 }
 
 
+/* Faq section  */
+
+.faq-section {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .faq-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  .faq-item {
+    margin-bottom: 20px;
+  }
+  
+  .faq-question {
+    font-size: 18px;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+    display: flex;
+    // background-color: #fc6969;
+    justify-content: space-between;
+    p {
+        margin: 0px;
+        i {
+        display: inline;
+        left: 0;
+    }
+  }
+}
+  
+  .faq-questions:hover {
+    color: #007bff;
+  }
+  
+  .faq-answer {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    display: none; /* Cache les réponses par défaut */
+    margin-top: 10px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .faq-title {
+        font-size: 20px;
+    }
+  
+    .faq-question {
+        font-size: 16px;
+    }
+  
+    .faq-answer {
+        font-size: 14px;
+    }
+  }
+
+
+
+
 /* footer */
 footer {
     width: 100%;
@@ -699,13 +776,20 @@ footer img {
         padding: 0 50px;
         width: fit-content;
     } 
+    .Homeinputs button {
+        // background-color: #2fff00;
+        width: 100%;
+    }
 }
 
 @media all and (min-width: 820px) and (max-width: 1024px) { 
     .Contentfooter{
         display: flex;
         gap: 60px;
-    
+    }
+    .Homeinputs button {
+        // background-color: #2fff00;
+        width: 100%;
     }
 }
 
@@ -754,10 +838,10 @@ footer img {
     header {
         height: 40vh;
     }
-    .container2 {
-        flex-direction: column;
-        align-items: center;
-    }
+    // .container2 {
+    //     flex-direction: column;
+    //     align-items: center;
+    // }
     .container {
         width: 100%;
     }

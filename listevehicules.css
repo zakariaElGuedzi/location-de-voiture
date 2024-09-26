@@ -1,10 +1,10 @@
+@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
   box-sizing: border-box;
 }
-
 
 body {
   font-family: "Poppins", sans-serif !important;
@@ -21,15 +21,7 @@ header {
   padding: 30px 15%;
   background-color: var(--button-color);
   color: #f4f4f4;
-  position: sticky;
-  top: 0;
-  z-index: 999;
 }
-
-
-
-
-
 header .langue {
   border-radius: 50%;
   font-size: 20px;
@@ -157,7 +149,7 @@ svg path {
   font-weight: 100;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 700px) {
   header {
     height: 10%;
     padding: 10px 15px;
@@ -248,13 +240,8 @@ svg path {
   .info-card .Contain1 .hautDiv .prixAuto label h3, .info-card .Contain1 .hautDiv .prixAuto label p {
     display: inline;
   }
-}/*# sourceMappingURL=listevehicules.css.map */
-
-
-
-
+}
 /* Faq section  */
-
 .faq-section {
   max-width: 800px;
   margin: 50px auto;
@@ -283,6 +270,15 @@ svg path {
   margin-bottom: 10px;
   cursor: pointer;
   transition: color 0.3s;
+  display: flex;
+  justify-content: space-between;
+}
+.faq-question p {
+  margin: 0px;
+}
+.faq-question p i {
+  display: inline;
+  left: 0;
 }
 
 .faq-question:hover {
@@ -300,14 +296,12 @@ svg path {
 /* Responsive Design */
 @media (max-width: 600px) {
   .faq-title {
-      font-size: 20px;
+    font-size: 20px;
   }
-
   .faq-question {
-      font-size: 16px;
+    font-size: 16px;
   }
-
   .faq-answer {
-      font-size: 14px;
+    font-size: 14px;
   }
-}
+}/*# sourceMappingURL=listevehicules.css.map */

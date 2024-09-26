@@ -10,6 +10,30 @@
 // // Change speed (e.g., double the speed)
 // wheel.style.animationDuration = '2s';
 
+
+// FAQ Question Home page
+   // Sélectionne tous les éléments avec la classe faq-question
+   const questions = document.querySelectorAll('.faq-question');
+
+   questions.forEach(question => {
+       question.addEventListener('click', () => {
+           // Sélectionne la réponse associée à cette question
+           const answer = question.nextElementSibling;
+
+           // Alterne l'affichage de la réponse (show/hide)
+           if (answer.style.display === 'block') {
+               answer.style.display = 'none';
+           } else {
+               answer.style.display = 'block';
+           }
+       });
+   });
+
+
+
+
+
+
 let menphone = document.querySelector('.menuphone');
 
 function closemenu() {
@@ -64,24 +88,6 @@ document.addEventListener('scroll', function() {
    }
 });
 
-
-// FAQ Question Home page
-   // Sélectionne tous les éléments avec la classe faq-question
-   const questions = document.querySelectorAll('.faq-question');
-
-   questions.forEach(question => {
-       question.addEventListener('click', () => {
-           // Sélectionne la réponse associée à cette question
-           const answer = question.nextElementSibling;
-
-           // Alterne l'affichage de la réponse (show/hide)
-           if (answer.style.display === 'block') {
-               answer.style.display = 'none';
-           } else {
-               answer.style.display = 'block';
-           }
-       });
-   });
 
 
 
