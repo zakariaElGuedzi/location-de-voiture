@@ -1,0 +1,229 @@
+* {
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    // border: 1px solid;
+}
+body {
+    font-family: "Poppins", sans-serif !important;
+    background-color: #f4f4f4;
+    // background: linear-gradient(153deg, rgba(255, 255, 255, 1) 42%, rgba(7, 14, 25, 0.48) 99%);
+}
+:root {
+    --primary-color: rgb(235, 171, 35);
+    --button-color : rgb(22, 22, 157) ;
+}
+p{
+    margin: 0 !important;
+}
+.bold{
+    font-weight: bolder;
+
+}
+// header
+header {
+    height: 15vh;
+    padding: 30px 15%;
+    // background: rgb(22,65,222);
+    // background: linear-gradient(180deg, rgba(22,65,222,1) 0%, rgba(20,62,242,1) 0%, rgba(255,255,255,1) 96%);    
+    .langue {
+        border-radius: 50%;
+        font-size: 20px;
+        width: 30px;
+        text-align: center;
+    }
+    background-color: var(--button-color);
+    color: #f4f4f4;
+}
+
+// second sec filtr
+section{
+    padding: 0px 10%;
+}
+.divCordoneLV {
+    border: 2px solid var(--primary-color);
+    padding: 15px 15px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    margin: 15px 0px;
+    text-align: center;
+    justify-content: space-between;
+    .Filter{
+        display: flex;
+        gap: 30px;
+        align-items: center;
+    }
+    h5 {
+        margin: 0px;
+        font-size: 15px;
+    }
+    button{
+        background-color: var(--button-color);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+    }
+    button:hover{
+        background-color: var(--primary-color);
+    }
+}
+.Offer{
+    display: flex;
+    width: 100%;
+    // border: 1px solid black;
+    .CarDetails{
+        flex: 5;
+        .OfferPrevNext{
+            width: 100%;
+        }
+        // border: 1px solid red;
+        .Car{
+            // border: 2px solid black;
+            padding: 30px;
+            display: flex;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            justify-content: center;
+            gap: 20px;
+            .carimg{
+                width: 25%;
+                background-color: rgb(255, 255, 255);
+                background-image: url(img/compact-car-dacia-sport-utility-vehicle-renault-renault-duster-removebg-preview.png);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 100%;
+                flex: 3;
+            }
+            .carDts{
+                flex: 5;
+                .CarClass{
+                    color: white;
+                    background-color: #d4111e;
+                    width: max-content;
+                    padding: 2px 9px;
+                    border-radius: 8px;
+                    margin-bottom: 10px !important;  
+                    font-size: 12px;
+                }
+                .CarName{
+                    font-size: 20px;
+                    font-weight: bolder;
+                }
+                .caroptions{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    p{
+                        margin: 0;
+                    }
+                    svg{
+                        width: 20px;
+                        height: 20px;
+                        opacity: 0.8;
+                        font-weight: 100;
+                        left: 20px;
+                    }
+                }
+            }
+        }
+    }
+    .OfferDetails{
+        flex: 3;
+        // border: 1px solid green;
+        .schedule {
+            max-width: 400px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+
+            .event {
+                display: flex;
+                align-items: flex-start;
+                margin-bottom: 20px;
+            }
+            .circle-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: relative;
+                margin-right: 9px;
+            }
+            
+            .circle {
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                margin-top: 5px;
+                z-index: 1;
+                border: 1px solid black;
+            }
+            
+            .line {
+                width: 1px;
+                height: 90px; 
+                background-color: #000;
+                position: absolute;
+                top: 30px; 
+                z-index: 0;
+            }
+            
+            .details {
+                flex-grow: 1;
+            }
+            
+            .date-time {
+                margin-bottom: 10px;
+            }
+            
+            .location p {
+                margin: 0;
+            }
+            
+            .location a {
+                color: #0066cc;
+                text-decoration: none;
+                font-size: 0.9em;
+            }
+            
+            .location a:hover {
+                text-decoration: underline;
+            }
+        }
+        .Tarif {
+            max-width: 400px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            .Price{
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        .RSVBTN{
+            max-width: 400px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            button{
+                background-color: var(--button-color);
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                width: 100%;
+                border-radius: 8px;
+            }
+            button:hover{
+                background-color: var(--primary-color);
+            }
+        }
+        
+    }
+}
