@@ -109,12 +109,11 @@ section {
             align-items: center;
             justify-content: center;
             flex-direction: column;
-            // width: 100%;
             position: relative;
             .infosDiv2 {
             width: 100%;
-            border-left: 3px solid var(--button-color);
-            padding-left: 3px;
+            border-left: 3px solid rgb(142 142 159 / 63%);
+            padding-left: 5px;
             // background-color: aqua;
                 h3 span {
                     font-size: small;
@@ -220,6 +219,8 @@ header {
                 flex-direction: row;
                 align-items:start;
                 // background-color: #098ee7;
+                justify-content: space-between;
+                width: 100%;
                 .detailsAuto {
                     min-height: 120px;
                     display: flex;
