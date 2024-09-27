@@ -47,7 +47,6 @@ section {
   align-items: center;
   border-radius: 10px;
   margin: 15px 0px;
-  text-align: center;
   justify-content: space-between;
 }
 .divCordoneLV .Filter {
@@ -214,4 +213,4 @@ section {
 }
 .Offer .OfferDetails .RSVBTN button:hover {
   background-color: var(--primary-color);
-}/*# sourceMappingURL=articles.css.map */
+}/*# sourceMappingURL=SingleVehicle.css.map */

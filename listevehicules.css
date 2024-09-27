@@ -35,16 +35,34 @@ section {
 
 .divCordoneLV {
   border: 2px solid var(--primary-color);
-  padding: 15px 2px;
+  padding: 15px 15px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   border-radius: 10px;
   margin: 15px 0px;
-  text-align: center;
+  justify-content: space-between;
+}
+.divCordoneLV p {
+  margin: 0;
+}
+.divCordoneLV .Filter {
+  display: flex;
+  gap: 30px;
+  align-items: center;
 }
 .divCordoneLV h5 {
   margin: 0px;
+  font-size: 15px;
+}
+.divCordoneLV button {
+  background-color: var(--button-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+.divCordoneLV button:hover {
+  background-color: var(--primary-color);
 }
 
 .addisplay {
@@ -133,8 +151,13 @@ section {
 .info-card .hautDiv .prixAuto button {
   background-color: var(--button-color);
   color: #f4f4f4;
-  padding: 2px 5px;
+  padding: 10px 15px;
   width: 100%;
+  border-radius: 8px;
+}
+.info-card .hautDiv .prixAuto button a {
+  color: white;
+  text-decoration: none;
 }
 
 svg {
