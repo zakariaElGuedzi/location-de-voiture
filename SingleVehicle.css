@@ -128,6 +128,7 @@ section {
 }
 .Offer .CarDetails .Car .carDts .caroptions p {
   margin: 0;
+  font-size: 13px;
 }
 .Offer .CarDetails .Car .carDts .caroptions svg {
   width: 20px;
