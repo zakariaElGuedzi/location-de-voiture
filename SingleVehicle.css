@@ -72,9 +72,11 @@ section {
 .Offer {
   display: flex;
   width: 100%;
+  flex-wrap: wrap;
 }
 .Offer .CarDetails {
   flex: 5;
+  margin-bottom: 20px;
 }
 .Offer .CarDetails .OfferPrevNext {
   width: 100%;
@@ -114,7 +116,8 @@ section {
 }
 .Offer .CarDetails .Car .carDts .caroptions {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 10px;
 }
 .Offer .CarDetails .Car .carDts .caroptions p {
@@ -127,12 +130,32 @@ section {
   font-weight: 100;
   left: 20px;
 }
+.Offer .CarDetails .PAPDetails {
+  padding: 30px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 15px;
+}
+.Offer .CarDetails .PAPDetails .DetailsContainer, .Offer .CarDetails .PAPDetails .Detail {
+  display: flex;
+  flex-direction: column;
+}
+.Offer .CarDetails .PAPDetails .Detail {
+  margin-top: 10px;
+}
+.Offer .CarDetails .PAPDetails .Detail input {
+  padding: 10px 20px;
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid black;
+}
 .Offer .OfferDetails {
   flex: 3;
+  margin-left: 20px;
+  margin-bottom: 20px;
 }
 .Offer .OfferDetails .schedule {
   max-width: 400px;
-  margin: 20px auto;
+  margin-bottom: 20px;
   background: #fff;
   border-radius: 8px;
   padding: 20px;
@@ -185,7 +208,6 @@ section {
 }
 .Offer .OfferDetails .Tarif {
   max-width: 400px;
-  margin: 20px auto;
   background: #fff;
   border-radius: 8px;
   padding: 20px;
@@ -198,10 +220,6 @@ section {
 .Offer .OfferDetails .RSVBTN {
   max-width: 400px;
   margin: 20px auto;
-  background: #fff;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
 }
 .Offer .OfferDetails .RSVBTN button {
   background-color: var(--button-color);
@@ -210,6 +228,10 @@ section {
   padding: 10px 20px;
   width: 100%;
   border-radius: 8px;
+}
+.Offer .OfferDetails .RSVBTN button a {
+  color: white;
+  text-decoration: none;
 }
 .Offer .OfferDetails .RSVBTN button:hover {
   background-color: var(--primary-color);
