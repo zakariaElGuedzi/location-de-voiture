@@ -168,11 +168,21 @@ section {
 .Offer .CarDetails .PAPDetails .Detail {
   margin-top: 10px;
 }
-.Offer .CarDetails .PAPDetails .Detail input {
+.Offer .CarDetails .PAPDetails .Detail .InpGroup {
   padding: 10px 20px;
   border-radius: 8px;
   outline: none;
   border: 1px solid black;
+}
+.Offer .CarDetails .PAPDetails .Detail input {
+  border: none;
+  outline: none;
+  padding-left: 10px;
+  width: calc(100% - 25px);
+}
+.Offer .CarDetails .PAPDetails .Detail input:focus {
+  border: none;
+  outline: none;
 }
 .Offer .OfferDetails {
   flex: 3;
