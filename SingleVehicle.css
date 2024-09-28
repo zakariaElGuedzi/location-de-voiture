@@ -81,6 +81,12 @@ section {
 .Offer .CarDetails .OfferPrevNext {
   width: 100%;
 }
+.Offer .CarDetails .OfferPrevNext a {
+  font-size: 13px;
+}
+.Offer .CarDetails .OfferPrevNext h3 {
+  font-size: 20px;
+}
 .Offer .CarDetails .Car {
   padding: 30px;
   display: flex;
@@ -129,6 +135,25 @@ section {
   opacity: 0.8;
   font-weight: 100;
   left: 20px;
+}
+.Offer .CarDetails .Advantages {
+  padding: 30px;
+  display: flex;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.Offer .CarDetails .Advantages .Adv {
+  display: flex;
+  gap: 10px;
+  flex: 1 1 45%; /* Grow, shrink, and set basis to 45% for two items per row */
+}
+.Offer .CarDetails .Advantages .Adv p {
+  font-size: 14px;
+}
+.Offer .CarDetails .Advantages .Adv i {
+  color: green;
 }
 .Offer .CarDetails .PAPDetails {
   padding: 30px;
