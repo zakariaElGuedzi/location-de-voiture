@@ -90,11 +90,11 @@ section{
     .Filter2{
         display: flex;
         flex-wrap: wrap;
-        gap: 10px;
+        gap: 9px;
         align-items: center;
         flex: 1;
         background-color: var(--primary-color);
-        padding: 10px;
+        padding: 9px;
         border-radius: 8px;
         .LieuPrisenEnCharge{
             flex-grow: 9 !important;
@@ -140,7 +140,7 @@ section{
         width: 100%;
     }
     button:hover{
-        background-color: var(--button-color);
+        background-color: rgb(9, 96, 9);
     }
 
 }
@@ -197,10 +197,12 @@ section{
                     display: flex;
                     flex-direction: row;
                     flex-wrap: wrap;
-                    gap: 10px;
+                    gap: 15px;
                     p{
                         margin: 0;
                         font-size: 13px;
+                        flex: 1 1 45%;
+
                     }
                     svg{
                         width: 20px;
