@@ -1,3 +1,8 @@
+// const Filter2 = document.querySelector(".Filter2")
+// Filter2.addEventListener("click",function(e){
+//     console.log(e.target);
+// })
+
 // Filtre Input focus finma werkti f div
 const LieuPrisenEnCharge = document.querySelector('.LieuPrisenEnCharge');
 const DatePrisencharge = document.querySelector('.DatePrisencharge');

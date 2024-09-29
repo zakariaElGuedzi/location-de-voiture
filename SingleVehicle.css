@@ -89,6 +89,7 @@ section {
 }
 .divCordoneLV2 .Filter2 {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   align-items: center;
   flex: 1;
@@ -134,6 +135,7 @@ section {
   border: none;
   padding: 20px 20px;
   border-radius: 8px;
+  width: 100%;
 }
 .divCordoneLV2 button:hover {
   background-color: var(--button-color);
