@@ -41,7 +41,7 @@ header {
 section{
     padding: 0px 10%;
 }
-.divCordoneLV {
+.divCordoneLV{
     border: 2px solid var(--primary-color);
     padding: 15px 15px;
     display: flex;
@@ -49,7 +49,7 @@ section{
     border-radius: 10px;
     margin: 15px 0px;
     justify-content: space-between;
-    .Filter{
+    .Filter,.Filter2{
         display: flex;
         gap: 30px;
         align-items: center;
@@ -68,6 +68,73 @@ section{
     button:hover{
         background-color: var(--primary-color);
     }
+}
+.divCordoneLV2{
+    padding: 10px 10px;
+    display: none;
+    border-radius: 10px;
+    margin: 15px 0px;
+    width: 100%;
+    gap: 20px;
+    flex-direction: column;
+    border: 2px solid var(--primary-color);
+
+    .ContainerTtle{
+        display: flex;
+        justify-content: space-between;
+        .rmvModifierFilt{
+            cursor: pointer;
+            font-size: 20px;
+        }
+    }
+    .Filter2{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex: 1;
+        background-color: var(--primary-color);
+        padding: 10px;
+        border-radius: 8px;
+        .LieuPrisenEnCharge,.DatePrisencharge,.DateRestitution{
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background-color: #f4f4f4;
+            padding: 10px 20px;
+            border-radius: 8px;
+            flex: 1;
+            width: 100%;
+            p{
+                font-size: 10px;
+            }
+            input{
+                border: none;
+                width: 100%;
+                background-color: transparent;
+            }
+            input:focus{
+                border: none;
+                outline: none;
+            }
+            input[type="date"]::-webkit-calendar-picker-indicator {
+                display: none;
+                -webkit-appearance: none;
+            }
+
+        }
+        
+    }
+    button{
+        background-color: green;
+        color: white;
+        border: none;
+        padding: 20px 20px;
+        border-radius: 8px;
+    }
+    button:hover{
+        background-color: var(--button-color);
+    }
+
 }
 .Offer{
     display: flex;
@@ -107,7 +174,7 @@ section{
                 flex: 5;
                 .CarClass{
                     color: white;
-                    background-color: #d4111e;
+                    background-color: #1879ca;
                     width: max-content;
                     padding: 2px 9px;
                     border-radius: 8px;
@@ -194,7 +261,6 @@ section{
         margin-bottom: 20px;
         // border: 1px solid green;
         .schedule {
-            max-width: 400px;
             //margin: 20px auto;
             margin-bottom: 20px;
             background: #fff;
@@ -224,7 +290,7 @@ section{
             }
             .line {
                 width: 1px;
-                height: 90px; 
+                height: 70px; 
                 background-color: #000;
                 position: absolute;
                 top: 30px; 
@@ -254,7 +320,6 @@ section{
             }
         }
         .Tarif {
-            max-width: 400px;
             //margin: 20px auto;
             background: #fff;
             border-radius: 8px;
