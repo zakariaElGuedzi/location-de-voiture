@@ -60,11 +60,25 @@
                             <input type="date">
                         </div>
                     </div>
+                    <div class="HeurePriseencharge">
+                        <i class="fa-regular fa-clock"></i>
+                        <div>
+                            <p>Heure</p>
+                            <input type="time">
+                        </div>
+                    </div>
                     <div class="DateRestitution">
                         <i class="fa-solid fa-calendar-days"></i>
                         <div>
                             <p>Date de restitution</p>
                             <input type="date">
+                        </div>
+                    </div>
+                    <div class="HeureRestitution">
+                        <i class="fa-regular fa-clock"></i>
+                        <div>
+                            <p>Heure</p>
+                            <input type="time">
                         </div>
                     </div>
                     <button class="BtnModifier">Chercher</button>
@@ -129,14 +143,14 @@
                     <p>Politique de carburant avantageuse</p>
                 </div>
             </div>
-            <div class="PAPDetails">
+            <form class="PAPDetails" novalidate>
                 <h6>Informations sur le conducteur principal</h6>
                 <div class="DetailsContainer">
-                    <div class="Detail">
+                    <div class="Detail ">
                         <label for="">Adresse e-mail :</label>
                         <div class="InpGroup">
                             <i class="fa-solid fa-envelope"></i>
-                            <input type="text" name="" id="" placeholder="Ex : JeanMartin@gmail.com">
+                            <input class="" type="text" name="" id="" placeholder="Ex : JeanMartin@gmail.com">
                         </div>
                     </div>
                     <div class="Detail">
@@ -154,7 +168,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
         <div class="OfferDetails">
              <div class="sticky-top "> <!--Position Sticky using bootstrap -->

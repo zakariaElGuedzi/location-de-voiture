@@ -1,20 +1,30 @@
 // Filtre Input focus finma werkti f div
-const parentDiv1 = document.querySelector('.LieuPrisenEnCharge');
-const parentDiv2 = document.querySelector('.DatePrisencharge');
-const parentDiv3 = document.querySelector('.DateRestitution');
+const LieuPrisenEnCharge = document.querySelector('.LieuPrisenEnCharge');
+const DatePrisencharge = document.querySelector('.DatePrisencharge');
+const DateRestitution = document.querySelector('.DateRestitution');
+const HeurePriseencharge = document.querySelector(".HeurePriseencharge")
+const HeureRestitution = document.querySelector(".HeureRestitution")
 
-const inputField1 = parentDiv1.querySelector('input');
-const inputField2 = parentDiv2.querySelector('input');
-const inputField3 = parentDiv3.querySelector('input');
+const inputField1 = LieuPrisenEnCharge.querySelector('input');
+const inputField2 = DatePrisencharge.querySelector('input');
+const inputField3 = DateRestitution.querySelector('input');
+const inputField4 = HeurePriseencharge.querySelector('input');
+const inputField5 = HeureRestitution.querySelector('input');
 
-parentDiv1.addEventListener('click', function() {
+LieuPrisenEnCharge.addEventListener('click', function() {
     inputField1.focus();
 });
-parentDiv2.addEventListener('click', function() {
+DatePrisencharge.addEventListener('click', function() {
     inputField2.showPicker();
 });
-parentDiv3.addEventListener('click', function() {
+DateRestitution.addEventListener('click', function() {
     inputField3.showPicker();
+});
+HeurePriseencharge.addEventListener('click', function() {
+    inputField4.showPicker();
+});
+HeureRestitution.addEventListener('click', function() {
+    inputField5.showPicker();
 });
 
 // Button Modifier f  Filter

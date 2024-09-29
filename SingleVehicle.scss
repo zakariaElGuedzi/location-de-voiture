@@ -95,15 +95,17 @@ section{
         background-color: var(--primary-color);
         padding: 10px;
         border-radius: 8px;
-        .LieuPrisenEnCharge,.DatePrisencharge,.DateRestitution{
+        .LieuPrisenEnCharge{
+            flex-grow: 9 !important;
+        }
+        .LieuPrisenEnCharge,.DatePrisencharge,.DateRestitution,.HeurePriseencharge,.HeureRestitution{
             display: flex;
             align-items: center;
             gap: 15px;
             background-color: #f4f4f4;
             padding: 10px 20px;
             border-radius: 8px;
-            flex: 1;
-            width: 100%;
+            flex-grow: 1;
             p{
                 font-size: 10px;
             }
@@ -117,6 +119,10 @@ section{
                 outline: none;
             }
             input[type="date"]::-webkit-calendar-picker-indicator {
+                display: none;
+                -webkit-appearance: none;
+            }
+            input[type="time"]::-webkit-calendar-picker-indicator {
                 display: none;
                 -webkit-appearance: none;
             }
