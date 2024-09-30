@@ -49,7 +49,6 @@ section {
   margin: 15px 0px;
   justify-content: space-between;
   box-sizing: border-box;
-  flex-wrap: wrap;
 }
 .divCordoneLV .Filter, .divCordoneLV .Filter2 {
   display: flex;
@@ -66,6 +65,18 @@ section {
   border: none;
   padding: 10px 20px;
   border-radius: 8px;
+}
+.divCordoneLV .modifButtonDiv {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: 100%;
+}
+.divCordoneLV .modifButtonDiv button {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .divCordoneLV button:hover {
   background-color: var(--primary-color);
@@ -353,5 +364,20 @@ section {
   }
   .CarName {
     font-size: 16px !important;
+  }
+}
+@media (max-width: 530px) {
+  .divCordoneLV {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .divCordoneLV .modifButtonDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .divCordoneLV button {
+    display: flex;
   }
 }/*# sourceMappingURL=SingleVehicle.css.map */
