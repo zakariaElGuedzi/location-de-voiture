@@ -55,6 +55,8 @@ section{
         display: flex;
         gap: 30px;
         align-items: center;
+        align-items: center;
+        width: 100%;
     }
     h5 {
         margin: 0px;
@@ -403,6 +405,7 @@ section{
         }
         button {
             display: flex;
+            margin-top: 20px;
         }
     }
     

@@ -54,6 +54,8 @@ section {
   display: flex;
   gap: 30px;
   align-items: center;
+  align-items: center;
+  width: 100%;
 }
 .divCordoneLV h5 {
   margin: 0px;
@@ -379,5 +381,6 @@ section {
   }
   .divCordoneLV button {
     display: flex;
+    margin-top: 20px;
   }
 }/*# sourceMappingURL=SingleVehicle.css.map */
