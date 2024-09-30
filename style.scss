@@ -67,6 +67,12 @@ header .logo h1 {
     margin: 0;
     font-size: 25px;
     font-weight: bold;
+    background-image: url(img/lgBlanc.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 170px;
+    aspect-ratio: 3/1;
 }
 
 nav {
@@ -477,8 +483,10 @@ footer h1 {
     padding-bottom: 20px;
 }
 footer img {
-    height: 7rem;
-    width: 9rem;
+    // height: 7rem;
+    width: 120px;
+    margin-bottom: 15px;
+    aspect-ratio: 3/1;
 }
 .Contentfooter {
     display: flex;
@@ -645,7 +653,7 @@ footer img {
             font-size: small;
             margin-bottom: 15px;
             h1 {
-                display: inline;
+                // display: inline;
                 font-size: 15px;
             }
             p {

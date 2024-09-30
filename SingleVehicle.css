@@ -48,6 +48,8 @@ section {
   border-radius: 10px;
   margin: 15px 0px;
   justify-content: space-between;
+  box-sizing: border-box;
+  flex-wrap: wrap;
 }
 .divCordoneLV .Filter, .divCordoneLV .Filter2 {
   display: flex;
@@ -343,4 +345,13 @@ section {
 }
 .Offer .OfferDetails .RSVBTN button:hover {
   background-color: var(--primary-color);
+}
+
+@media (max-width: 390px) {
+  p, h3, h5, h1 {
+    font-size: smaller !important;
+  }
+  .CarName {
+    font-size: 16px !important;
+  }
 }/*# sourceMappingURL=SingleVehicle.css.map */
