@@ -158,6 +158,9 @@ nav ul li a:hover {
     }
 }
 
+.HomeinputsSection {
+    background: linear-gradient(153deg, rgba(255, 255, 255, 1) 42%, rgba(7, 14, 25, 0.212) 99%);
+}
 .Homeinputs {
     border-radius: 10px;
     background-color: rgb(222, 162, 32);
@@ -172,6 +175,7 @@ nav ul li a:hover {
     width: 90%;
     margin: auto;
     position: relative;
+    
 }
 
 .Homeinputs label {
@@ -212,6 +216,54 @@ nav ul li a:hover {
 
 .villeSearch:focus {
     outline: none;
+}
+
+
+
+// service orange
+.servicesOrng {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #333;
+    color: whitesmoke;
+    margin-top: -28px;
+    p {
+        text-align: center;
+    }
+}
+.servicesOrngH2Div1 {
+    margin: 20px 0;
+    position: relative; /* Add this */
+    width: 100%;
+    // background-color: red;
+}
+
+.servicesOrngH2Div1 h2 {
+    font-size: smaller;
+    text-align: center;
+}
+
+.servicesOrngH2Div1 h2::before, 
+.servicesOrngH2Div1 h2::after {
+    content: '';
+    display: block;
+    width: 10%;
+    height: 2px; /* Adjust thickness */
+    background: rgb(187, 186, 186); /* Border color */
+    position: absolute;
+}
+
+.servicesOrngH2Div1 h2::before {
+    // left: 0;
+    right: 60%;
+    top: 25%; /* Adjust position */
+}
+
+.servicesOrngH2Div1 h2::after {
+    left: 60%;
+    top: 25%; /* Adjust position */
 }
 
 
@@ -295,6 +347,43 @@ nav ul li a:hover {
     }
     }   
 
+// section dirent
+.sectionDirent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.sectionDirent2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 25px 0px;
+    border-bottom: 2px solid;
+    width: 90%;
+    border-color: #192664;
+    flex-wrap: wrap;
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 15px;
+    }
+    div img {
+        opacity: .7;
+        width: 30px;
+    }
+    div h4 {
+        text-align: center;
+        font-size: 20px;
+    }
+    div p {
+        font-size: small;
+        text-align: center;
+        opacity: .7;
+    }
+}
 
 /* gallery div */
 .galleryDiv {
@@ -394,7 +483,7 @@ nav ul li a:hover {
 
 .faq-section {
     max-width: 800px;
-    margin: 50px auto;
+    margin: 20px auto;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
@@ -475,6 +564,32 @@ footer {
     background: transparent radial-gradient(37vmax 15vmax at 2% 100%,  rgb(37, 61, 178) 0%, #222121 100%) 0% 0% no-repeat padding-box;
     padding-top: 2rem;
     letter-spacing: 2px;
+    .Reseau {
+        // background-color: red !important;
+        // flex-direction:column;
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+        // h1 {
+        // min-width: max-content;
+        
+        // }
+        ul {
+            display: flex;
+            list-style: none;
+            // flex-direction: row;
+            justify-content: space-around;
+            align-items: start;
+            li {
+                list-style: none !important;
+                font-size: 25px;
+            }
+            li:hover {
+                color: #007bff;
+                cursor: pointer;
+            }
+        }
+    }
 }
 footer h1 {
     font-size: 22px;
@@ -711,6 +826,17 @@ footer img {
         width: 100%;
     }
    
+    //orange sec
+    .servicesOrngH2Div1 h2::before {
+        // left: 0;
+        right: 80%;
+        top: 22%; /* Adjust position */
+    }
+    
+    .servicesOrngH2Div1 h2::after {
+        left: 80%;
+        top: 22%; /* Adjust position */
+    }
 
     .argumentHeader  {
         // padding-bottom: 1000px;
@@ -751,7 +877,22 @@ footer img {
         height: 25rem;
         width: 22rem;
     }
-    
+    //faq
+    .faq-section {
+        margin-top: 0px;
+    }
+
+    // dirent
+    .sectionDirent2 {
+        width: 100%;
+    }
+    .sectionDirent2 div {
+        width: 40%;
+    }
+    .sectionDirent2 h4,p{
+        font-size: smaller;
+    }
+
 
     // footer
 
@@ -770,6 +911,18 @@ footer img {
     }
     .smallContent2 h1{
         text-align: center;
+    }
+    .Reseau {
+        h1 {
+            font-size: 18px;
+        }
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            // background-color: red !important;
+        }
     }
 }
 
@@ -856,6 +1009,9 @@ footer img {
     .argumentDiv {
         width: 100%;
         text-align: center;
+    }
+    .argumentDiv h2 {
+        font-size: 30px;
     }
     // .argumentDiv label {
     //     // align-items: center;
