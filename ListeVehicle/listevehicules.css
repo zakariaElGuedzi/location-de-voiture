@@ -31,7 +31,7 @@ header .langue {
 }
 
 section {
-  padding: 0px 15%;
+  padding: 0px 10%;
 }
 
 .divCordoneLV {
@@ -64,6 +64,78 @@ section {
 }
 .divCordoneLV button:hover {
   background-color: var(--primary-color);
+}
+
+.divCordoneLV2 {
+  padding: 10px 10px;
+  display: none;
+  border-radius: 10px;
+  margin: 15px 0px;
+  width: 100%;
+  gap: 20px;
+  flex-direction: column;
+  border: 2px solid var(--primary-color);
+}
+.divCordoneLV2 .ContainerTtle {
+  display: flex;
+  justify-content: space-between;
+}
+.divCordoneLV2 .ContainerTtle .rmvModifierFilt {
+  cursor: pointer;
+  font-size: 20px;
+}
+.divCordoneLV2 .Filter2 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  align-items: center;
+  flex: 1;
+  background-color: var(--primary-color);
+  padding: 9px;
+  border-radius: 8px;
+}
+.divCordoneLV2 .Filter2 .LieuPrisenEnCharge {
+  flex-grow: 9 !important;
+}
+.divCordoneLV2 .Filter2 .LieuPrisenEnCharge, .divCordoneLV2 .Filter2 .DatePrisencharge, .divCordoneLV2 .Filter2 .DateRestitution, .divCordoneLV2 .Filter2 .HeurePriseencharge, .divCordoneLV2 .Filter2 .HeureRestitution {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: #f4f4f4;
+  padding: 10px 20px;
+  border-radius: 8px;
+  flex-grow: 1;
+}
+.divCordoneLV2 .Filter2 .LieuPrisenEnCharge p, .divCordoneLV2 .Filter2 .DatePrisencharge p, .divCordoneLV2 .Filter2 .DateRestitution p, .divCordoneLV2 .Filter2 .HeurePriseencharge p, .divCordoneLV2 .Filter2 .HeureRestitution p {
+  font-size: 10px;
+}
+.divCordoneLV2 .Filter2 .LieuPrisenEnCharge input, .divCordoneLV2 .Filter2 .DatePrisencharge input, .divCordoneLV2 .Filter2 .DateRestitution input, .divCordoneLV2 .Filter2 .HeurePriseencharge input, .divCordoneLV2 .Filter2 .HeureRestitution input {
+  border: none;
+  width: 100%;
+  background-color: transparent;
+}
+.divCordoneLV2 .Filter2 .LieuPrisenEnCharge input:focus, .divCordoneLV2 .Filter2 .DatePrisencharge input:focus, .divCordoneLV2 .Filter2 .DateRestitution input:focus, .divCordoneLV2 .Filter2 .HeurePriseencharge input:focus, .divCordoneLV2 .Filter2 .HeureRestitution input:focus {
+  border: none;
+  outline: none;
+}
+.divCordoneLV2 .Filter2 .LieuPrisenEnCharge input[type=date]::-webkit-calendar-picker-indicator, .divCordoneLV2 .Filter2 .DatePrisencharge input[type=date]::-webkit-calendar-picker-indicator, .divCordoneLV2 .Filter2 .DateRestitution input[type=date]::-webkit-calendar-picker-indicator, .divCordoneLV2 .Filter2 .HeurePriseencharge input[type=date]::-webkit-calendar-picker-indicator, .divCordoneLV2 .Filter2 .HeureRestitution input[type=date]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+.divCordoneLV2 .Filter2 .LieuPrisenEnCharge input[type=time]::-webkit-calendar-picker-indicator, .divCordoneLV2 .Filter2 .DatePrisencharge input[type=time]::-webkit-calendar-picker-indicator, .divCordoneLV2 .Filter2 .DateRestitution input[type=time]::-webkit-calendar-picker-indicator, .divCordoneLV2 .Filter2 .HeurePriseencharge input[type=time]::-webkit-calendar-picker-indicator, .divCordoneLV2 .Filter2 .HeureRestitution input[type=time]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+.divCordoneLV2 button {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 20px 20px;
+  border-radius: 8px;
+  width: 100%;
+}
+.divCordoneLV2 button:hover {
+  background-color: rgb(9, 96, 9);
 }
 
 .addisplay {
@@ -196,7 +268,7 @@ section {
 }
 .Cariste .Cars .caritem .carimg {
   background-color: rgb(255, 255, 255);
-  background-image: url(img/compact-car-dacia-sport-utility-vehicle-renault-renault-duster-removebg-preview.png);
+  background-image: url(/img/compact-car-dacia-sport-utility-vehicle-renault-renault-duster-removebg-preview.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;

@@ -34,7 +34,7 @@ header {
 
 // second sec filtr
 section {
-    padding: 0px 15%;
+    padding: 0px 10%;
 }
 .divCordoneLV {
     border: 2px solid var(--primary-color);
@@ -66,6 +66,81 @@ section {
     button:hover{
         background-color: var(--primary-color);
     }
+}
+.divCordoneLV2{
+    padding: 10px 10px;
+    display: none;
+    border-radius: 10px;
+    margin: 15px 0px;
+    width: 100%;
+    gap: 20px;
+    flex-direction: column;
+    border: 2px solid var(--primary-color);
+
+    .ContainerTtle{
+        display: flex;
+        justify-content: space-between;
+        .rmvModifierFilt{
+            cursor: pointer;
+            font-size: 20px;
+        }
+    }
+    .Filter2{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+        align-items: center;
+        flex: 1;
+        background-color: var(--primary-color);
+        padding: 9px;
+        border-radius: 8px;
+        .LieuPrisenEnCharge{
+            flex-grow: 9 !important;
+        }
+        .LieuPrisenEnCharge,.DatePrisencharge,.DateRestitution,.HeurePriseencharge,.HeureRestitution{
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background-color: #f4f4f4;
+            padding: 10px 20px;
+            border-radius: 8px;
+            flex-grow: 1;
+            p{
+                font-size: 10px;
+            }
+            input{
+                border: none;
+                width: 100%;
+                background-color: transparent;
+            }
+            input:focus{
+                border: none;
+                outline: none;
+            }
+            input[type="date"]::-webkit-calendar-picker-indicator {
+                display: none;
+                -webkit-appearance: none;
+            }
+            input[type="time"]::-webkit-calendar-picker-indicator {
+                display: none;
+                -webkit-appearance: none;
+            }
+
+        }
+        
+    }
+    button{
+        background-color: green;
+        color: white;
+        border: none;
+        padding: 20px 20px;
+        border-radius: 8px;
+        width: 100%;
+    }
+    button:hover{
+        background-color: rgb(9, 96, 9);
+    }
+
 }
 
 // ad display
@@ -211,7 +286,7 @@ section {
             gap: 20px;
             .carimg{
                 background-color: rgb(255, 255, 255);
-                background-image: url(img/compact-car-dacia-sport-utility-vehicle-renault-renault-duster-removebg-preview.png);
+                background-image: url(/img/compact-car-dacia-sport-utility-vehicle-renault-renault-duster-removebg-preview.png);
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: 100%;
