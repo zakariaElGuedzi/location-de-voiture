@@ -49,12 +49,10 @@ section{
     border-radius: 10px;
     margin: 15px 0px;
     justify-content: space-between;
-    box-sizing: border-box;
     // flex-wrap: wrap;
     .Filter,.Filter2{
         display: flex;
         gap: 30px;
-        align-items: center;
         align-items: center;
         width: 100%;
     }
@@ -70,18 +68,18 @@ section{
         border-radius: 8px;
     
     }
-    .modifButtonDiv {
-        display: flex;
-        align-items: center;
-        justify-content: end;
-        width: 100%;
-        button {
-            width: 60%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-    }
+    // .modifButtonDiv {
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: end;
+    //     width: 100%;
+    //     button {
+    //         width: 60%;
+    //         display: flex;
+    //         align-items: center;
+    //         justify-content: center;
+    //     }
+    // }
     button:hover{
         background-color: var(--primary-color);
     }
@@ -356,6 +354,7 @@ section{
             .Price{
                 display: flex;
                 justify-content: space-between;
+
             }
         }
         .RSVBTN{
@@ -395,7 +394,6 @@ section{
     .divCordoneLV {
         flex-wrap: wrap;
         width: 100%;
-        
         .modifButtonDiv {
         display: flex;
         align-items: center;
