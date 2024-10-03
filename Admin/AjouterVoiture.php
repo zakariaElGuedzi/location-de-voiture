@@ -23,7 +23,7 @@ if(isset($_POST['AjouterVoiture'])){
     $imageFileType = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
 
     // Allow certain file formats
-    $allowedTypes = array("jpg", "jpeg", "png", "gif");
+    $allowedTypes = array("jpg", "jpeg", "png");
     if (in_array($imageFileType, $allowedTypes)) {
         // Move the uploaded file to the server directory
         if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFilePath)) {
@@ -37,19 +37,41 @@ if(isset($_POST['AjouterVoiture'])){
             echo "File upload failed.";
         }
     } else {
-        echo "Only JPG, JPEG, PNG, and GIF files are allowed.";
+        $TypeError = "Image extension Only JPG, JPEG, PNG autorisé";
     }
 
     // $currentDateTime = date("Y-m-d H:i:s");
     // $UserID = $_SESSION['userid'];
     // $sqlState2 = $pdo->prepare('INSERT INTO historique VALUES(NULL,"Creation Operateur",?,?)');
     // $sqlState2->execute(array($currentDateTime,$UserID));
-
+    $SuccesMessage = "Voiture Bien Ajouté";
+    header("refresh:1;AjouterVoiture.php");
 }
 ?>
+
+<div id="loader">
+    <div class="spinner"></div>
+</div>
+
 <main class="content">
   <div class="row">
     <div class="col-12 col-xl-12">
+            <?php
+                if(isset($TypeError)){
+                    echo "
+                    <div class='alert alert-danger' role='alert'>
+                        $TypeError
+                    </div>
+                    ";
+                }elseif(isset($SuccesMessage)){
+                    echo "
+                    <div class='alert alert-success' role='alert'>
+                        $SuccesMessage
+                    </div>
+                    ";
+                }
+            ?>
+
         <div class="card card-body border-0 shadow mb-4">
             <h2 class="h5 mb-4">General information</h2>
             <form method="POST" enctype="multipart/form-data">
@@ -62,7 +84,7 @@ if(isset($_POST['AjouterVoiture'])){
                     </div>
                     <div class="col-md-6 mb-3">
                         <label class="my-1 me-2" for="country">Marque</label>
-                        <select class="form-select" name="carbrand" aria-label="Default select example">
+                        <select class="form-select" name="carbrand" aria-label="Default select example" required>
                             <option selected>Open this select menu</option>
                             <option value="1">BMW</option>
                             <option value="2">Clio</option>
@@ -75,7 +97,7 @@ if(isset($_POST['AjouterVoiture'])){
                         <div class="">
                             <label for="exampleInputIconRight">Prix par jour:</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" oninput="calculatePrice()" name="originalcarprice" id="orgprix" placeholder="Exemple : 1500" aria-label="Search">
+                                <input type="text" class="form-control" oninput="calculatePrice()" name="originalcarprice" id="orgprix" placeholder="Exemple : 1500" aria-label="Search" required>
                                 <span class="input-group-text" id="basic-addon2">
                                     MAD
                                 </span>
@@ -86,7 +108,7 @@ if(isset($_POST['AjouterVoiture'])){
                         <div class="">
                             <label for="exampleInputIconRight">Recution:</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" oninput="calculatePrice()" name="reduction" id="reduction" placeholder="Exemple : 10" aria-label="Search">
+                                <input type="text" class="form-control" oninput="calculatePrice()" name="reduction" id="reduction" placeholder="Exemple : 10" aria-label="Search" required>
                                 <span class="input-group-text" id="basic-addon2">
                                     %
                                 </span>
@@ -118,7 +140,7 @@ if(isset($_POST['AjouterVoiture'])){
                     </div>
                     <div class="col-md-3 mb-3">
                         <label for="Password">Type Fuel</label>
-                        <select class="form-select" name="carfuel" aria-label="Default select example">
+                        <select class="form-select" name="carfuel" aria-label="Default select example" required>
                             <option selected>Open this select menu</option>
                             <option value="Diesel">Diesel</option>
                             <option value="Essence">Essence</option>
@@ -126,7 +148,7 @@ if(isset($_POST['AjouterVoiture'])){
                     </div>
                     <div class="col-md-3 mb-3">
                         <label class="my-1 me-2" for="country">Vitesse</label>
-                        <select class="form-select" name="cartransmission" aria-label="Default select example">
+                        <select class="form-select" name="cartransmission" aria-label="Default select example" required>
                             <option selected>Open this select menu</option>
                             <option value="Manuel">Manuel</option>
                             <option value="Automatic">Automatic</option>
@@ -135,7 +157,7 @@ if(isset($_POST['AjouterVoiture'])){
                 </div>
                 <div class="mb-3">
                     <label for="formFile" class="form-label">Voiture Image :</label>
-                    <input class="form-control" type="file" name="image" id="image" accept="image/*">
+                    <input class="form-control" type="file" name="image" id="image" accept="image/*" required>
                 </div>
                 <!-- <h6>Accesories :</h6>
                 <div class="d-flex flex-wrap align-content-center gap-3 mb-3">
@@ -181,16 +203,16 @@ if(isset($_POST['AjouterVoiture'])){
   </div>
 </main>
 <script>
-function calculatePrice() {
-    const prix = parseFloat(document.getElementById("orgprix").value);
-    const reduction = parseFloat(document.getElementById("reduction").value);
-    
-    if (!isNaN(prix) && !isNaN(reduction)) {
-        const discount = (reduction / 100) * prix;
-        const finalPrice = prix - discount;
-        document.getElementById("prixreduc").value = finalPrice.toFixed(2);
-    } else {
-        document.getElementById("prixreduc").value = '';
+    function calculatePrice() {
+        const prix = parseFloat(document.getElementById("orgprix").value);
+        const reduction = parseFloat(document.getElementById("reduction").value);
+        
+        if (!isNaN(prix) && !isNaN(reduction)) {
+            const discount = (reduction / 100) * prix;
+            const finalPrice = prix - discount;
+            document.getElementById("prixreduc").value = finalPrice.toFixed(2);
+        } else {
+            document.getElementById("prixreduc").value = '';
+        }
     }
-}
-    </script>
+</script>

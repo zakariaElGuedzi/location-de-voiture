@@ -95,6 +95,41 @@
 
 <!-- Volt JS -->
 <script src="assets/js/volt.js"></script>
+<style>
+    #loader {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.1); /* semi-transparent background */
+            z-index: 9999; /* high z-index to overlay content */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Spinner (loader) style */
+        .spinner {
+            border: 8px solid #f3f3f3; /* Light grey */
+            border-top: 8px solid #3498db; /* Blue */
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1.5s linear infinite;
+        }
+
+        /* Keyframes for spinning effect */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Hide content until the page fully loads */
+        #content {
+            display: none;
+        }
+</style>
 <script>
   // scripts.js
 function loadContent(page) {
@@ -107,5 +142,14 @@ function loadContent(page) {
     };
     xhr.send();
 }
+window.addEventListener("beforeunload", function() {
+            // Show the loader
+        document.getElementById("loader").style.visibility = "visible";
+    });
+
+    // Also, hide the loader after the page is fully loaded
+    window.addEventListener("load", function() {
+        document.getElementById("loader").style.visibility = "hidden";
+    });
 
 </script>

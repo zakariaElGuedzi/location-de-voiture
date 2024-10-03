@@ -7,7 +7,15 @@ $cars = $pdo->query('SELECT * FROM cars')->fetchAll(PDO::FETCH_OBJ);
   .smallspan{
     font-size: 9px;
   }
+  td{
+    padding: 0 !important;
+  }
 </style>
+
+<div id="loader">
+    <div class="spinner"></div>
+</div>
+
 <main class="content">
 			<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
 				<div class="d-block mb-4 mb-md-0">
@@ -48,10 +56,10 @@ $cars = $pdo->query('SELECT * FROM cars')->fetchAll(PDO::FETCH_OBJ);
                 <td><?php echo $car->CarPricewithReduction?> DH</td>
                 <td><?php echo $car->CarFuelType?></td>
                 <td><?php echo $car->CarTransmission?></td>
-                <td class="">
-                    <a class="p-1" href=""><i class="fa-solid fa-eye"></i></a>
-                    <a class="p-1" href=""><i class="fa-solid fa-pen"></i></a>
-                    <a class="p-1" href=""><i class="fa-solid fa-trash"></i></a>
+                <td>
+                    <a class="p-1" href="ShowCarDetails.php?id=<?php echo $car->CarId ?>"><i class="fa-solid fa-eye"></i></a>
+                    <a class="p-1" href="EditCar.php?id=<?php echo $car->CarId ?>"><i class="fa-solid fa-pen"></i></a>
+                    <a class="p-1" href="DeleteCar.php?id=<?php echo $car->CarId ?>"><i class="fa-solid fa-trash"></i></a>
                 </td>
             </tr>
             <?php
