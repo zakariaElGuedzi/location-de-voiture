@@ -164,9 +164,11 @@ if(isset($_POST['AjouterVoiture'])){
                 </div>
                 <div class="mb-3">
                     <label for="formFile" class="form-label">Voiture Image :</label>
-                    <input class="form-control" type="file" name="image" value="<?php echo $cr->CarImage?>" id="image" accept="image/*" required>
-                    <img src="<?php echo $cr->CarImage?>" alt="" width="200px">
-
+                    <input type="hidden" name="current_image" value="<?php echo $cr->CarImage; ?>">
+                    <!-- <input class="form-control" type="file" name="image" value="<?php echo $cr->CarImage?>" id="image" accept="image/*" required> -->
+                    <img src="<?php echo $cr->CarImage?>" alt="" width="200px"> <br>
+                    <label for="image">Choisir Nouveau image (optionel):</label>
+                    <input type="file" class="form-control" name="image" id="image" accept="image/*">
                 </div>
                 <!-- <h6>Accesories :</h6>
                 <div class="d-flex flex-wrap align-content-center gap-3 mb-3">
@@ -203,7 +205,7 @@ if(isset($_POST['AjouterVoiture'])){
                 </div> -->
 
                 <div class="">
-                    <button class="btn btn-gray-800 mt-2 animate-up-2" name="AjouterVoiture" type="submit">Ajouter</button>
+                    <button class="btn btn-gray-800 mt-2 animate-up-2" name="ModifierVoiture" type="submit">Modifier</button>
                 </div>
                 </div>
             </form>
