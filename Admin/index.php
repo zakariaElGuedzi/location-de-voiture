@@ -108,7 +108,7 @@ include "includes/navbar.php";
               </div>
           </div>
       </div>
-      <div class="col-12 col-sm-6 col-xl-4 mb-4">
+      <!-- <div class="col-12 col-sm-6 col-xl-4 mb-4">
           <div class="card border-0 shadow">
               <div class="card-body">
                   <div class="row d-block d-xl-flex align-items-center">
@@ -130,8 +130,8 @@ include "includes/navbar.php";
                   </div>
               </div>
           </div>
-      </div>
-      <div class="col-12 col-sm-6 col-xl-4 mb-4">
+      </div> -->
+      <!-- <div class="col-12 col-sm-6 col-xl-4 mb-4">
           <div class="card border-0 shadow">
               <div class="card-body">
                   <div class="row d-block d-xl-flex align-items-center">
@@ -153,7 +153,7 @@ include "includes/navbar.php";
                   </div>
               </div>
           </div>
-      </div>
+      </div> -->
   </div>
 </main>
 <script>

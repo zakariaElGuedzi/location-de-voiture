@@ -1,6 +1,13 @@
 <?php
 include "includes/navbar.php";
+$cars = $pdo->query('SELECT * FROM cars')->fetchAll(PDO::FETCH_OBJ);
+
 ?>
+<style>
+  .smallspan{
+    font-size: 9px;
+  }
+</style>
 <main class="content">
 			<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
 				<div class="d-block mb-4 mb-md-0">
@@ -20,29 +27,36 @@ include "includes/navbar.php";
 					<thead>
 						<tr>
 							<th class="border-bottom">ID</th>
+              <th class="border-bottom">Image</th>
               <th class="border-bottom">Car Name</th>
 							<th class="border-bottom">Brand</th>
-              <th class="border-bottom">Price Per day</th>
+              <th class="border-bottom">Price Per day <span class="smallspan">( avec reduction )</span></th>
               <th class="border-bottom">Fuel Type</th>
-              <th class="border-bottom">Model Year</th>
+              <th class="border-bottom">Vitesse</th>
 							<th class="border-bottom">Action</th>
 						</tr>
 					</thead>
 					<tbody>
-            <tr>
-                <td>1</td>
-                <td>G160</td>
-                <td>BMW</td>
-                <td>300</td>
-                <td>Diesel</td>
-                <td>2020</td>
-                <td>
-                    <a href="">Afficher</a>
-                    <a href="">Modifier</a>
-                    <a href="">Supprimer</a>
+            <?php
+                foreach($cars as $car){
+            ?>
+            <tr>  
+                <td><?php echo $car->CarId?></td>
+                <td><?php echo '<img src="' . $car->CarImage . '" alt="Image" width="80" style="margin:10px;">';?></td>
+                <td><?php echo $car->CarName?></td>
+                <td><?php echo $car->BrandId?></td>
+                <td><?php echo $car->CarPricewithReduction?> DH</td>
+                <td><?php echo $car->CarFuelType?></td>
+                <td><?php echo $car->CarTransmission?></td>
+                <td class="">
+                    <a class="p-1" href=""><i class="fa-solid fa-eye"></i></a>
+                    <a class="p-1" href=""><i class="fa-solid fa-pen"></i></a>
+                    <a class="p-1" href=""><i class="fa-solid fa-trash"></i></a>
                 </td>
             </tr>
-
+            <?php
+                  }
+            ?>
 					</tbody>
 				</table>
 			</div>
