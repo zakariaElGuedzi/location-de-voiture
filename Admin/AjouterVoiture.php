@@ -73,7 +73,7 @@ if(isset($_POST['AjouterVoiture'])){
             ?>
 
         <div class="card card-body border-0 shadow mb-4">
-            <h2 class="h5 mb-4">General information</h2>
+            <h2 class="h5 mb-4">Ajouter Voiture</h2>
             <form method="POST" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-md-6 mb-3">
