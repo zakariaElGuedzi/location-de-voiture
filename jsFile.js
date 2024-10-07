@@ -48,6 +48,36 @@ function closemenu() {
  }
 
 
+// first price
+let sprice = document.getElementById('secondPrice');
+sprice.textContent = 8000 + " Dhs";
+let contnSprice = sprice.textContent;
+let spricetoNumber = parseInt(contnSprice);console.log(spricetoNumber)
+
+
+let fPrice = document.getElementById('firstPrice');
+let contentFprice = spricetoNumber+300+" Dh";
+// let tonumber = parseInt(contentFprice);
+fPrice.textContent = contentFprice ;
+console.log(contentFprice)
+
+
+
+// let spriceVl = sprice.textContent+100;
+fPrice.style.color = "red";
+
+
+
+
+
+
+
+
+
+
+
+
+
 // scroll header
 document.addEventListener('scroll', function() {
    const header = document.querySelector('.header');
@@ -56,35 +86,6 @@ document.addEventListener('scroll', function() {
    } else {
        header.classList.remove('blurred');
    }
-});
-
-//searchbar
-const LieuPrisenEnCharge = document.querySelector('.LieuPrisenEnCharge');
-const DatePrisencharge = document.querySelector('.DatePrisencharge');
-const DateRestitution = document.querySelector('.DateRestitution');
-const HeurePriseencharge = document.querySelector(".HeurePriseencharge")
-const LieuRestitution = document.querySelector(".LieuRestitution")
-
-const inputField1 = LieuPrisenEnCharge.querySelector('input');
-const inputField2 = DatePrisencharge.querySelector('input');
-const inputField3 = DateRestitution.querySelector('input');
-const inputField4 = HeurePriseencharge.querySelector('input');
-const inputField5 = LieuRestitution.querySelector('input');
-
-LieuPrisenEnCharge.addEventListener('click', function() {
-    inputField1.focus();
-});
-DatePrisencharge.addEventListener('click', function() {
-    inputField2.showPicker();
-});
-DateRestitution.addEventListener('click', function() {
-    inputField3.showPicker();
-});
-HeurePriseencharge.addEventListener('click', function() {
-    inputField4.showPicker();
-});
-LieuRestitution.addEventListener('click', function() {
-    inputField5.focus();
 });
 
 

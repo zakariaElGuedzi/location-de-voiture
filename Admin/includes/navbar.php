@@ -40,7 +40,7 @@ include "dependencies.php"
   </nav>
 <nav class="navbar navbar-dark navbar-theme-primary px-4 col-12 d-lg-none">
     <a class="navbar-brand me-lg-5">
-        <img class="navbar-brand-dark" src="/img/lgBlanc.png" alt="Volt logo" /> <img class="navbar-brand-light" src="/img/lgBlanc.png" alt="Volt logo" />
+        <img class="navbar-brand-dark" src="../../assets/img/lc.png" alt="Volt logo" /> <img class="navbar-brand-light" src="../../assets/img/lc.png" alt="Volt logo" />
     </a>
     <div class="d-flex align-items-center">
         <button class="navbar-toggler d-lg-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -76,7 +76,7 @@ include "dependencies.php"
       <li class="nav-item">
         <a class="nav-link d-flex align-items-center">
           <span class="sidebar-icon">
-            <img src="/img/lgBlanc.png"  alt="Volt Logo">
+            <img src="../../assets/img/lc.png" height="50" width="50" alt="Volt Logo">
           </span>
           <span class="mt-1 ms-1 sidebar-text">Location Voiture</span>
         </a>
@@ -119,7 +119,7 @@ include "dependencies.php"
                 <span class="sidebar-text">Ajouter Voiture</span>
               </a>
               <a class="nav-link" href="GererVoiture.php">
-                <span class="sidebar-text">Liste Voiture</span>
+                <span class="sidebar-text">Gerer Voiture</span>
               </a>
             </li>
           </ul>

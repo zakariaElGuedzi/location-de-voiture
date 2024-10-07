@@ -205,18 +205,7 @@
                         <p class="m-0"><?php echo $es?></p>
                     </div>
                 </div>
-<<<<<<< Updated upstream:ListeVehicle/listevehicules.html
-                <hr>
-            </div>
-        </div>
-            <div class="d-flex justify-content-between">
-                <a href="">Reset</a>
-                <a href="">Filter</a>
-            </div>
-
-=======
             </form>
->>>>>>> Stashed changes:ListeVehicle/listevehicules.php
         </div>
         <div class="Cars" id="car">
             <?php

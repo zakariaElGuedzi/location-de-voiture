@@ -187,6 +187,7 @@ section{
             .carimg{
                 width: 25%;
                 background-color: rgb(255, 255, 255);
+                background-image: url(/img/compact-car-dacia-sport-utility-vehicle-renault-renault-duster-removebg-preview.png);
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: 100%;
@@ -194,21 +195,14 @@ section{
             }
             .carDts{
                 flex: 5;
-                .CarClasses{
-                    display: flex;
-                    gap: 5px;
-                    .CarClass{
-                        color: white;
-                        background-color: #1879ca;
-                        width: max-content;
-                        padding: 2px 9px;
-                        border-radius: 8px;
-                        margin-bottom: 10px !important;  
-                        font-size: 12px;
-                    }
-                    .red{
-                        background-color: red !important;
-                    }
+                .CarClass{
+                    color: white;
+                    background-color: #1879ca;
+                    width: max-content;
+                    padding: 2px 9px;
+                    border-radius: 8px;
+                    margin-bottom: 10px !important;  
+                    font-size: 12px;
                 }
                 .CarName{
                     font-size: 20px;
@@ -255,27 +249,38 @@ section{
                 }
             }
         }
-        .RSVBTN{
-            margin: 20px auto;
-            button{
-                background-color: var(--button-color);
-                color: white;
-                border: none;
-                padding: 15px 20px;
-                width: 100%;
-                border-radius: 8px;
-
-                a{
-                    color: white;
-                    text-decoration: none;
+        .PAPDetails{
+            padding: 30px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 15px;
+            .DetailsContainer,.Detail{
+                display: flex;
+                flex-direction: column;
+                
+            }
+            .Detail{
+                margin-top: 10px;
+                .InpGroup{
+                    padding: 10px 20px;
+                    border-radius: 8px;
+                    outline: none;
+                    border: 1px solid black;
+                    
+                }
+                input{
+                    border: none;
+                    outline: none;
+                    padding-left: 10px;
+                    width: calc(100% - 25px);
+                }
+                input:focus{
+                    border: none;
+                    outline: none;
                 }
             }
-            button:hover{
-                background-color: var(--primary-color);
-            }
+            
         }
     }
-
     .OfferDetails{
         flex: 3;
         margin-left: 20px;
@@ -348,53 +353,33 @@ section{
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
             .Price{
                 display: flex;
-                flex-direction: column;
-                gap: 5px;
-                .OrgPrice,.Reduction{
-                    display: flex;
-                    justify-content: space-between;
-                }
-            }
-            .FinalPrice{
-                display: flex;
                 justify-content: space-between;
+
             }
         }
+        .RSVBTN{
+            max-width: 400px;
+            margin: 20px auto;
+            button{
+                background-color: var(--button-color);
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                width: 100%;
+                border-radius: 8px;
 
+                a{
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+            button:hover{
+                background-color: var(--primary-color);
+            }
+        }
         
     }
 }
-.PAPDetails{
-    padding: 5px;
-    .DetailsContainer,.Detail{
-        display: flex;
-        flex-direction: column;
-    }
-    .Detail{
-        .InpGroup{
-            padding: 10px 20px;
-            border-radius: 8px;
-            outline: none;
-            border: 1px solid black;
-        }
-        input{
-            border: none;
-            outline: none;
-            padding-left: 10px;
-            width: calc(100% - 25px);
-        }
-        input:focus{
-            border: none;
-            outline: none;
-        }
-    }
-}
-.confirmer{
-    padding: 10px;
-    background-color: var(--button-color);
-    color: white;
-}
-
 
 @media (max-width : 390px) {
     p , h3 ,h5 , h1 {
@@ -423,5 +408,3 @@ section{
     }
     
 }
-
-/////////////////// checkbox style ///////////////////////

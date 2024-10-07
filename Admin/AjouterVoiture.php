@@ -86,13 +86,9 @@ if(isset($_POST['AjouterVoiture'])){
                         <label class="my-1 me-2" for="country">Marque</label>
                         <select class="form-select" name="carbrand" aria-label="Default select example" required>
                             <option selected>Open this select menu</option>
-                            <?php
-                                $Brands = $pdo->prepare('SELECT * FROM brands');
-                                $Brands->execute();
-                                while($row = $Brands->fetch()){
-                            ?>
-                            <option value="<?php echo $row['BrandId']?>"><?php echo $row['Brand']?></option>
-                            <?php } ?>
+                            <option value="1">BMW</option>
+                            <option value="2">Clio</option>
+                            <option value="3">Peugeot</option>
                         </select>
                     </div>
                 </div>

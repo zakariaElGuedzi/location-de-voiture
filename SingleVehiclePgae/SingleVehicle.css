@@ -170,6 +170,7 @@ section {
 .Offer .CarDetails .Car .carimg {
   width: 25%;
   background-color: rgb(255, 255, 255);
+  background-image: url(/img/compact-car-dacia-sport-utility-vehicle-renault-renault-duster-removebg-preview.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
@@ -178,11 +179,7 @@ section {
 .Offer .CarDetails .Car .carDts {
   flex: 5;
 }
-.Offer .CarDetails .Car .carDts .CarClasses {
-  display: flex;
-  gap: 5px;
-}
-.Offer .CarDetails .Car .carDts .CarClasses .CarClass {
+.Offer .CarDetails .Car .carDts .CarClass {
   color: white;
   background-color: #1879ca;
   width: -moz-max-content;
@@ -191,9 +188,6 @@ section {
   border-radius: 8px;
   margin-bottom: 10px !important;
   font-size: 12px;
-}
-.Offer .CarDetails .Car .carDts .CarClasses .red {
-  background-color: red !important;
 }
 .Offer .CarDetails .Car .carDts .CarName {
   font-size: 20px;
@@ -237,23 +231,33 @@ section {
 .Offer .CarDetails .Advantages .Adv i {
   color: green;
 }
-.Offer .CarDetails .RSVBTN {
-  margin: 20px auto;
+.Offer .CarDetails .PAPDetails {
+  padding: 30px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 15px;
 }
-.Offer .CarDetails .RSVBTN button {
-  background-color: var(--button-color);
-  color: white;
-  border: none;
-  padding: 15px 20px;
-  width: 100%;
+.Offer .CarDetails .PAPDetails .DetailsContainer, .Offer .CarDetails .PAPDetails .Detail {
+  display: flex;
+  flex-direction: column;
+}
+.Offer .CarDetails .PAPDetails .Detail {
+  margin-top: 10px;
+}
+.Offer .CarDetails .PAPDetails .Detail .InpGroup {
+  padding: 10px 20px;
   border-radius: 8px;
+  outline: none;
+  border: 1px solid black;
 }
-.Offer .CarDetails .RSVBTN button a {
-  color: white;
-  text-decoration: none;
+.Offer .CarDetails .PAPDetails .Detail input {
+  border: none;
+  outline: none;
+  padding-left: 10px;
+  width: calc(100% - 25px);
 }
-.Offer .CarDetails .RSVBTN button:hover {
-  background-color: var(--primary-color);
+.Offer .CarDetails .PAPDetails .Detail input:focus {
+  border: none;
+  outline: none;
 }
 .Offer .OfferDetails {
   flex: 3;
@@ -320,46 +324,26 @@ section {
 }
 .Offer .OfferDetails .Tarif .Price {
   display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-.Offer .OfferDetails .Tarif .Price .OrgPrice, .Offer .OfferDetails .Tarif .Price .Reduction {
-  display: flex;
   justify-content: space-between;
 }
-.Offer .OfferDetails .Tarif .FinalPrice {
-  display: flex;
-  justify-content: space-between;
+.Offer .OfferDetails .RSVBTN {
+  max-width: 400px;
+  margin: 20px auto;
 }
-
-.PAPDetails {
-  padding: 5px;
-}
-.PAPDetails .DetailsContainer, .PAPDetails .Detail {
-  display: flex;
-  flex-direction: column;
-}
-.PAPDetails .Detail .InpGroup {
-  padding: 10px 20px;
-  border-radius: 8px;
-  outline: none;
-  border: 1px solid black;
-}
-.PAPDetails .Detail input {
-  border: none;
-  outline: none;
-  padding-left: 10px;
-  width: calc(100% - 25px);
-}
-.PAPDetails .Detail input:focus {
-  border: none;
-  outline: none;
-}
-
-.confirmer {
-  padding: 10px;
+.Offer .OfferDetails .RSVBTN button {
   background-color: var(--button-color);
   color: white;
+  border: none;
+  padding: 10px 20px;
+  width: 100%;
+  border-radius: 8px;
+}
+.Offer .OfferDetails .RSVBTN button a {
+  color: white;
+  text-decoration: none;
+}
+.Offer .OfferDetails .RSVBTN button:hover {
+  background-color: var(--primary-color);
 }
 
 @media (max-width: 390px) {

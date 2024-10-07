@@ -1,8 +1,6 @@
 <?php
 include "includes/navbar.php";
-$id = $_GET['id'];
-
-if(isset($_POST['ModifierVoiture'])){
+if(isset($_POST['AjouterVoiture'])){
     $carname = $_POST['carname'];
     $carbrand = $_POST['carbrand'];
     $originalcarprice = $_POST['originalcarprice'];
@@ -12,72 +10,43 @@ if(isset($_POST['ModifierVoiture'])){
     $carsteats = $_POST['carsteats'];
     $carfuel = $_POST['carfuel'];
     $cartransmission = $_POST['cartransmission'];
-    if (isset($_POST['current_image'])) {
-        $currentImage = $_POST['current_image'];
-    
-        $targetDir = "uploads/";
-        $fileName = basename($_FILES["image"]["name"]);
-        $imageFileType = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
-        $newImageUploaded = false;
-    
-        // Check if a new image was uploaded
-        if (!empty($_FILES["image"]["name"])) {
-            $targetFilePath = $targetDir . $fileName;
-            // Allow certain file formats
-            $allowedTypes = array("jpg", "jpeg", "png","avif");
-            if (in_array($imageFileType, $allowedTypes)) {
-                if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFilePath)) {
-                    // If a new image was uploaded, delete the old one and update the path
-                    if (file_exists($currentImage)) {
-                        unlink($currentImage);
-                    }
-                    $currentImage = $targetFilePath;
-                    $newImageUploaded = true;
-                } else {
-                    $TypeError = "Failed to upload the new image.";
+    // $carimg = $_POST['carimg'];
 
-                    exit;
-                }
-            } else {
-                $TypeError = "Image extension Only JPG, JPEG, PNG autorisé";
-                exit;
-            }
+    // $sqlState = $pdo->prepare('INSERT INTO cars VALUES(NULL,?,?,?,?,?,?,?,?,?,?)');
+    // $sqlState->execute(array($carname, $carbrand, $originalcarprice,
+    // $reduction, $carpricewithreduction, $carmodel, $carsteats,$carfuel,$cartransmission,$carimg
+    // ));
+
+    $targetDir = "uploads/";  // Folder to store the uploaded images
+    $fileName = basename($_FILES["image"]["name"]);
+    $targetFilePath = $targetDir . $fileName;
+    $imageFileType = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
+
+    // Allow certain file formats
+    $allowedTypes = array("jpg", "jpeg", "png");
+    if (in_array($imageFileType, $allowedTypes)) {
+        // Move the uploaded file to the server directory
+        if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFilePath)) {
+            // Insert file path into the database
+            // $insert = $conn->query("INSERT INTO images (image_path) VALUES ('$targetFilePath')");
+            $sqlState = $pdo->prepare('INSERT INTO cars VALUES(NULL,?,?,?,?,?,?,?,?,?,?)');
+            $sqlState->execute(array($carname, $carbrand, $originalcarprice,
+            $reduction, $carpricewithreduction, $carmodel, $carsteats,$carfuel,$cartransmission,$targetFilePath
+            ));
+        } else {
+            echo "File upload failed.";
         }
+    } else {
+        $TypeError = "Image extension Only JPG, JPEG, PNG autorisé";
     }
-        $sqlState = $pdo->prepare('UPDATE cars SET 
-        carname = ?, 
-        BrandId = ?, 
-        CarOriginalPrice = ?, 
-        CarReduction     = ?, 
-        CarPricewithReduction = ?, 
-        CarModel = ?, 
-        CarSeats = ?, 
-        CarFuelType = ?, 
-        CarTransmission = ?, 
-        CarImage = ? 
-        WHERE CarId = ?'); // Assuming you're updating based on an 'id' field
 
-    $update = $sqlState->execute(array(
-        $carname, 
-        $carbrand, 
-        $originalcarprice, 
-        $reduction, 
-        $carpricewithreduction, 
-        $carmodel, 
-        $carsteats, 
-        $carfuel, 
-        $cartransmission, 
-        $currentImage, 
-        $id // Add the id of the car you're updating
-    ));
-    if($update){
-        $SuccesMessage = "Car updated successfully";
-        header("refresh:1;GererVoiture.php");
-    }else{
-        $TypeError = "Error updating car";
-    }
+    // $currentDateTime = date("Y-m-d H:i:s");
+    // $UserID = $_SESSION['userid'];
+    // $sqlState2 = $pdo->prepare('INSERT INTO historique VALUES(NULL,"Creation Operateur",?,?)');
+    // $sqlState2->execute(array($currentDateTime,$UserID));
+    $SuccesMessage = "Voiture Bien Ajouté";
+    header("refresh:1;AjouterVoiture.php");
 }
-
 ?>
 
 <div id="loader">
@@ -85,6 +54,7 @@ if(isset($_POST['ModifierVoiture'])){
 </div>
 
 <?php
+    $id = $_GET['id'];
     $Cars = $pdo->prepare('SELECT * FROM cars where CarId=?');
     $Cars->execute(array($id));
     $cr = $Cars->fetch(PDO::FETCH_OBJ);
@@ -122,28 +92,10 @@ if(isset($_POST['ModifierVoiture'])){
                     <div class="col-md-6 mb-3">
                         <label class="my-1 me-2" for="country">Marque</label>
                         <select class="form-select" name="carbrand" aria-label="Default select example" required>
-                            <?php
-                                // Fetch the selected brand
-                                $Brand = $pdo->prepare('SELECT Brand FROM brands WHERE BrandId = ?');
-                                $Brand->execute(array($cr->BrandId));
-                                $br = $Brand->fetch(PDO::FETCH_OBJ);
-                            ?>
-                            <!-- Selected brand displayed first -->
-                            <option selected value="<?php echo $cr->BrandId ?>"><?php echo $br->Brand ?></option>
-                            
-                            <?php
-                                // Fetch all brands
-                                $Brands = $pdo->prepare('SELECT * FROM brands');
-                                $Brands->execute();
-                                while($row = $Brands->fetch()){
-                                    // Skip the selected brand from the options list
-                                    if ($row['BrandId'] != $cr->BrandId) {
-                            ?>
-                            <option value="<?php echo $row['BrandId'] ?>"><?php echo $row['Brand'] ?></option>
-                            <?php
-                                    }
-                                }
-                            ?>
+                            <option selected>Open this select menu</option>
+                            <option value="1">BMW</option>
+                            <option value="2">Clio</option>
+                            <option value="3">Peugeot</option>
                         </select>
                     </div>
                 </div>
@@ -196,7 +148,7 @@ if(isset($_POST['ModifierVoiture'])){
                     <div class="col-md-3 mb-3">
                         <label for="Password">Type Fuel</label>
                         <select class="form-select" name="carfuel" aria-label="Default select example" required>
-                            <option selected value="<?PHP echo $cr->CarFuelType?>"><?PHP echo $cr->CarFuelType?></option>
+                            <option selected>Open this select menu</option>
                             <option value="Diesel">Diesel</option>
                             <option value="Essence">Essence</option>
                         </select>
@@ -204,7 +156,7 @@ if(isset($_POST['ModifierVoiture'])){
                     <div class="col-md-3 mb-3">
                         <label class="my-1 me-2" for="country">Vitesse</label>
                         <select class="form-select" name="cartransmission" aria-label="Default select example" required>
-                            <option selected value="<?PHP echo $cr->CarTransmission?>"><?PHP echo $cr->CarTransmission?></option>
+                            <option selected>Open this select menu</option>
                             <option value="Manuel">Manuel</option>
                             <option value="Automatic">Automatic</option>
                         </select>
@@ -213,10 +165,10 @@ if(isset($_POST['ModifierVoiture'])){
                 <div class="mb-3">
                     <label for="formFile" class="form-label">Voiture Image :</label>
                     <input type="hidden" name="current_image" value="<?php echo $cr->CarImage; ?>">
+                    <!-- <input class="form-control" type="file" name="image" value="<?php echo $cr->CarImage?>" id="image" accept="image/*" required> -->
                     <img src="<?php echo $cr->CarImage?>" alt="" width="200px"> <br>
                     <label for="image">Choisir Nouveau image (optionel):</label>
                     <input type="file" class="form-control" name="image" id="image" accept="image/*">
-                    
                 </div>
                 <!-- <h6>Accesories :</h6>
                 <div class="d-flex flex-wrap align-content-center gap-3 mb-3">
