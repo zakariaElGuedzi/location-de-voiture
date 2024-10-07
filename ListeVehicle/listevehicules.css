@@ -270,12 +270,19 @@ section {
   justify-content: center;
   gap: 20px;
 }
+.Cariste .Cars .caritem .ImageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .Cariste .Cars .caritem .carimg {
   background-color: rgb(255, 255, 255);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
   flex: 2;
+  width: 170px;
+  height: 150px;
 }
 .Cariste .Cars .caritem .carDts {
   flex: 5;
