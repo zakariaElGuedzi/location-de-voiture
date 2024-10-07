@@ -26,7 +26,7 @@ $cars = $pdo->query('SELECT * FROM cars')->fetchAll(PDO::FETCH_OBJ);
 						<svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
 						</svg>
-						Ajouter Vendeure
+						Ajouter Voiture
 					</a>
 				</div>
 			</div>
@@ -41,6 +41,7 @@ $cars = $pdo->query('SELECT * FROM cars')->fetchAll(PDO::FETCH_OBJ);
               <th class="border-bottom">Price Per day <span class="smallspan">( avec reduction )</span></th>
               <th class="border-bottom">Fuel Type</th>
               <th class="border-bottom">Vitesse</th>
+              <th class="border=bottom">Active</th>
 							<th class="border-bottom">Action</th>
 						</tr>
 					</thead>
@@ -52,12 +53,24 @@ $cars = $pdo->query('SELECT * FROM cars')->fetchAll(PDO::FETCH_OBJ);
                 <td><?php echo $car->CarId?></td>
                 <td><?php echo '<img src="' . $car->CarImage . '" alt="Image" width="80" style="margin:10px;">';?></td>
                 <td><?php echo $car->CarName?></td>
-                <td><?php echo $car->BrandId?></td>
+                <?php
+                    $Brand = $pdo->prepare('SELECT Brand FROM brands where BrandId=?');
+                    $Brand->execute(array($car->BrandId));
+                    $br = $Brand->fetch(PDO::FETCH_OBJ);
+                ?>
+                <td><?php echo $br->Brand?></td>
                 <td><?php echo $car->CarPricewithReduction?> DH</td>
                 <td><?php echo $car->CarFuelType?></td>
                 <td><?php echo $car->CarTransmission?></td>
                 <td>
-                    <a class="p-1" href="ShowCarDetails.php?id=<?php echo $car->CarId ?>"><i class="fa-solid fa-eye"></i></a>
+                <div class="form-check form-switch d-flex justify-content-center">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheck" 
+                    <?php echo ($car->active === 1) ? 'checked' : ''; ?> 
+                    onchange="updateCarStatus(<?php echo $car->CarId; ?>, this.checked)">
+                </div>
+                </td>
+                <td>
+                    <!-- <a class="p-1" href="ShowCarDetails.php?id=<?php echo $car->CarId ?>"><i class="fa-solid fa-eye"></i></a> -->
                     <a class="p-1" href="EditCar.php?id=<?php echo $car->CarId ?>"><i class="fa-solid fa-pen"></i></a>
                     <a class="p-1" href="DeleteCar.php?id=<?php echo $car->CarId ?>"><i class="fa-solid fa-trash"></i></a>
                 </td>
@@ -86,12 +99,25 @@ $cars = $pdo->query('SELECT * FROM cars')->fetchAll(PDO::FETCH_OBJ);
             </div>
           </div>
 		</main>
-    <script>
-    var modal = document.getElementById('modal-default');
-    modal.addEventListener('show.bs.modal', function(event) {
-    var button = event.relatedTarget;
-    var opId = button.getAttribute('data-op-id');
-    var supprimeropButton = modal.querySelector('#supprimer-op');
-    supprimeropButton.href = 'SupprimerOp.php?id=' + opId;
-  });
+<script>
+function updateCarStatus(carId, isChecked) {
+    // Convert the boolean value to 1 or 0
+    let status = isChecked ? 1 : 0;    
+    // Create an AJAX request
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST', 'update_car_status.php', true); // Assuming the script is update_car_status.php
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    
+    // Send the request with the car ID and the new status
+    xhr.send('carId=' + carId + '&status=' + status);
+
+    // Optional: Handle response (you could show a message or update the UI)
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            console.log('Car status updated successfully');
+        } else {
+            console.log('Error updating car status');
+        }
+    };
+}
 </script>
