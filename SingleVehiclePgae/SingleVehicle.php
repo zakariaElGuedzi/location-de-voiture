@@ -1,0 +1,300 @@
+<?php
+    include_once "../Admin/includes/database.php";
+    $id = $_GET['id'];
+    $Cars = $pdo->prepare('SELECT * FROM cars where CarId=?');
+    $Cars->execute(array($id));
+    $cr = $Cars->fetch(PDO::FETCH_OBJ);
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="SingleVehicle.css" media="print" onload="this.media='all'">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">     
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"></head>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <script src="https://kit.fontawesome.com/cfd6df17a2.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="">
+        <div class="header d-flex justify-content-between">
+            <h3><a href="/index.html">Location</a></h3>
+            <!-- <div>
+                <h3 class="langue p-1 bg-success">Fr</h3>
+            </div> -->
+        </div>
+    </header>
+
+    <section class="sec1LV"> 
+        <div  class="divCordoneLV">
+            <div class="Filter">
+                <div>
+                    <h5 class="bold">Casablanca Mohammed V de casa</h5>
+                    <p>mer. 2 oct. 2024, 10:00</p>
+                </div>
+                <i class="fa-solid fa-chevron-right"></i>
+                <div>
+                    <h5 class="bold">Casablanca Mohammed V de casa</h5>
+                    <p>mer. 2 oct. 2024, 10:00</p>
+                </div>
+            </div>
+            <button class="BtnModifier">Modifier</button>
+        </div>
+            <div  class="divCordoneLV2">
+                <div class="ContainerTtle">
+                    <h6>Modifier la recherche :</h6>
+                    <i class="fa-solid fa-xmark rmvModifierFilt"></i>
+                </div>
+                <div class="Filter2">
+                    <div class="LieuPrisenEnCharge">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <div>
+                            <p>Lieu de prise en charge</p>
+                            <input type="text" placeholder="Lieu de prise en charge">
+                        </div>
+                    </div>
+                    <div class="DatePrisencharge">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <div>
+                            <p>Date de prise en charge</p>
+                            <input type="date">
+                        </div>
+                    </div>
+                    <div class="HeurePriseencharge">
+                        <i class="fa-regular fa-clock"></i>
+                        <div>
+                            <p>Heure</p>
+                            <input type="time">
+                        </div>
+                    </div>
+                    <div class="DateRestitution">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <div>
+                            <p>Date de restitution</p>
+                            <input type="date">
+                        </div>
+                    </div>
+                    <div class="HeureRestitution">
+                        <i class="fa-regular fa-clock"></i>
+                        <div>
+                            <p>Heure</p>
+                            <input type="time">
+                        </div>
+                    </div>
+                    <button class="BtnModifier">Chercher</button>
+                </div>
+            </div>
+    </section>
+    <section class="Offer">
+        <div class="CarDetails">
+            <div class="OfferPrevNext">
+                <a href="/ListeVehicle/listevehicules.php" class="text-primary">Revenir aux resultat de recheche</a>
+                <h3>Votre Offre</h3>
+            </div>
+
+            <div class="Car">
+            <div class="carimg" style="background-image: url('../Admin/<?php echo $cr->CarImage?>')">
+
+                </div>
+                <div class="carDts">
+                    <div class="CarClasses">
+                        <p class="CarClass">Idéal pour les familles</p>
+                        <?php if(!$cr->CarReduction == 0 ){?>
+                        <p class="CarClass red">Reduction de  : <?php echo  $cr->CarReduction; ?> %</p>
+                        <?php } ?>
+                    </div>
+                    <h6 class="CarName"><?php echo $cr->CarName?></h6>
+                    <div class="caroptions">
+                        <p>
+                            <svg xmlns="http://www.w3.org/2000/svg" 
+                                viewBox="0 0 24 24">
+                                <path d="M16.5 6a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0zM18 6A6 6 0 1 0 6 6a6 6 0 0 0 12 0zM3 23.25a9 9 0 1 1 18 0 .75.75 0 0 0 1.5 0c0-5.799-4.701-10.5-10.5-10.5S1.5 17.451 1.5 23.25a.75.75 0 0 0 1.5 0z">
+                                </path>
+                            </svg>
+                            <?php echo $cr->CarSeats?> siege
+                        </p>
+                        <p>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.75 15.292v-.285a2.25 2.25 0 0 1 4.5 0v.285a.75.75 0 0 0 1.5 0v-.285a3.75 3.75 0 1 0-7.5 0v.285a.75.75 0 0 0 1.5 0zM13.54 5.02l-2.25 6.75a.75.75 0 0 0 1.424.474l2.25-6.75a.75.75 0 1 0-1.424-.474zM6.377 6.757a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25.75.75 0 0 0 0 1.5.375.375 0 1 1 0-.75.375.375 0 0 1 0 .75.75.75 0 0 0 0-1.5zm12.75 3.75a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25.75.75 0 0 0 0 1.5.375.375 0 1 1 0-.75.375.375 0 0 1 0 .75.75.75 0 0 0 0-1.5zm-1.496-3.75a1.125 1.125 0 1 0 1.119 1.131v-.006c0-.621-.504-1.125-1.125-1.125a.75.75 0 0 0 0 1.5.375.375 0 0 1-.375-.375V7.88a.375.375 0 1 1 .373.377.75.75 0 1 0 .008-1.5zm-8.254-3a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25.75.75 0 0 0 0 1.5.375.375 0 1 1 0-.75.375.375 0 0 1 0 .75.75.75 0 0 0 0-1.5zM21.88 17.541a16.503 16.503 0 0 0-19.76 0 .75.75 0 1 0 .898 1.202 15.003 15.003 0 0 1 17.964 0 .75.75 0 1 0 .898-1.202zm.62-5.534c0 5.799-4.701 10.5-10.5 10.5s-10.5-4.701-10.5-10.5 4.701-10.5 10.5-10.5 10.5 4.701 10.5 10.5zm1.5 0c0-6.627-5.373-12-12-12s-12 5.373-12 12 5.373 12 12 12 12-5.373 12-12zm-19.123-1.5a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25.75.75 0 0 0 0 1.5.375.375 0 1 1 0-.75.375.375 0 0 1 0 .75.75.75 0 0 0 0-1.5z"></path></svg>
+                            Kilométrage illimité
+                        </p>
+                        <p>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M1.5 6.75v-3a.75.75 0 0 0-1.5 0v3a.75.75 0 0 0 1.5 0m2.85-.45-2.25-3a.75.75 0 1 0-1.2.9l2.25 3a.75.75 0 1 0 1.2-.9m18.9 13.95h-3L21 21v-.75A2.25 2.25 0 0 1 23.25 18l-.75-.75v6a.75.75 0 0 0 1.5 0v-6a.75.75 0 0 0-.75-.75 3.75 3.75 0 0 0-3.75 3.75V21c0 .414.336.75.75.75h3a.75.75 0 0 0 0-1.5M18.024 2.056A.75.75 0 1 1 18.75 3v1.5a.75.75 0 1 1-.722.95.75.75 0 1 0-1.446.4A2.25 2.25 0 1 0 18.75 3c-1 0-1 1.5 0 1.5a2.25 2.25 0 1 0-2.174-2.832.75.75 0 0 0 1.448.388M12 18.75a.75.75 0 0 1 1.5 0c0 .315-.107.622-.304.868l-2.532 3.163A.75.75 0 0 0 11.25 24h3a.75.75 0 0 0 0-1.5h-3l.586 1.219 2.532-3.164c.41-.513.632-1.15.632-1.805a2.25 2.25 0 0 0-4.5 0 .75.75 0 0 0 1.5 0M8.25 1.5H9v5.25a.75.75 0 0 0 1.5 0V1.5A1.5 1.5 0 0 0 9 0h-.75a.75.75 0 0 0 0 1.5m0 6h3a.75.75 0 0 0 0-1.5h-3a.75.75 0 0 0 0 1.5m-6-7.5H.75A.75.75 0 0 0 0 .75v3c0 .414.336.75.75.75h1.5a2.25 2.25 0 0 0 0-4.5m0 1.5a.75.75 0 0 1 0 1.5H.75l.75.75v-3l-.75.75zm8.25 11.25v-3a.75.75 0 0 0-1.5 0v3a.75.75 0 0 0 1.5 0m1.5 0v1.5a.75.75 0 0 0 1.5 0v-1.5a.75.75 0 0 0-1.5 0m7.5 0v-3a.75.75 0 0 0-1.5 0v3a.75.75 0 0 0 1.5 0m3 1.5A2.25 2.25 0 0 0 20.25 12h-15A2.25 2.25 0 0 1 3 9.75a.75.75 0 0 0-1.5 0 3.75 3.75 0 0 0 3.75 3.75h15a.75.75 0 0 1 .75.75.75.75 0 0 0 1.5 0"></path></svg>
+                            <?php echo $cr->CarTransmission?>
+                        </p>
+                        <p>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M32 64C32 28.7 60.7 0 96 0L256 0c35.3 0 64 28.7 64 64l0 192 8 0c48.6 0 88 39.4 88 88l0 32c0 13.3 10.7 24 24 24s24-10.7 24-24l0-154c-27.6-7.1-48-32.2-48-62l0-64L384 64c-8.8-8.8-8.8-23.2 0-32s23.2-8.8 32 0l77.3 77.3c12 12 18.7 28.3 18.7 45.3l0 13.5 0 24 0 32 0 152c0 39.8-32.2 72-72 72s-72-32.2-72-72l0-32c0-22.1-17.9-40-40-40l-8 0 0 144c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 512c-17.7 0-32-14.3-32-32s14.3-32 32-32L32 64zM96 80l0 96c0 8.8 7.2 16 16 16l128 0c8.8 0 16-7.2 16-16l0-96c0-8.8-7.2-16-16-16L112 64c-8.8 0-16 7.2-16 16z"/></svg>
+                            <?php echo $cr->CarFuelType?>
+                        </p>
+                        <p>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M128 0c17.7 0 32 14.3 32 32l0 32 128 0 0-32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 32 48 0c26.5 0 48 21.5 48 48l0 48L0 160l0-48C0 85.5 21.5 64 48 64l48 0 0-32c0-17.7 14.3-32 32-32zM0 192l448 0 0 272c0 26.5-21.5 48-48 48L48 512c-26.5 0-48-21.5-48-48L0 192zm64 80l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm128 0l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zM64 400l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zm112 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16z"/></svg>
+                            <?php echo $cr->CarModel?>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            
+            <div class="Advantages">
+                <div class="Adv">
+                    <i class="fa-solid fa-check"></i>
+                    <p>Évaluation client : 7,5/10</p>
+                </div>
+                <div class="Adv">
+                    <i class="fa-solid fa-check"></i>
+                    <p>Comptoir facile à trouver</p>
+                </div>
+                <div class="Adv">
+                    <i class="fa-solid fa-check"></i>
+                    <p>Voitures en bon état</p>
+                </div>
+                <div class="Adv">
+                    <i class="fa-solid fa-check"></i>
+                    <p>Politique de carburant avantageuse</p>
+                </div>
+            </div>
+            <!-- <form class="PAPDetails" novalidate>
+                <h6>Informations sur le conducteur principal</h6>
+                <div class="DetailsContainer">
+                    <div class="Detail ">
+                        <label for="">Adresse e-mail :</label>
+                        <div class="InpGroup">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input class="" type="text" name="" id="" placeholder="Ex : AliFahid@gmail.com">
+                        </div>
+                    </div>
+                    <div class="Detail">
+                        <label for="">Nom et Prenom :</label>
+                        <div class="InpGroup">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" name="" id="" placeholder="Ex : Ali Fahid">
+                        </div>
+                    </div>
+                    <div class="Detail">
+                        <label for="">Numero Telephone :</label>
+                        <div class="InpGroup">
+                            <i class="fa-solid fa-phone"></i>
+                            <input type="text" name="" id="" placeholder="Ex : 060 01 20 40">
+                        </div>
+                    </div>
+                </div>
+            </form> -->
+            <div class="RSVBTN">
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#modal-default">Reserver Maintenant</button>  
+            </div>
+        </div>
+        <div class="OfferDetails">
+             <div class="sticky-top "> <!--Position Sticky using bootstrap -->
+                <div class="schedule">
+                    <div class="event">
+                        <div class="circle-container">
+                            <div class="circle"></div>
+                            <div class="line"></div>
+                        </div>
+    
+                        <div class="details">
+                            <div class="date-time">
+                                <p>mer. 2 oct. - 10:00</p>
+                            </div>
+                            <div class="location">
+                                <p class="bold">Casablanca Aéroport</p>
+                                <a href="#">Voir les instructions relatives à la prise en charge</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="event">
+                        <div class="circle-container">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="details">
+                            <div class="date-time">
+                                <p>sam. 5 oct. - 10:00</p>
+                            </div>
+                            <div class="location">
+                                <p class="bold">Casablanca Aéroport</p>
+                                <a href="#">Voir les instructions relatives à la restitution</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Tarif">
+                    <h5>Détail du tarif de la location :</h5>
+                    <div class="Price">
+                        <div class="OrgPrice">
+                            <p>Montant de la location par jour :</p>
+                            <p><?php echo $cr->CarOriginalPrice?> MAD</p>
+                        </div>
+                        <div class="Reduction">
+                            <?php if(!$cr->CarReduction == 0){?>
+                                <p>réduction :</p>
+                                <p><?php echo $cr->CarReduction?> %</p>
+                            <?php }?>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="FinalPrice">
+                        <p class="bold">Prix total par jours :</p>
+                        <?php if(!$cr->CarReduction == 0){?>
+                            <p class="bold"><?PHP echo $cr->CarPricewithReduction?> MAD</p>
+                        <?php }else{?>
+                            <p class="bold"><?PHP echo $cr->CarOriginalPrice?> MAD</p>
+                            <?php }?>
+                    </div>
+                </div>
+                <div class="alert alert-success mt-3" role="alert">
+                    <h6 class="alert-heading">PAIEMENT A LA LIVRAISON</h6>
+                    <p>Paiement Cash ou par carte Visa ou Mastercard.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- Modal Reservation -->
+        <div class="modal fade" id="modal-default" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="h6 modal-title">Informations sur le conducteur principal</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <form class="PAPDetails" novalidate>
+                <div class="DetailsContainer">
+                    <div class="Detail ">
+                        <label for="">Adresse e-mail :</label>
+                        <div class="InpGroup">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input class="" type="text" name="" id="" >
+                        </div>
+                    </div>
+                    <div class="Detail">
+                        <label for="">Nom et Prenom :</label>
+                        <div class="InpGroup">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" name="" id="">
+                        </div>
+                    </div>
+                    <div class="Detail">
+                        <label for="">Numero Telephone :</label>
+                        <div class="InpGroup">
+                            <i class="fa-solid fa-phone"></i>
+                            <input type="text" name="" id="">
+                        </div>
+                    </div>
+                </div>
+            </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn confirmer">Confirmer</button>
+                    <button type="button" class="btn btn-link text-gray ms-auto" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="SingleVeh.js" defer></script>
+</html>

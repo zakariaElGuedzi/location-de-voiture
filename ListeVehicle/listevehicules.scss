@@ -263,6 +263,9 @@ section {
         flex: 0.8;
         padding: 20px;
         box-shadow: rgba(26, 26, 26, 0.16) 0px 2px 8px 0px;
+        height: fit-content;
+        position: sticky;
+        top: 20px;
         .FilterTitle{
             display: flex;
             justify-content: space-between;
@@ -287,7 +290,6 @@ section {
             gap: 20px;
             .carimg{
                 background-color: rgb(255, 255, 255);
-                background-image: url(/img/compact-car-dacia-sport-utility-vehicle-renault-renault-duster-removebg-preview.png);
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: 100%;
@@ -298,14 +300,21 @@ section {
                 display: flex;
                 flex-direction: column;
                 gap: 10px;
-                .CarClass{
-                    color: white;
-                    background-color: #1879ca;
-                    width: max-content;
-                    padding: 2px 9px;
-                    border-radius: 8px;
-                    margin-bottom: 10px !important;  
-                    font-size: 12px;
+                .CarClasses{
+                    display: flex;
+                    gap: 5px;
+                    .CarClass{
+                        color: white;
+                        background-color: #1879ca;
+                        width: max-content;
+                        padding: 2px 9px;
+                        border-radius: 8px;
+                        margin-bottom: 10px !important;  
+                        font-size: 12px;
+                    }
+                    .red{
+                        background-color: red !important;
+                    }
                 }
                 .CarName{
                     font-size: 20px;
@@ -489,6 +498,7 @@ header {
 
 
 
+<<<<<<< Updated upstream
 
 
 /* Faq section  */
@@ -597,3 +607,5 @@ header {
         font-size: 14px;
     }
   }
+=======
+>>>>>>> Stashed changes
