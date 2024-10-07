@@ -29,21 +29,19 @@ if(isset($_POST['AjouterVoiture'])){
         if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFilePath)) {
             // Insert file path into the database
             // $insert = $conn->query("INSERT INTO images (image_path) VALUES ('$targetFilePath')");
-            $sqlState = $pdo->prepare('INSERT INTO cars VALUES(NULL,?,?,?,?,?,?,?,?,?,?)');
-            $sqlState->execute(array($carname, $carbrand, $originalcarprice,
-            $reduction, $carpricewithreduction, $carmodel, $carsteats,$carfuel,$cartransmission,$targetFilePath
-            ));
+            $sqlState = $pdo->prepare('INSERT INTO cars (CarName, BrandId, CarOriginalPrice, CarReduction, CarPricewithReduction, CarModel, CarSeats, CarFuelType, CarTransmission, CarImage,active) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,1)');
+            $result = $sqlState->execute(array($carname, $carbrand, $originalcarprice, $reduction, $carpricewithreduction, $carmodel, $carsteats, $carfuel, $cartransmission, $targetFilePath));            
+            // if($result){
+            //     echo "voiture ajouté avec succés";
+            // }else{
+            //     echo " echec";
+            // }
         } else {
             echo "File upload failed.";
         }
     } else {
         $TypeError = "Image extension Only JPG, JPEG, PNG autorisé";
     }
-
-    // $currentDateTime = date("Y-m-d H:i:s");
-    // $UserID = $_SESSION['userid'];
-    // $sqlState2 = $pdo->prepare('INSERT INTO historique VALUES(NULL,"Creation Operateur",?,?)');
-    // $sqlState2->execute(array($currentDateTime,$UserID));
     $SuccesMessage = "Voiture Bien Ajouté";
     header("refresh:1;AjouterVoiture.php");
 }
@@ -163,40 +161,6 @@ if(isset($_POST['AjouterVoiture'])){
                     <label for="formFile" class="form-label">Voiture Image :</label>
                     <input class="form-control" type="file" name="image" id="image" accept="image/*" required>
                 </div>
-                <!-- <h6>Accesories :</h6>
-                <div class="d-flex flex-wrap align-content-center gap-3 mb-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck10">
-                        <label class="form-check-label" for="defaultCheck10">
-                            Default checkbox
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck11">
-                        <label class="form-check-label" for="defaultCheck11">
-                            Default checkbox
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck12">
-                        <label class="form-check-label" for="defaultCheck12">
-                            Default checkbox
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck13">
-                        <label class="form-check-label" for="defaultCheck13">
-                            Default checkbox
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck14">
-                        <label class="form-check-label" for="defaultCheck14">
-                            Default checkbox
-                        </label>
-                    </div>                    
-                </div> -->
-
                 <div class="">
                     <button class="btn btn-gray-800 mt-2 animate-up-2" name="AjouterVoiture" type="submit">Ajouter</button>
                 </div>
