@@ -21,7 +21,7 @@
 <body>
     <header class="">
         <div class="header d-flex justify-content-between">
-            <h3><a href="/index.html">Location</a></h3>
+            <h3><a href="/index.html">test</a></h3>
             <div>
                 <h3 class="langue p-1 bg-success">Fr</h3>
             </div>
@@ -135,10 +135,6 @@
                     <a href="">Supprimer tous les filtres</a>
                 </div>
                 <hr>
-<<<<<<< Updated upstream:ListeVehicle/listevehicules.html
-                <!-- body info filtr -->
-            <div class="bodyInfoFiltrs">
-=======
                 <div class="Marque">
                     <h6>Marque :</h6>
                     <select class="form-control" name="brand" onchange="filterCars()">
@@ -154,7 +150,6 @@
                     </select>
                 </div>
                 <hr>
->>>>>>> Stashed changes:ListeVehicle/listevehicules.php
                 <div class="Transmission">
                     <h6 for="price">Transmission :</h6>
                     <div class="d-flex justify-content-between">
