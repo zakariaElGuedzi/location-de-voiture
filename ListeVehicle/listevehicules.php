@@ -135,6 +135,7 @@
                     <a href="">Supprimer tous les filtres</a>
                 </div>
                 <hr>
+                <div class="FilterOptions">
                 <div class="Marque">
                     <h6>Marque :</h6>
                     <select class="form-control" name="brand" onchange="filterCars()">
@@ -205,8 +206,10 @@
                         <p class="m-0"><?php echo $es?></p>
                     </div>
                 </div>
+                </div>
             </form>
         </div>
+        <hr class="devider" style="border: 0.2px solid black;">
         <div class="Cars" id="car">
             <?php
                 $cars = $pdo->query('SELECT * FROM cars')->fetchAll(PDO::FETCH_OBJ);
