@@ -260,11 +260,11 @@
                     </div>
                     <div>
                         <div class="carprice">
-                            <p>Prix par 1 jour :</p>
+                            <p>Prix par <b>4</b> jour :</p>
                             <?php  if(!$car->CarReduction == 0){?>
-                            <s><?php echo  $car->CarOriginalPrice; ?>DH</s>
+                            <s><?php echo  $car->CarOriginalPrice;?> DH</s>
                             <?php } ?>
-                            <h4><?php echo  $car->CarPricewithReduction; ?>DH</h4>
+                            <h4><?php echo  $car->CarPricewithReduction;?> DH</h4>
                             <a href="/SingleVehiclePgae/SingleVehicle.php?id=<?php echo $car->CarId ?>">Voir L'offre</a>
                         </div>
                     </div>

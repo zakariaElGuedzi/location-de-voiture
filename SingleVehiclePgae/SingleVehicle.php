@@ -97,9 +97,8 @@
                 <a href="/ListeVehicle/listevehicules.php" class="text-primary">Revenir aux resultat de recheche</a>
                 <h3>Votre Offre</h3>
             </div>
-
             <div class="Car">
-            <div class="carimg" style="background-image: url('../Admin/<?php echo $cr->CarImage?>')">
+                <div class="carimg" style="background-image: url('../Admin/<?php echo $cr->CarImage?>')">
 
                 </div>
                 <div class="carDts">
@@ -135,12 +134,13 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M128 0c17.7 0 32 14.3 32 32l0 32 128 0 0-32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 32 48 0c26.5 0 48 21.5 48 48l0 48L0 160l0-48C0 85.5 21.5 64 48 64l48 0 0-32c0-17.7 14.3-32 32-32zM0 192l448 0 0 272c0 26.5-21.5 48-48 48L48 512c-26.5 0-48-21.5-48-48L0 192zm64 80l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm128 0l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zM64 400l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zm112 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16z"/></svg>
                             <?php echo $cr->CarModel?>
                         </p>
-
                     </div>
                 </div>
             </div>
-            
+            <hr>
             <div class="Advantages">
+                <h5>Excellent choix !</h5>
+                <div class="ADVS">
                 <div class="Adv">
                     <i class="fa-solid fa-check"></i>
                     <p>Évaluation client : 7,5/10</p>
@@ -157,35 +157,42 @@
                     <i class="fa-solid fa-check"></i>
                     <p>Politique de carburant avantageuse</p>
                 </div>
-            </div>
-            <!-- <form class="PAPDetails" novalidate>
-                <h6>Informations sur le conducteur principal</h6>
-                <div class="DetailsContainer">
-                    <div class="Detail ">
-                        <label for="">Adresse e-mail :</label>
-                        <div class="InpGroup">
-                            <i class="fa-solid fa-envelope"></i>
-                            <input class="" type="text" name="" id="" placeholder="Ex : AliFahid@gmail.com">
-                        </div>
-                    </div>
-                    <div class="Detail">
-                        <label for="">Nom et Prenom :</label>
-                        <div class="InpGroup">
-                            <i class="fa-solid fa-user"></i>
-                            <input type="text" name="" id="" placeholder="Ex : Ali Fahid">
-                        </div>
-                    </div>
-                    <div class="Detail">
-                        <label for="">Numero Telephone :</label>
-                        <div class="InpGroup">
-                            <i class="fa-solid fa-phone"></i>
-                            <input type="text" name="" id="" placeholder="Ex : 060 01 20 40">
-                        </div>
-                    </div>
                 </div>
-            </form> -->
-            <div class="RSVBTN">
-                    <button type="button" data-bs-toggle="modal" data-bs-target="#modal-default">Reserver Maintenant</button>  
+            </div>
+            <hr>
+            <div class="Conditions">
+                <div>
+                    <h5>Conditions :</h5>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i>Caution (10% valeur de voiture )</li>
+                        <li><i class="fa-solid fa-check"></i>Permis de conduire 2 ans </li>
+                        <li><i class="fa-solid fa-check"></i>Age : plus de 24 ans</li>
+                        <li><i class="fa-solid fa-check"></i>Durée minimale : 4 jrs</li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Ville Livraison :</h5>
+                    <p>Pour 4 jours minimum :</p>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i>Casablanca - Berchid - Safi - Laayoune</li>
+                    </ul>
+                    <p>Plus de 15 jours :</p>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i>Partout au maroc</li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Documents requis :</h5>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i>Permis de conduire Plus de 2 ans</li>
+                        <li><i class="fa-solid fa-check"></i>Carte nationale</li>
+                    </ul>
+                    <p>Pour les étrangers :</p>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i>Permis de conduire Plus de 2 ans</li>
+                        <li><i class="fa-solid fa-check"></i>Passport</li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="OfferDetails">
@@ -226,7 +233,7 @@
                     <h5>Détail du tarif de la location :</h5>
                     <div class="Price">
                         <div class="OrgPrice">
-                            <p>Montant de la location par jour :</p>
+                            <p>Montant de la location par <b>4</b> jour :</p>
                             <p><?php echo $cr->CarOriginalPrice?> MAD</p>
                         </div>
                         <div class="Reduction">
@@ -238,7 +245,7 @@
                     </div>
                     <hr>
                     <div class="FinalPrice">
-                        <p class="bold">Prix total par jours :</p>
+                        <p class="bold">Prix total par <b>4</b> jours :</p>
                         <?php if(!$cr->CarReduction == 0){?>
                             <p class="bold"><?PHP echo $cr->CarPricewithReduction?> MAD</p>
                         <?php }else{?>
@@ -249,6 +256,9 @@
                 <div class="alert alert-success mt-3" role="alert">
                     <h6 class="alert-heading">PAIEMENT A LA LIVRAISON</h6>
                     <p>Paiement Cash ou par carte Visa ou Mastercard.</p>
+                </div>
+                <div class="RSVBTN">
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#modal-default">Reserver Maintenant</button>  
                 </div>
             </div>
         </div>

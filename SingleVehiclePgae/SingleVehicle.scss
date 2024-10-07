@@ -43,13 +43,14 @@ section{
 }
 .divCordoneLV{
     border: 2px solid var(--primary-color);
-    padding: 15px 15px;
+    padding: 10px 10px;
     display: flex;
     align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
     border-radius: 10px;
     margin: 15px 0px;
     justify-content: space-between;
-    // flex-wrap: wrap;
     .Filter,.Filter2{
         display: flex;
         gap: 30px;
@@ -236,42 +237,62 @@ section{
             }
         }
         .Advantages{
-            padding: 30px;
             display: flex;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            // box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            flex-direction: column;
             justify-content: center;
-            gap: 20px;
             flex-wrap: wrap;
             margin-top: 15px;
-            .Adv{
+            h5{
+                font-weight: bolder;
+            }
+            .ADVS{
                 display: flex;
-                gap: 10px;
-                flex: 1 1 45%; /* Grow, shrink, and set basis to 45% for two items per row */
-                p{
-                    font-size: 14px;
-                }
-                i{
-                    color: green;
+                // box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+                justify-content: center;
+                gap: 20px;
+                flex-wrap: wrap;
+                margin-top: 15px;
+                .Adv{
+                    display: flex;
+                    gap: 10px;
+                    flex: 1 1 45%; /* Grow, shrink, and set basis to 45% for two items per row */
+                    p{
+                        font-size: 14px;
+                    }
+                    i{
+                        color: green;
+                    }
                 }
             }
         }
-        .RSVBTN{
-            margin: 20px auto;
-            button{
-                background-color: var(--button-color);
-                color: white;
-                border: none;
-                padding: 15px 20px;
-                width: 100%;
-                border-radius: 8px;
-
-                a{
-                    color: white;
-                    text-decoration: none;
+        .Conditions{
+            display: flex;
+            align-items: start;
+            gap: 20px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            h5{
+                font-weight: bolder;
+            }
+            ul{
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                margin: 0;
+                li{
+                    list-style: none;
+                    display: flex;
+                    i{
+                        color: green;
+                        padding-right: 5px;
+                    }
                 }
             }
-            button:hover{
-                background-color: var(--primary-color);
+            p{
+                font-weight: 500;
+                padding: 10px;
+                text-decoration: underline;
             }
         }
     }
@@ -359,9 +380,26 @@ section{
                 display: flex;
                 justify-content: space-between;
             }
-        }
+        }        
+    }
+    .RSVBTN{
+        margin: 20px auto;
+        button{
+            background-color: var(--button-color);
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            width: 100%;
+            border-radius: 8px;
 
-        
+            a{
+                color: white;
+                text-decoration: none;
+            }
+        }
+        button:hover{
+            background-color: var(--primary-color);
+        }
     }
 }
 .PAPDetails{
@@ -424,4 +462,19 @@ section{
     
 // }
 
+@media(max-width:800px){
+    section{
+        padding: 0px 8.5%;
+    }
+    .schedule,.Tarif{
+        padding: 0px 10px !important;
+    }
+    .OfferDetails{
+        margin: 0 !important;
+    }
+    .Filter{
+        flex-direction: column;
+        gap: 15px !important;
+    }
+}
 /////////////////// checkbox style ///////////////////////

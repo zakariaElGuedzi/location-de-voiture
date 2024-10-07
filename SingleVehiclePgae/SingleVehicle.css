@@ -42,9 +42,11 @@ section {
 
 .divCordoneLV {
   border: 2px solid var(--primary-color);
-  padding: 15px 15px;
+  padding: 10px 10px;
   display: flex;
   align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
   border-radius: 10px;
   margin: 15px 0px;
   justify-content: space-between;
@@ -218,42 +220,61 @@ section {
   left: 20px;
 }
 .Offer .CarDetails .Advantages {
-  padding: 30px;
   display: flex;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+.Offer .CarDetails .Advantages h5 {
+  font-weight: bolder;
+}
+.Offer .CarDetails .Advantages .ADVS {
+  display: flex;
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
   margin-top: 15px;
 }
-.Offer .CarDetails .Advantages .Adv {
+.Offer .CarDetails .Advantages .ADVS .Adv {
   display: flex;
   gap: 10px;
   flex: 1 1 45%; /* Grow, shrink, and set basis to 45% for two items per row */
 }
-.Offer .CarDetails .Advantages .Adv p {
+.Offer .CarDetails .Advantages .ADVS .Adv p {
   font-size: 14px;
 }
-.Offer .CarDetails .Advantages .Adv i {
+.Offer .CarDetails .Advantages .ADVS .Adv i {
   color: green;
 }
-.Offer .CarDetails .RSVBTN {
-  margin: 20px auto;
+.Offer .CarDetails .Conditions {
+  display: flex;
+  align-items: start;
+  gap: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
-.Offer .CarDetails .RSVBTN button {
-  background-color: var(--button-color);
-  color: white;
-  border: none;
-  padding: 15px 20px;
-  width: 100%;
-  border-radius: 8px;
+.Offer .CarDetails .Conditions h5 {
+  font-weight: bolder;
 }
-.Offer .CarDetails .RSVBTN button a {
-  color: white;
-  text-decoration: none;
+.Offer .CarDetails .Conditions ul {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 0;
 }
-.Offer .CarDetails .RSVBTN button:hover {
-  background-color: var(--primary-color);
+.Offer .CarDetails .Conditions ul li {
+  list-style: none;
+  display: flex;
+}
+.Offer .CarDetails .Conditions ul li i {
+  color: green;
+  padding-right: 5px;
+}
+.Offer .CarDetails .Conditions p {
+  font-weight: 500;
+  padding: 10px;
+  text-decoration: underline;
 }
 .Offer .OfferDetails {
   flex: 3;
@@ -331,6 +352,24 @@ section {
   display: flex;
   justify-content: space-between;
 }
+.Offer .RSVBTN {
+  margin: 20px auto;
+}
+.Offer .RSVBTN button {
+  background-color: var(--button-color);
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  width: 100%;
+  border-radius: 8px;
+}
+.Offer .RSVBTN button a {
+  color: white;
+  text-decoration: none;
+}
+.Offer .RSVBTN button:hover {
+  background-color: var(--primary-color);
+}
 
 .PAPDetails {
   padding: 5px;
@@ -368,5 +407,20 @@ section {
   }
   .CarName {
     font-size: 16px !important;
+  }
+}
+@media (max-width: 800px) {
+  section {
+    padding: 0px 8.5%;
+  }
+  .schedule, .Tarif {
+    padding: 0px 10px !important;
+  }
+  .OfferDetails {
+    margin: 0 !important;
+  }
+  .Filter {
+    flex-direction: column;
+    gap: 15px !important;
   }
 }/*# sourceMappingURL=SingleVehicle.css.map */

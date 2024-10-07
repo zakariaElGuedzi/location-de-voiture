@@ -31,9 +31,8 @@ $cars = $stmt->fetchAll(PDO::FETCH_OBJ);
 if ($cars) {
     foreach ($cars as $car) { ?>
                     <div class="caritem">
-                <div class="carimg" style="background-image: url('../Admin/<?php echo $car->CarImage?>')">
-
-                </div>
+                    <div class="carimg" style="background-image: url('../Admin/<?php echo $car->CarImage?>')">
+                    </div>
                 <div class="carDts">
                     <div class="CarClasses">
                         <p class="CarClass">Idéal pour les familles</p>

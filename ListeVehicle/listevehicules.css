@@ -248,6 +248,72 @@ section {
   height: fit-content;
   position: sticky;
   top: 20px;
+  /* From Uiverse.io by aboalsim114 */
+  /* Hide the default checkbox */
+  /* Create a custom checkbox */
+  /* Style the checkmark/indicator */
+}
+.Cariste .CarFilter .container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.Cariste .CarFilter .container {
+  display: flex;
+  gap: 10px;
+}
+.Cariste .CarFilter .checkmark {
+  position: relative;
+  box-shadow: rgb(255, 84, 0) 0px 0px 0px 2px;
+  background-color: rgba(16, 16, 16, 0.5);
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+  flex-shrink: 0;
+  margin-top: -1px;
+  transition: all 0.2s ease 0s;
+  cursor: pointer;
+  transform-origin: 0px 10px;
+  border-radius: 4px;
+  margin: -1px 10px 0px 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.Cariste .CarFilter .container input:checked ~ .checkmark {
+  box-shadow: rgb(255, 84, 0) 0px 0px 0px 2px;
+  background-color: rgba(245, 24, 24, 0.5);
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+  flex-shrink: 0;
+  margin-top: -1px;
+  transition: all 0.2s ease 0s;
+  cursor: pointer;
+  transform-origin: 0px 10px;
+  border-radius: 4px;
+  margin: -1px 10px 0px 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.Cariste .CarFilter .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.Cariste .CarFilter .container input:checked ~ .checkmark:after {
+  display: block;
+}
+.Cariste .CarFilter .container .checkmark:after {
+  left: 0.45em;
+  top: 0.25em;
+  width: 0.25em;
+  height: 0.5em;
+  border: solid white;
+  border-width: 0 0.15em 0.15em 0;
+  transform: rotate(45deg);
+  transition: all 500ms ease-in-out;
 }
 .Cariste .CarFilter .FilterTitle {
   display: flex;
@@ -333,6 +399,8 @@ section {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  margin-top: 10px;
+  gap: 10px;
 }
 .Cariste .Cars .caritem .carDts .carprice p, .Cariste .Cars .caritem .carDts .carprice s {
   margin: 0;
