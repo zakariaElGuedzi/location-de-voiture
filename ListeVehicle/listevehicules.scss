@@ -385,23 +385,23 @@ header {
     height: 10%;
     padding: 10px 15px;
 }
-.sec1LV {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0px;
-    .divCordoneLV {
-        width: 100%;
-        min-width: 135%;
-        // background-color: rebeccapurple;
-        text-align: left;
-        padding: 10px 5px;
-        h5 {
-            font-size: 13px;
-            font-weight: 600;
-        }
-    }
-}
+// .sec1LV {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     margin: 0px;
+//     .divCordoneLV {
+//         width: 100%;
+//         min-width: 135%;
+//         // background-color: rebeccapurple;
+//         text-align: left;
+//         padding: 10px 5px;
+//         h5 {
+//             font-size: 13px;
+//             font-weight: 600;
+//         }
+//     }
+// }
 .info-card {
     // background-color: yellow ;
     height: 100%;
@@ -547,6 +547,44 @@ header {
   
   /* Responsive Design */
   @media (max-width: 600px) {
+    .sec1LV {
+        box-sizing: border-box;
+        font-size: smaller;
+        width: 100%;
+        display: flex;
+        // flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding: 0 10px;
+        button {
+            display: block;
+            width: 100%;
+        }
+        .divCordoneLV {
+            flex-direction: column;
+            width: 100%;
+        }
+    }
+    .Cariste {
+        flex-direction: column;
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0px;
+        .CarFilter {
+            height: 30px ;
+            box-sizing: border-box;
+            max-height: fit-content;
+        }
+        .Transmission {
+            width: 50%;
+            border-right: 1px solid gray;
+            padding-right: 10px;
+        }
+        .bodyInfoFiltrs {
+            display: flex;
+            gap: 10px;
+        }
+    }
     .faq-title {
         font-size: 20px;
     }
