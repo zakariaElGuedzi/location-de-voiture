@@ -23,7 +23,7 @@ if(isset($_POST['AjouterVoiture'])){
     $imageFileType = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
 
     // Allow certain file formats
-    $allowedTypes = array("jpg", "jpeg", "png");
+    $allowedTypes = array("jpg", "jpeg", "png","avif","webp");
     if (in_array($imageFileType, $allowedTypes)) {
         // Move the uploaded file to the server directory
         if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFilePath)) {

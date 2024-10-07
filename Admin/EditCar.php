@@ -24,7 +24,7 @@ if(isset($_POST['ModifierVoiture'])){
         if (!empty($_FILES["image"]["name"])) {
             $targetFilePath = $targetDir . $fileName;
             // Allow certain file formats
-            $allowedTypes = array("jpg", "jpeg", "png","avif");
+            $allowedTypes = array("jpg", "jpeg", "png","avif","webp");
             if (in_array($imageFileType, $allowedTypes)) {
                 if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFilePath)) {
                     // If a new image was uploaded, delete the old one and update the path
