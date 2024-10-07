@@ -48,3 +48,10 @@ RemoveModifierFilter.addEventListener('click', function() {
     NewSearchBar.style.display = "none"
 })
 
+
+///Open filter
+let filter = document.querySelector(".FilterTitle")
+filter.addEventListener('click',function(){
+    let FilterOptions = document.querySelector(".FilterOptions")
+    FilterOptions.classList.toggle("show")
+})

@@ -131,11 +131,12 @@
         <div class="CarFilter">
             <form class="FilterConatiner" id="filterForm">
                 <div class="FilterTitle">
-                    <h6>Filter</h6>
-                    <a href="">Supprimer tous les filtres</a>
+                    <h6><i class="fa-solid fa-filter"></i> Filter</h6>
+                    <!-- <a href="">Supprimer tous les filtres</a> -->
                 </div>
-                <hr>
                 <div class="FilterOptions">
+                <hr>
+
                 <div class="Marque">
                     <h6>Marque :</h6>
                     <select class="form-control" name="brand" onchange="filterCars()">
@@ -209,15 +210,14 @@
                 </div>
             </form>
         </div>
-        <hr class="devider" style="border: 0.2px solid black;">
         <div class="Cars" id="car">
             <?php
                 $cars = $pdo->query('SELECT * FROM cars')->fetchAll(PDO::FETCH_OBJ);
                 foreach($cars as $car){
             ?>
             <div class="caritem">
-                <div class="carimg" style="background-image: url('../Admin/<?php echo $car->CarImage?>')">
-
+                <div class="ImageContainer">
+                    <div class="carimg" style="background-image: url('../Admin/<?php echo $car->CarImage?>')"></div>
                 </div>
                 <div class="carDts">
                     <div class="CarClasses">

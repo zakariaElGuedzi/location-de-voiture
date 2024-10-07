@@ -398,14 +398,31 @@ svg path {
     max-height: -moz-fit-content;
     max-height: fit-content;
     position: relative;
+    margin-bottom: 20px;
   }
   .Cariste .CarFilter .FilterOptions {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
+    display: none;
   }
-  .Cariste .CarFilter .FilterOptions > div {
-    flex: 1;
+  .Cariste .CarFilter .show {
+    height: -moz-fit-content;
+    height: fit-content;
+    display: block !important;
+  }
+  .Cariste .caritem {
+    flex-direction: column;
+  }
+  .Cariste .caritem .ImageContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .Cariste .caritem .carimg {
+    width: 174px !important;
+    height: 107px;
+    flex: none !important;
+  }
+  .Cariste .caritem .caroptions {
+    width: 100% !important;
   }
 }
 @media (max-width: 1060px) {
@@ -415,8 +432,5 @@ svg path {
   .Cariste {
     margin: 0;
     padding-top: 0;
-  }
-  .devider {
-    margin: 3px;
   }
 }/*# sourceMappingURL=listevehicules.css.map */
