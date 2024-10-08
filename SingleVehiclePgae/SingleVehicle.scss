@@ -283,6 +283,7 @@ section{
                 li{
                     list-style: none;
                     display: flex;
+                    font-size: 14px;
                     i{
                         color: green;
                         padding-right: 5px;
@@ -427,13 +428,13 @@ section{
         }
     }
 }
-.confirmer{
-    padding: 10px;
-    background-color: var(--button-color);
-    color: white;
+.modal-footer{
+    .confirmer{
+        // margin: 10px auto;
+        background-color: var(--button-color);
+        color: white;
+    }
 }
-
-
 @media (max-width : 390px) {
     p , h3 ,h5 , h1 {
         font-size: smaller !important;

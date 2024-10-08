@@ -272,7 +272,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                <form class="PAPDetails" novalidate>
+                <form class="PAPDetails needs-validation" novalidate>
                 <div class="DetailsContainer">
                     <div class="Detail ">
                         <label for="">Adresse e-mail :</label>
@@ -296,13 +296,13 @@
                         </div>
                     </div>
                 </div>
-            </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn confirmer">Confirmer</button>
+                    <button type="button" type="submit" class="btn confirmer">Confirmer</button>
                     <button type="button" class="btn btn-link text-gray ms-auto" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
+            </form>
         </div>
     </div>
 </body>

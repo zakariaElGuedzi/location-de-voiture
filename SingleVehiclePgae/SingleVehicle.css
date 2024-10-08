@@ -266,6 +266,7 @@ section {
 .Offer .CarDetails .Conditions ul li {
   list-style: none;
   display: flex;
+  font-size: 14px;
 }
 .Offer .CarDetails .Conditions ul li i {
   color: green;
@@ -395,8 +396,7 @@ section {
   outline: none;
 }
 
-.confirmer {
-  padding: 10px;
+.modal-footer .confirmer {
   background-color: var(--button-color);
   color: white;
 }

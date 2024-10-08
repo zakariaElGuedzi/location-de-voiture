@@ -1,10 +1,11 @@
 <?php
-// session_start();
-// if(!isset($_SESSION['name'])){
-//   header('location:../../backend/login.php');
-// }
 include_once "database.php";
-include "dependencies.php"
+include "dependencies.php";
+
+session_start();
+if(!isset($_SESSION['username'])){
+  header('location:login.php');
+}
 ?>
   <nav class="navbar navbar-top navbar-expand navbar-dashboard navbar-dark ps-0 pe-2 pb-0">
     <div class="container-fluid px-0">
@@ -18,7 +19,7 @@ include "dependencies.php"
               <div class="media d-flex align-items-center">
                 <img class="avatar rounded-circle" alt="Image placeholder" src="../../assets/img/team/profile-picture-3.jpg">
                 <div class="media-body ms-2 text-dark align-items-center d-none d-lg-block">
-                  <span class="mb-0 font-small fw-bold text-gray-900">AGENCE</span>
+                  <span class="mb-0 font-small fw-bold text-gray-900"><?php echo $_SESSION['username']?></span>
                 </div>
               </div>
             </a>
@@ -28,7 +29,7 @@ include "dependencies.php"
                 My Profile
               </a>
               <div role="separator" class="dropdown-divider my-1"></div>
-              <a class="dropdown-item d-flex align-items-center" href="../../index.html">
+              <a class="dropdown-item d-flex align-items-center" href="logout.php">
                 <svg class="dropdown-icon text-danger me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>                
                 Logout
               </a>
