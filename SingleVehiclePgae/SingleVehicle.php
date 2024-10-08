@@ -4,6 +4,9 @@
     $Cars = $pdo->prepare('SELECT * FROM cars where CarId=?');
     $Cars->execute(array($id));
     $cr = $Cars->fetch(PDO::FETCH_OBJ);
+    // if(isset($_POST['Reserver'])){
+    //     echo "hello worold";
+    // }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,8 +21,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"></head>
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
     <script src="https://kit.fontawesome.com/cfd6df17a2.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="">
@@ -137,7 +141,7 @@
                     </div>
                 </div>
             </div>
-            <hr>
+            
             <div class="Advantages">
                 <h5>Excellent choix !</h5>
                 <div class="ADVS">
@@ -159,7 +163,7 @@
                 </div>
                 </div>
             </div>
-            <hr>
+            
             <div class="Conditions">
                 <div>
                     <h5>Conditions :</h5>
@@ -272,39 +276,78 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                <form class="PAPDetails needs-validation" novalidate>
-                <div class="DetailsContainer">
-                    <div class="Detail ">
-                        <label for="">Adresse e-mail :</label>
-                        <div class="InpGroup">
-                            <i class="fa-solid fa-envelope"></i>
-                            <input class="" type="text" name="" id="" >
+                <!-- <form class="PAPDetails needs-validation" novalidate >
+                    <div class="DetailsContainer">
+                        <div class="Detail ">
+                            <label for="">Adresse e-mail :</label>
+                            <div class="InpGroup">
+                                <i class="fa-solid fa-envelope"></i>
+                                <input class="" type="text" name="" id="" required>
+                            </div>
+                        </div>
+                        <div class="Detail">
+                            <label for="">Nom et Prenom :</label>
+                            <div class="InpGroup">
+                                <i class="fa-solid fa-user"></i>
+                                <input type="text" name="" id="">
+                            </div>
+                        </div>
+                        <div class="Detail">
+                            <label for="">Numero Telephone :</label>
+                            <div class="InpGroup">
+                                <i class="fa-solid fa-phone"></i>
+                                <input type="text" name="" id="">
+                            </div>
                         </div>
                     </div>
-                    <div class="Detail">
-                        <label for="">Nom et Prenom :</label>
-                        <div class="InpGroup">
-                            <i class="fa-solid fa-user"></i>
-                            <input type="text" name="" id="">
+                </div> -->
+                <form class="row g-3 needs-validation" method="post" novalidate>
+                    <div class="col-md-12">
+                        <label for="validationCustom01" cl  ass="form-label">Nom et Prenom</label>
+                        <input type="text" class="form-control" id="validationCustom01" placeholder="Mark" required>
+                        <div class="invalid-feedback">
+                                Entrer un nom et prenom valide.
+                            </div>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="validationCustom02" class="form-label">E-mail</label>
+                        <input type="email" class="form-control" id="validationCustom02" placeholder="email@gmail.com" required>
+                        <div class="invalid-feedback">
+                                Entrer un email valide.
+                            </div>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="validationCustomUsername" class="form-label">Numero Telephone</label>
+                        <div class="input-group has-validation">
+                            <input type="text" class="form-control"  id="validationCustomUsername" placeholder="06 53 73 46 73" aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Entrer un numero de telephone valide.
+                            </div>
                         </div>
                     </div>
-                    <div class="Detail">
-                        <label for="">Numero Telephone :</label>
-                        <div class="InpGroup">
-                            <i class="fa-solid fa-phone"></i>
-                            <input type="text" name="" id="">
-                        </div>
+                    <div class="modal-footer">
+                        <button type="submit" name="Reserver" class="confirmer">Confirmer</button>
+                        <button type="button" class="btn btn-link text-gray ms-auto fermer" data-bs-dismiss="modal">Fermer</button>
                     </div>
-                </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" type="submit" class="btn confirmer">Confirmer</button>
-                    <button type="button" class="btn btn-link text-gray ms-auto" data-bs-dismiss="modal">Close</button>
-                </div>
+                </form>
+
             </div>
             </form>
         </div>
     </div>
 </body>
+<script>
+
+    var forms = document.querySelectorAll(".needs-validation");
+    Array.prototype.slice.call( forms ).forEach( function ( form ){
+        form.addEventListener("submit",function(event){
+            if(!form.checkValidity()){
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            form.classList.add("was-validated");
+        },false)
+    })
+    </script>
 <script src="SingleVeh.js" defer></script>
 </html>

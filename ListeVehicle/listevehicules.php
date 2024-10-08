@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="listevehicules.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"></head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 
 </head>
@@ -265,7 +266,7 @@
                             <s><?php echo  $car->CarOriginalPrice;?> DH</s>
                             <?php } ?>
                             <h4><?php echo  $car->CarPricewithReduction;?> DH</h4>
-                            <a href="/SingleVehiclePgae/SingleVehicle.php?id=<?php echo $car->CarId ?>">Voir L'offre</a>
+                            <a href="../SingleVehiclePgae/SingleVehicle.php?id=<?php echo $car->CarId ?>">Voir L'offre</a>
                         </div>
                     </div>
                 </div>

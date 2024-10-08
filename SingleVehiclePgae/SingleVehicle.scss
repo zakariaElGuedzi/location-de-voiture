@@ -182,7 +182,7 @@ section{
             // border: 2px solid black;
             padding: 30px;
             display: flex;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
             justify-content: center;
             gap: 20px;
             .carimg{
@@ -238,11 +238,12 @@ section{
         }
         .Advantages{
             display: flex;
-            // box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
             flex-direction: column;
             justify-content: center;
             flex-wrap: wrap;
             margin-top: 15px;
+            padding: 30px;
             h5{
                 font-weight: bolder;
             }
@@ -272,6 +273,9 @@ section{
             gap: 20px;
             justify-content: space-between;
             flex-wrap: wrap;
+            box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            margin-top: 15px;
             h5{
                 font-weight: bolder;
             }
@@ -309,7 +313,7 @@ section{
             background: #fff;
             border-radius: 8px;
             padding: 20px;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
 
             .event {
                 display: flex;
@@ -367,7 +371,7 @@ section{
             background: #fff;
             border-radius: 8px;
             padding: 20px;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
             .Price{
                 display: flex;
                 flex-direction: column;
@@ -433,6 +437,16 @@ section{
         // margin: 10px auto;
         background-color: var(--button-color);
         color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 8px;
+    }
+    .confirmer:hover{
+        background-color: var(--primary-color);
+    }
+    .fermer{
+        color: black;
+        text-decoration: none;
     }
 }
 @media (max-width : 390px) {

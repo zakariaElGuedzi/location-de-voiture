@@ -67,11 +67,9 @@ include "includes/navbar.php";
                   <td><span class="badge bg-danger p-2">Annulé</span></td>
                   <td>2024-09-29 17:04:05</td>
                   <td>
-                      <a href=""><i class="fa-solid fa-eye"></i></a>
+                      <a href="showbooking.php"><i class="fa-solid fa-eye"></i></a>
                   </td>
               </tr>
-              
-
 					</tbody>
 				</table>
 			</div>
