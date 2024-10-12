@@ -120,4 +120,22 @@ function setMinEndDate() {
         inputField3.setAttribute('min', minEndDate);
     }
 }
+// function search(){
+// if(inputField1.value == ""){
+//         LieuPrisenEnCharge.classList.add("inputError");
+//     }elseif(inputField2.value == ""){
+//         LieuPrisenEnCharge.classList.add("inputError");
+
+//     }elseif(inputField3.value == ""){
+//         LieuPrisenEnCharge.classList.add("inputError");
+
+//     }elseif(inputField4.value == ""){
+//         LieuPrisenEnCharge.classList.add("inputError");
+
+//     }elseif(inputField5.value == ""){
+//         LieuPrisenEnCharge.classList.add("inputError");
+//     }else{
+//         alert("Recherche effectuée avec succès")
+//     }
+// }
 

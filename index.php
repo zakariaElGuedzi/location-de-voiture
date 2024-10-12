@@ -1,16 +1,15 @@
 <?php
 if(isset($_POST['ChercherVeh'])){
-    $Search = true;
-    $LieuDepart = $_POST['LieuDepart'];
-    $DateDepart = $_POST['DateDepart'];
-    $HeureDepart = $_POST['HeureDepart'];
-    $DateResti = $_POST['DateResti'];
-    $LieuResti = $_POST['LieuResti'];
-    if(empty($LieuDepart) || empty($DateDepart) || empty($HeureDepart) || empty($DateResti) || empty($LieuResti)){
-        echo  "Veuillez remplir tous les champs";
-        header("location:../ListeVehicle/listevehicules.php");
+    if(empty($_POST['LieuDepart']) || empty($_POST['DateDepart']) || empty($_POST['HeureDepart']) || empty($_POST['DateResti']) || empty($_POST['LieuResti'])){
+        $error =   "Veuillez remplir tous les champs";
+        // header("location:../ListeVehicle/listevehicules.php");
     }else{
-
+        $Search = true;
+        $LieuDepart = $_POST['LieuDepart'];
+        $DateDepart = $_POST['DateDepart'];
+        $HeureDepart = $_POST['HeureDepart'];
+        $DateResti = $_POST['DateResti'];
+        $LieuResti = $_POST['LieuResti'];
         header("location:../ListeVehicle/listevehicules.php?LD=$LieuDepart&DD=$DateDepart&HD=$HeureDepart&DR=$DateResti&LR=$LieuResti&Search=$Search");
     }
 }
@@ -25,7 +24,7 @@ if(isset($_POST['ChercherVeh'])){
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
      
-    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"></head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
@@ -86,7 +85,7 @@ if(isset($_POST['ChercherVeh'])){
 
     <!-- <section class="HomeinputsSection"> -->
         <div class="Homeinputs ">
-                <form class="Filter2" method="post">
+            <form class="Filter2" method="post" novalidate>
                     <div class="LieuPrisenEnCharge">
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <div>
@@ -124,7 +123,17 @@ if(isset($_POST['ChercherVeh'])){
                         </div>
                     </div>
                     <button class="BtnModifier" type="submit" name="ChercherVeh">Chercher</button>
-                </form>
+            </form>
+            <?PHP
+                IF(isset($error)){
+            ?>
+                <div class="ErrorDiv">
+                    <p><?php echo "$error"?></p>
+                </div>
+            <?php
+                }
+            ?>
+
         </div>
     <!-- </section> -->
     

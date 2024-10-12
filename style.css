@@ -167,12 +167,14 @@ nav ul li a:hover {
   background-color: rgb(222, 162, 32);
   padding: 7px;
   display: flex;
+  flex-direction: column;
   gap: 10px;
   justify-content: center;
   align-items: center;
   z-index: 11 !important;
   margin-top: -2.5rem !important;
-  width: 90%;
+  width: -moz-fit-content;
+  width: fit-content;
   margin: auto;
   position: relative;
 }
@@ -240,6 +242,17 @@ nav ul li a:hover {
 }
 .Homeinputs button:hover {
   background-color: rgb(9, 96, 9);
+}
+.Homeinputs .ErrorDiv {
+  border: 1px solid red;
+  width: 100%;
+  background-color: #d4111e;
+  border-radius: 8px;
+  text-align: center;
+}
+.Homeinputs .ErrorDiv p {
+  margin: 0;
+  color: white;
 }
 
 .Homeinputs label {
