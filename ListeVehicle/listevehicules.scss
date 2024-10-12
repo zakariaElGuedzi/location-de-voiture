@@ -20,16 +20,20 @@ body {
 header {
     height: 15vh;
     padding: 30px 15%;
-    // background: rgb(22,65,222);
-    // background: linear-gradient(180deg, rgba(22,65,222,1) 0%, rgba(20,62,242,1) 0%, rgba(255,255,255,1) 96%);    
-    .langue {
-        border-radius: 50%;
-        font-size: 20px;
-        width: 30px;
-        text-align: center;
-    }
     background-color: var(--button-color);
     color: #f4f4f4;
+    ul{
+        gap: 20px;
+        li{
+            list-style: none;
+            a{
+                color: white;
+            }
+            a:hover{
+                color: var(--primary-color);
+            }
+        }
+    }
 }
 
 // second sec filtr

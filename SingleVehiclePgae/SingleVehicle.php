@@ -26,12 +26,20 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header class="">
+<header class="">
         <div class="header d-flex justify-content-between">
-            <h3><a href="/index.html">Location</a></h3>
-            <!-- <div>
-                <h3 class="langue p-1 bg-success">Fr</h3>
-            </div> -->
+            <a href="../index.php"><img src="/img/lgBlanc.png" width="150px" alt=""></a>
+            <ul class="d-flex align-items-center justify-content-center m-0">
+                <li>
+                    <a href="">Home</a>
+                </li>
+                <li>
+                    <a href="">Nov Voitures</a>
+                </li>
+                <li>
+                    <a href="">Contact</a>
+                </li>
+            </ul>
         </div>
     </header>
     <?php

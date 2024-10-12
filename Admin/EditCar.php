@@ -28,14 +28,13 @@ if(isset($_POST['ModifierVoiture'])){
             if (in_array($imageFileType, $allowedTypes)) {
                 if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFilePath)) {
                     // If a new image was uploaded, delete the old one and update the path
-                    if (file_exists($currentImage)) {
-                        unlink($currentImage);
-                    }
+                    // if (file_exists($currentImage)) {
+                    //     unlink($currentImage);
+                    // }
                     $currentImage = $targetFilePath;
                     $newImageUploaded = true;
                 } else {
                     $TypeError = "Failed to upload the new image.";
-
                     exit;
                 }
             } else {

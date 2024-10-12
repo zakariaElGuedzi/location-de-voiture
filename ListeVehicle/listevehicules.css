@@ -22,11 +22,17 @@ header {
   background-color: var(--button-color);
   color: #f4f4f4;
 }
-header .langue {
-  border-radius: 50%;
-  font-size: 20px;
-  width: 30px;
-  text-align: center;
+header ul {
+  gap: 20px;
+}
+header ul li {
+  list-style: none;
+}
+header ul li a {
+  color: white;
+}
+header ul li a:hover {
+  color: var(--primary-color);
 }
 
 section {

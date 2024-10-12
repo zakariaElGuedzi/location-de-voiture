@@ -30,10 +30,18 @@
 <body>
     <header class="">
         <div class="header d-flex justify-content-between">
-            <h3><a href="/index.html">Location</a></h3>
-            <div>
-                <h3 class="langue p-1 bg-success">Fr</h3>
-            </div>
+            <a href="../index.php"><img src="/img/lgBlanc.png" width="150px" alt=""></a>
+            <ul class="d-flex align-items-center justify-content-center m-0">
+                <li>
+                    <a href="">Home</a>
+                </li>
+                <li>
+                    <a href="">Nov Voitures</a>
+                </li>
+                <li>
+                    <a href="">Contact</a>
+                </li>
+            </ul>
         </div>
     </header>
     <?php
@@ -59,44 +67,44 @@
                     <h6>Modifier la recherche :</h6>
                     <i class="fa-solid fa-xmark rmvModifierFilt"></i>
                 </div>
-                <div class="Filter2">
+                <form class="Filter2" method="post">
                     <div class="LieuPrisenEnCharge">
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <div>
                             <p>Lieu de prise en charge</p>
-                            <input type="text" placeholder="Lieu de prise en charge">
+                            <input type="text" placeholder="Lieu de prise en charge" name="LP">
                         </div>
                     </div>
                     <div class="DatePrisencharge">
                         <i class="fa-solid fa-calendar-days"></i>
                         <div>
                             <p>Date de prise en charge</p>
-                            <input type="date">
+                            <input type="date" name="DP">
                         </div>
                     </div>
                     <div class="HeurePriseencharge">
                         <i class="fa-regular fa-clock"></i>
                         <div>
                             <p>Heure</p>
-                            <input type="time">
+                            <input type="time" name="HP">
                         </div>
                     </div>
                     <div class="DateRestitution">
                         <i class="fa-solid fa-calendar-days"></i>
                         <div>
                             <p>Date de restitution</p>
-                            <input type="date">
+                            <input type="date" name="DR">
                         </div>
                     </div>
                     <div class="HeureRestitution">
                         <i class="fa-regular fa-clock"></i>
                         <div>
                             <p>Heure</p>
-                            <input type="time">
+                            <input type="time" name="HR">
                         </div>
                     </div>
                     <button class="BtnModifier">Chercher</button>
-                </div>
+                </form>
             </div>
     </section>
     <?php

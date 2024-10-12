@@ -63,9 +63,9 @@ include "includes/navbar.php";
                               </thead>
                               <tbody>
                                  <tr>
-                                    <th scope="row" class="text-left fw-bold h6">Origin License</th>
-                                    <td>Extended License</td>
-                                    <td>999,00</td>
+                                    <th scope="row" class="text-left fw-bold h6">Golf 8</th>
+                                    <td>BMW</td>
+                                    <td>800,00</td>
                                  </tr>
                               </tbody>
                            </table>

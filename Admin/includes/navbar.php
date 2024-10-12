@@ -17,7 +17,7 @@ if(!isset($_SESSION['username'])){
           <li class="nav-item dropdown ms-lg-3">
             <a class="nav-link dropdown-toggle pt-1 px-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <div class="media d-flex align-items-center">
-                <img class="avatar rounded-circle" alt="Image placeholder" src="../../assets/img/team/profile-picture-3.jpg">
+                <img class="avatar rounded-circle" alt="Image placeholder" src="../../img//default-profile-account-unknown-icon-black-silhouette-free-vector.jpg">
                 <div class="media-body ms-2 text-dark align-items-center d-none d-lg-block">
                   <span class="mb-0 font-small fw-bold text-gray-900"><?php echo $_SESSION['username']?></span>
                 </div>

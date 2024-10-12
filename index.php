@@ -37,10 +37,10 @@ if(isset($_POST['ChercherVeh'])){
             <div class="logo d-inline">
                 <h1></h1>
             </div>
-            <div class="contact-info">
+            <!-- <div class="contact-info">
                 <img src="img/fr-lng.png" class="d-inline langHead"></img>
                 <p class="d-inline"><i class="fa-solid fa-phone px-2"></i>0638 38 372 2</p>
-            </div>
+            </div> -->
         </div>
         <div class="container container2">
             <nav class="navHeader">
@@ -54,7 +54,7 @@ if(isset($_POST['ChercherVeh'])){
             </nav>
             <div class="lastcontHeader p-2">
                 <i class="sss fa-solid fa-bars"  onclick="afficheMenuPhone()"></i>
-                <button class="callToActionHeader bg-success px-3 py-2">Book Now</button>
+                <button class="callToActionHeader bg-success px-3 py-2">Reserver Maintenant</button>
             </div>
             <!-- menu phone -->
             <div class="menuphone" id="menPhone">

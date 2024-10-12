@@ -48,13 +48,13 @@ include "includes/navbar.php";
                         </div>
                           <div class="d-sm-none">
                               <h2 class="h5">Total Voitures</h2>
-                              <h3 class="fw-extrabold mb-1">1</h3>
+                              <h3 class="fw-extrabold mb-1">11</h3>
                           </div>
                       </div>
                       <div class="col-12 col-xl-7 px-xl-0">
                           <div class="d-none d-sm-block">
                               <h2 class="h6 text-gray-400 mb-0">Total Voitures</h2>
-                              <h3 class="fw-extrabold mb-2">1</h3>
+                              <h3 class="fw-extrabold mb-2">11</h3>
                           </div>
 
                       </div>
@@ -72,13 +72,13 @@ include "includes/navbar.php";
                         </div>
                           <div class="d-sm-none">
                               <h2 class="fw-extrabold h5">Total Reservation</h2>
-                              <h3 class="mb-1">1</h3>
+                              <h3 class="mb-1">3</h3>
                           </div>
                       </div>
                       <div class="col-12 col-xl-7 px-xl-0">
                           <div class="d-none d-sm-block">
                               <h2 class="h6 text-gray-400 mb-0">Total Reservation</h2>
-                              <h3 class="fw-extrabold mb-2">1</h3>
+                              <h3 class="fw-extrabold mb-2">3</h3>
                           </div>
                       </div>
                   </div>
@@ -95,13 +95,13 @@ include "includes/navbar.php";
                         </div>
                           <div class="d-sm-none">
                               <h2 class="fw-extrabold h5">Total Brands</h2>
-                              <h3 class="mb-1">1</h3>
+                              <h3 class="mb-1">8</h3>
                           </div>
                       </div>
                       <div class="col-12 col-xl-7 px-xl-0">
                           <div class="d-none d-sm-block">
                               <h2 class="h6 text-gray-400 mb-0">Total Brands</h2>
-                              <h3 class="fw-extrabold mb-2">1</h3>
+                              <h3 class="fw-extrabold mb-2">8</h3>
                           </div>
                       </div>
                   </div>
