@@ -308,7 +308,7 @@ section {
             .ImageContainer{
                 display: flex;
                 justify-content: center;
-                align-items: center;
+                align-items: start;
             }
             .carimg{
                 background-color: rgb(255, 255, 255);
@@ -344,41 +344,55 @@ section {
                     font-size: 20px;
                     font-weight: bolder;
                 }
-                .caroptions{
+                .OptionAndPrice{
                     display: flex;
-                    flex-direction: row;
-                    flex-wrap: wrap;
-                    gap: 15px;
-                    width: 90%;
-                    p{
-                        margin: 0;
-                        font-size: 13px;
+                    gap: 30px;
+                    .caroptions{
+                        display: flex;
+                        flex-wrap: wrap;
+                        align-self: center;
+                        gap: 20px;
+                        // flex-direction: row;
+                        // flex-wrap: wrap;
+                        // gap: 15px;
+                        // width: 90%;
+                        p{
+                            margin: 0;
+                            font-size: 13px;
+                        }
+                        svg{
+                            width: 20px;
+                            height: 20px;
+                            opacity: 0.8;
+                            font-weight: 100;
+                            left: 20px;
+                        }
                     }
-                    svg{
-                        width: 20px;
-                        height: 20px;
-                        opacity: 0.8;
-                        font-weight: 100;
-                        left: 20px;
-                    }
+                    
                 }
-                
-                .carprice{
+                hr{
+                    margin: 10px 0;
+                }
+                .voiroffre{
                     display: flex;
-                    flex-direction: column;
-                    align-items: flex-end;
-                    margin-top: 10px;
-                    gap: 10px;
-                    p,s{
-                        margin: 0;
-                        font-size: 15px;
-                    }
-                    s{
-                        color: red;
-                    }
-                    h4{
-                        font-weight: bold;
-                        font-size: 20px;
+                    justify-content: space-between;
+                    align-items: center;
+                    .carprice{
+                        display: flex;
+                        flex-direction: column;
+                        margin-top: 10px;
+                        gap: 10px;
+                        p,s{
+                            margin: 0;
+                            font-size: 15px;
+                        }
+                        s{
+                            color: red;
+                        }
+                        h4{
+                            font-weight: bold;
+                            font-size: 20px;
+                        }
                     }
                     a{
                         text-decoration: none;
@@ -391,6 +405,7 @@ section {
                         background-color: rgb(7, 82, 7);
                     }
                 }
+
             }
         }
     }
@@ -573,6 +588,16 @@ header {
             }
             .caroptions{
                 width: 100% !important;
+            }
+            .OptionAndPrice{
+                flex-direction: column;
+                .carprice{
+                    justify-content: center;
+                    align-items: center;
+                    button{
+                        width: 100% !important;
+                    }
+                }
             }
         }
     }

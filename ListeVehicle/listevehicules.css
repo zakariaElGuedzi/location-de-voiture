@@ -286,7 +286,7 @@ section {
 .Cariste .Cars .caritem .ImageContainer {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
 }
 .Cariste .Cars .caritem .carimg {
   background-color: rgb(255, 255, 255);
@@ -324,50 +324,60 @@ section {
   font-size: 20px;
   font-weight: bolder;
 }
-.Cariste .Cars .caritem .carDts .caroptions {
+.Cariste .Cars .caritem .carDts .OptionAndPrice {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 15px;
-  width: 90%;
+  gap: 30px;
 }
-.Cariste .Cars .caritem .carDts .caroptions p {
+.Cariste .Cars .caritem .carDts .OptionAndPrice .caroptions {
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
+  gap: 20px;
+}
+.Cariste .Cars .caritem .carDts .OptionAndPrice .caroptions p {
   margin: 0;
   font-size: 13px;
 }
-.Cariste .Cars .caritem .carDts .caroptions svg {
+.Cariste .Cars .caritem .carDts .OptionAndPrice .caroptions svg {
   width: 20px;
   height: 20px;
   opacity: 0.8;
   font-weight: 100;
   left: 20px;
 }
-.Cariste .Cars .caritem .carDts .carprice {
+.Cariste .Cars .caritem .carDts hr {
+  margin: 10px 0;
+}
+.Cariste .Cars .caritem .carDts .voiroffre {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Cariste .Cars .caritem .carDts .voiroffre .carprice {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
   margin-top: 10px;
   gap: 10px;
 }
-.Cariste .Cars .caritem .carDts .carprice p, .Cariste .Cars .caritem .carDts .carprice s {
+.Cariste .Cars .caritem .carDts .voiroffre .carprice p, .Cariste .Cars .caritem .carDts .voiroffre .carprice s {
   margin: 0;
   font-size: 15px;
 }
-.Cariste .Cars .caritem .carDts .carprice s {
+.Cariste .Cars .caritem .carDts .voiroffre .carprice s {
   color: red;
 }
-.Cariste .Cars .caritem .carDts .carprice h4 {
+.Cariste .Cars .caritem .carDts .voiroffre .carprice h4 {
   font-weight: bold;
   font-size: 20px;
 }
-.Cariste .Cars .caritem .carDts .carprice a {
+.Cariste .Cars .caritem .carDts .voiroffre a {
   text-decoration: none;
   background-color: green;
   color: white;
   padding: 10px 20px;
   border-radius: 8px;
 }
-.Cariste .Cars .caritem .carDts .carprice a:hover {
+.Cariste .Cars .caritem .carDts .voiroffre a:hover {
   background-color: rgb(7, 82, 7);
 }
 
@@ -444,6 +454,16 @@ svg path {
     flex: none !important;
   }
   .Cariste .caritem .caroptions {
+    width: 100% !important;
+  }
+  .Cariste .caritem .OptionAndPrice {
+    flex-direction: column;
+  }
+  .Cariste .caritem .OptionAndPrice .carprice {
+    justify-content: center;
+    align-items: center;
+  }
+  .Cariste .caritem .OptionAndPrice .carprice button {
     width: 100% !important;
   }
 }
