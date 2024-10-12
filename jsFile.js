@@ -49,14 +49,14 @@ function closemenu() {
 
 
 // scroll header
-document.addEventListener('scroll', function() {
-   const header = document.querySelector('.header');
-   if (window.scrollY > 50) { // Adjust the scroll position threshold as needed
-       header.classList.add('blurred');
-   } else {
-       header.classList.remove('blurred');
-   }
-});
+    // document.addEventListener('scroll', function() {
+    //    const header = document.querySelector('.header');
+    //    if (window.scrollY > 50) { // Adjust the scroll position threshold as needed
+    //        header.classList.add('blurred');
+    //    } else {
+    //        header.classList.remove('blurred');
+    //    }
+    // });
 
 //searchbar
 const LieuPrisenEnCharge = document.querySelector('.LieuPrisenEnCharge');
@@ -87,82 +87,37 @@ LieuRestitution.addEventListener('click', function() {
     inputField5.focus();
 });
 
+let date1
+inputField2.addEventListener("change",function(){
+    date1 = inputField2.value;
+    console.log(date1);
+    DatePrisencharge.classList.remove("inputError")
 
+})
+inputField3.addEventListener("change",function(){
+    if(!date1){
+        // alert("Veuillez choisir une date de prise en charge")
+        inputField3.value = ''
+        DatePrisencharge.classList.add("inputError")
+    }
+})
 
+function setMinEndDate() {
+    // Get the value of the start date
+    // const startDate = document.getElementById('startDate').value;
+    let startDate = inputField2.value
+    if (startDate) {
+        // Create a new Date object from the start date
+        const start = new Date(startDate);
+        
+        // Add 4 days to the start date
+        start.setDate(start.getDate() + 4);
 
-
-
-
-
-
-
-
-
-
-
-
-
-// const scene = new THREE.Scene();
-// const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-// const renderer = new THREE.WebGLRenderer();
-// renderer.setSize(window.innerWidth, window.innerHeight);
-// renderer.setClearColor(0xeeeeee); // Light gray background
-// document.body.appendChild(renderer.domElement);
-
-// // Lighting
-// const light = new THREE.DirectionalLight(0xffffff, 1);
-// light.position.set(5, 5, 5).normalize();
-// scene.add(light);
-
-// const ambientLight = new THREE.AmbientLight(0x404040); // Ambient light
-// scene.add(ambientLight);
-
-// // Test: Add a basic box geometry
-// const geometry = new THREE.BoxGeometry();
-// const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-// const cube = new THREE.Mesh(geometry, material);
-// scene.add(cube);
-
-// // Load 3D Model
-// const loader = new THREE.GLTFLoader();
-// loader.load('img/scene.gltf', function (gltf) {
-//     console.log('Model loaded:', gltf); // Log loaded model
-//     scene.add(gltf.scene);
-//     gltf.scene.scale.set(1, 1, 1); // Adjust scale
-//     gltf.scene.position.set(0, 0, 0); // Adjust position
-// }, undefined, function (error) {
-//     console.error('An error happened:', error);
-// });
-
-// // OrbitControls
-// const controls = new THREE.OrbitControls(camera, renderer.domElement);
-
-// // Camera Position
-// camera.position.set(0, 1, 5);
-// camera.lookAt(0, 1, 0); // Ensure camera is looking at the model
-
-// // Animation loop
-// function animate() {
-//     requestAnimationFrame(animate);
-//     controls.update(); // Only required if controls.enableDamping = true, or controls.autoRotate = true
-//     renderer.render(scene, camera);
-// }
-// animate();
-
-// // Handle resizing
-// window.addEventListener('resize', () => {
-//     camera.aspect = window.innerWidth / window.innerHeight;
-//     camera.updateProjectionMatrix();
-//     renderer.setSize(window.innerWidth, window.innerHeight);
-// });
-
-
-//  loader.load('img/scene.gltf', function(gltf) {
-//     scene.add(gltf.scene);
-//     gltf.scene.scale.set(1, 1, 1); 
-//     gltf.scene.position.set(0, 0, 0);
-// }, undefined, function(error) {
-//     console.error(error);
-// });
-
+        // Format the new date to YYYY-MM-DD (required format for input type="date")
+        const minEndDate = start.toISOString().split('T')[0];
+        
+        // Set the min attribute of the end date input
+        inputField3.setAttribute('min', minEndDate);
+    }
+}
 

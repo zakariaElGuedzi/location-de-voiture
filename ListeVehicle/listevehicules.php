@@ -1,5 +1,13 @@
 <?php
-    include_once "../Admin/includes/database.php"
+    include_once "../Admin/includes/database.php";
+    if(isset($_GET['LD']) || isset($_GET['DD']) || isset($_GET['HD']) || isset($_GET['DR']) || isset($_GET['LR']) || isset($_GET['Search'])){
+        $LD = $_GET['LD'];
+        $DD = $_GET['DD'];
+        $HD = $_GET['HD'];
+        $DR = $_GET['DR'];
+        $LR = $_GET['LR'];
+        $sr = $_GET['Search'];
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,17 +36,19 @@
             </div>
         </div>
     </header>
-
+    <?php
+        if(isset($_GET['Search'])){
+    ?>
     <section class="sec1LV"> 
         <div  class="divCordoneLV">
             <div class="Filter">
                 <div>
-                    <h5 class="bold">Casablanca Mohammed V de casa</h5>
-                    <p>mer. 2 oct. 2024, 10:00</p>
+                    <h5 class="bold"><?php ECHO $_GET['LD']?></h5>
+                    <p>mer. 2 oct. 2024, <?php echo $_GET['HD']?></p>
                 </div>
                 <i class="fa-solid fa-chevron-right"></i>
                 <div>
-                    <h5 class="bold">Casablanca Mohammed V de casa</h5>
+                    <h5 class="bold"><?php ECHO $_GET['LR']?></h5>
                     <p>mer. 2 oct. 2024, 10:00</p>
                 </div>
             </div>
@@ -89,6 +99,9 @@
                 </div>
             </div>
     </section>
+    <?php
+        }
+    ?>
 
     <!-- ad display -->
     <!-- <div class="addisplay"></div> -->
@@ -266,7 +279,17 @@
                             <s><?php echo  $car->CarOriginalPrice;?> DH</s>
                             <?php } ?>
                             <h4><?php echo  $car->CarPricewithReduction;?> DH</h4>
+                            <?php
+                                if(isset($_GET['Search'])){
+                            ?>
+                                <a href="../SingleVehiclePgae/SingleVehicle.php?id=<?php echo $car->CarId ?>&LD=<?php echo $LD ?>&DD=<?php echo $DD ?>&HD=<?php echo $HD ?>&DR=<?php echo $DR ?>&LR=<?php echo $LR ?>&Search=<?php echo $sr ?>">Voir L'offre</a>
+                            <?php
+                                }else{
+                            ?>
                             <a href="../SingleVehiclePgae/SingleVehicle.php?id=<?php echo $car->CarId ?>">Voir L'offre</a>
+                            <?php
+                                }
+                            ?>
                         </div>
                     </div>
                 </div>

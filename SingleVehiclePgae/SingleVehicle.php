@@ -34,7 +34,9 @@
             </div> -->
         </div>
     </header>
-
+    <?php
+        if(isset($_GET['Search'])){
+    ?>
     <section class="sec1LV"> 
         <div  class="divCordoneLV">
             <div class="Filter">
@@ -95,6 +97,9 @@
                 </div>
             </div>
     </section>
+    <?php
+        }
+    ?>
     <section class="Offer">
         <div class="CarDetails">
             <div class="OfferPrevNext">
@@ -200,39 +205,45 @@
             </div>
         </div>
         <div class="OfferDetails">
-             <div class="sticky-top "> <!--Position Sticky using bootstrap -->
-                <div class="schedule">
-                    <div class="event">
-                        <div class="circle-container">
-                            <div class="circle"></div>
-                            <div class="line"></div>
-                        </div>
-    
-                        <div class="details">
-                            <div class="date-time">
-                                <p>mer. 2 oct. - 10:00</p>
+            <div class="sticky-top"> <!--Position Sticky using bootstrap -->
+                <?php
+                    if(isset($_GET['Search'])){
+                ?>
+                    <div class="schedule">
+                        <div class="event">
+                            <div class="circle-container">
+                                <div class="circle"></div>
+                                <div class="line"></div>
                             </div>
-                            <div class="location">
-                                <p class="bold">Casablanca Aéroport</p>
-                                <a href="#">Voir les instructions relatives à la prise en charge</a>
+        
+                            <div class="details">
+                                <div class="date-time">
+                                    <p>mer. 2 oct. - 10:00</p>
+                                </div>
+                                <div class="location">
+                                    <p class="bold">Casablanca Aéroport</p>
+                                    <a href="#">Voir les instructions relatives à la prise en charge</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="event">
+                            <div class="circle-container">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="details">
+                                <div class="date-time">
+                                    <p>sam. 5 oct. - 10:00</p>
+                                </div>
+                                <div class="location">
+                                    <p class="bold">Casablanca Aéroport</p>
+                                    <a href="#">Voir les instructions relatives à la restitution</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="event">
-                        <div class="circle-container">
-                            <div class="circle"></div>
-                        </div>
-                        <div class="details">
-                            <div class="date-time">
-                                <p>sam. 5 oct. - 10:00</p>
-                            </div>
-                            <div class="location">
-                                <p class="bold">Casablanca Aéroport</p>
-                                <a href="#">Voir les instructions relatives à la restitution</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php
+                    }
+                ?>
                 <div class="Tarif">
                     <h5>Détail du tarif de la location :</h5>
                     <div class="Price">
@@ -325,6 +336,55 @@
                             </div>
                         </div>
                     </div>
+                    <?php
+                        if(!isset($_GET['Search'])){
+                    ?>
+                    <div class="col-md-12">
+                            <label for="validationCustomUsername" class="form-label">Lieu Depart</label>
+                        <div class="input-group has-validation">
+                            <input type="text" class="form-control"  id="validationCustomUsername" placeholder="Casablanca" aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Entrer un lieu valid
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                            <label for="validationCustomUsername" class="form-label">Lieu restitution</label>
+                        <div class="input-group has-validation">
+                            <input type="text" class="form-control"  id="validationCustomUsername" placeholder="Tanger" aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Entrer un lieu valid
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                            <label for="validationCustomUsername" class="form-label">Date depart</label>
+                        <div class="input-group has-validation">
+                            <input type="date" class="form-control"  id="validationCustomUsername" placeholder="Tanger" aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Entrer un date valid
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                            <label for="validationCustomUsername" class="form-label">Date restitution</label>
+                        <div class="input-group has-validation">
+                            <input type="date" class="form-control"  id="validationCustomUsername" placeholder="Tanger" aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Entrer une date valid
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                            <label for="validationCustomUsername" class="form-label">Heure Depart</label>
+                        <div class="input-group has-validation">
+                            <input type="time" class="form-control"  id="validationCustomUsername" placeholder="Time" aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Entrer une heure valid
+                            </div>
+                        </div>
+                    </div>
+                    <?php } ?>
                     <div class="modal-footer">
                         <button type="submit" name="Reserver" class="confirmer">Confirmer</button>
                         <button type="button" class="btn btn-link text-gray ms-auto fermer" data-bs-dismiss="modal">Fermer</button>

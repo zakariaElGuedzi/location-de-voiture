@@ -1,3 +1,10 @@
+///Open filter
+let filter = document.querySelector(".FilterTitle")
+filter.addEventListener('click',function(){
+    let FilterOptions = document.querySelector(".FilterOptions")
+    FilterOptions.classList.toggle("show")
+})
+
 // const Filter2 = document.querySelector(".Filter2")
 // Filter2.addEventListener("click",function(e){
 //     console.log(e.target);
@@ -49,9 +56,3 @@ RemoveModifierFilter.addEventListener('click', function() {
 })
 
 
-///Open filter
-let filter = document.querySelector(".FilterTitle")
-filter.addEventListener('click',function(){
-    let FilterOptions = document.querySelector(".FilterOptions")
-    FilterOptions.classList.toggle("show")
-})

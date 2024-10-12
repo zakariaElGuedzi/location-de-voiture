@@ -37,7 +37,7 @@ if (isset($_POST['connecter'])) {
            <div class="col-12 d-flex align-items-center justify-content-center">
               <div class="bg-white shadow border-0 rounded border-light p-4 p-lg-5 w-100 fmxw-500">
                  <div class="text-center text-md-center mb-4 mt-md-0">
-                    <img src="/img/lgBlack.png" alt="" width="200px">
+                    <img src="../img/lgBlack.png" alt="" width="200px">
                  </div>
                  <form  method="post" class="mt-4">
                     <?php

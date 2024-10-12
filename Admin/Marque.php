@@ -7,7 +7,7 @@ if(isset($_POST['AjouterMarque'])){
   $rsult = $sqlState->execute(array($marque));
   if($rsult){
     $SuccesMessage = "Voiture Bien Ajouté";
-    header("refresh:1;Marque.php");
+    // header("refresh:1;Marque.php");
   }else{
     $Error = "Erreur lors de l'ajout de la voiture";
   }
@@ -62,9 +62,9 @@ if(isset($_POST['AjouterMarque'])){
                 <td>
                 <?php echo  $row['Brand'] ?>
                 </td>
-                <td>
-                    <a href="">Modifier</a>
-                    <a href="">Supprimer</a>
+                <td class="">
+                    <a href="" data-bs-toggle="modal" data-bs-target="#modal3-default" data-marque-id="<?php echo $row['BrandId']; ?>"><i class="fa-solid fa-pen"></i></a>
+                    <a href="" data-bs-toggle="modal" data-bs-target="#modal2-default" data-marque-id="<?php echo $row['BrandId']; ?>"><i class="fa-solid fa-trash"></i></a>
                 </td>
             </tr>
                     <?php }?>
@@ -72,7 +72,6 @@ if(isset($_POST['AjouterMarque'])){
 				</table>
 			</div>
       <!-- modal add brand -->
-        <button type="button" class="btn btn-block btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modal-default">Default</button>
         <form class="modal fade" id="modal-default" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true" method="post">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -92,13 +91,66 @@ if(isset($_POST['AjouterMarque'])){
                 </div>
             </div>
         </form>
+        <!-- modal delete brand -->
+        <form class="modal fade" id="modal2-default" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true" method="post">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="h6 modal-title">Supprimer la marque :</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Si vous supprimer  une marque, vous ne pourrez pas la récupérer</p>
+                        <p class="text-danger">Tous les voitures de cette marque seront supprimé</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href=""  class="btn btn-danger" type="submit" id="supprimer-marque">Supprimer</a>
+                        <button type="button" class="btn btn-link text-gray ms-auto" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- modifier!-->
+        <form class="modal fade" id="modal3-default" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true" method="post">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="h6 modal-title">Modifier la marque</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <label for="">Nom Marque</label>
+                        <input type="text" class="form-control" id="marque" required placeholder="Exemple :  BMW">
+
+                    </div>
+                    <div class="modal-footer">
+                        <a href="" id="modifier-marque"  class="btn btn-success" type="submit">Modifier</a>
+                        <button type="button" class="btn btn-link text-gray ms-auto" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </form>
 		</main>
     <script>
-    var modal = document.getElementById('modal-default');
+    var modal = document.getElementById('modal2-default');
     modal.addEventListener('show.bs.modal', function(event) {
     var button = event.relatedTarget;
-    var opId = button.getAttribute('data-op-id');
-    var supprimeropButton = modal.querySelector('#supprimer-op');
-    supprimeropButton.href = 'SupprimerOp.php?id=' + opId;
+    var opId = button.getAttribute('data-marque-id');
+    var supprimeropButton = modal.querySelector('#supprimer-marque');
+    supprimeropButton.href = 'supprimermarque.php?id=' + opId;
   });
+
+  var modal3 = document.getElementById('modal3-default');
+    modal.addEventListener('show.bs.modal', function(event) {
+    var button = event.relatedTarget;
+    var opId = button.getAttribute('data-marque-id');
+    var modifier = modal.querySelector('#modifier-marque');
+    var marque = document.getElementById("marque")
+    marque.addEventListener("change",function(){
+        marque = marque.value;
+        console.log(marque);
+    })
+    modifier.href = 'modifiermarque.php?id=' + opId + '&newmarque='+ marque;
+  });
+
 </script>

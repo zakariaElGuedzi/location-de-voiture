@@ -92,6 +92,12 @@
 
 <!-- Github buttons -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
+<!-- alert !-->
+
+<!-- Add Toastr CSS and JS via CDN -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 
 <!-- Volt JS -->
 <script src="assets/js/volt.js"></script>

@@ -195,6 +195,10 @@ nav ul li a:hover {
             .LieuPrisenEnCharge{
                 flex-grow: 9 !important;
             }
+            .inputError{
+                color: red !important;
+                border: 2px solid red !important;
+            }
             .LieuPrisenEnCharge,.DatePrisencharge,.DateRestitution,.HeurePriseencharge,.LieuRestitution{
                 display: flex;
                 align-items: center;

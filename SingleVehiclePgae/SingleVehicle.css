@@ -148,6 +148,7 @@ section {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
+  margin-top: 13px;
 }
 .Offer .CarDetails {
   flex: 5;
@@ -284,6 +285,7 @@ section {
 }
 .Offer .OfferDetails {
   flex: 3;
+  margin-top: 50px;
   margin-left: 20px;
   margin-bottom: 20px;
 }
@@ -426,7 +428,7 @@ section {
 }
 @media (max-width: 800px) {
   section {
-    padding: 0px 8.5%;
+    padding: 0px 4%;
   }
   .schedule, .Tarif {
     padding: 0px 10px !important;
@@ -437,5 +439,8 @@ section {
   .Filter {
     flex-direction: column;
     gap: 15px !important;
+  }
+  .Offer {
+    flex-direction: column;
   }
 }/*# sourceMappingURL=SingleVehicle.css.map */

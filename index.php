@@ -1,3 +1,20 @@
+<?php
+if(isset($_POST['ChercherVeh'])){
+    $Search = true;
+    $LieuDepart = $_POST['LieuDepart'];
+    $DateDepart = $_POST['DateDepart'];
+    $HeureDepart = $_POST['HeureDepart'];
+    $DateResti = $_POST['DateResti'];
+    $LieuResti = $_POST['LieuResti'];
+    if(empty($LieuDepart) || empty($DateDepart) || empty($HeureDepart) || empty($DateResti) || empty($LieuResti)){
+        echo  "Veuillez remplir tous les champs";
+        header("location:../ListeVehicle/listevehicules.php");
+    }else{
+
+        header("location:../ListeVehicle/listevehicules.php?LD=$LieuDepart&DD=$DateDepart&HD=$HeureDepart&DR=$DateResti&LR=$LieuResti&Search=$Search");
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,10 +28,10 @@
     <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"></head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+
 </head>
 <body>
-
-
     <!-- First 100vh -->
     <header>
         <div class="container firstIn">
@@ -30,24 +47,22 @@
             <nav class="navHeader">
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="../ListeVehicle/listevehicules.php" blank>Services</a></li>
+                    <li><a href="../ListeVehicle/listevehicules.php" blank>Nos Voitures</a></li>
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="../Admin/index.php">Admin Panel (demo)</a></li>
-
                 </ul>
             </nav>
             <div class="lastcontHeader p-2">
                 <i class="sss fa-solid fa-bars"  onclick="afficheMenuPhone()"></i>
                 <button class="callToActionHeader bg-success px-3 py-2">Book Now</button>
             </div>
-
             <!-- menu phone -->
             <div class="menuphone" id="menPhone">
                 <div class="menu1">
                     <ul>
                         <li><a href="#home">Home</a></li>
-                        <li><a href="../ListeVehicle/listevehicules.php" blank>Services</a></li>
+                        <li><a href="../ListeVehicle/listevehicules.php" blank>Nos Voitures</a></li>
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#contact">Contact</a></li>
                         <li><a href="../Admin/index.php">Admin Panel (demo)</a></li>
@@ -71,51 +86,45 @@
 
     <!-- <section class="HomeinputsSection"> -->
         <div class="Homeinputs ">
-                <div class="Filter2">
+                <form class="Filter2" method="post">
                     <div class="LieuPrisenEnCharge">
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <div>
                             <p>Lieu de prise en charge</p>
-                            <input type="text " placeholder="Lieu de prise en charge">
+                            <input type="text" name="LieuDepart" placeholder="Lieu de prise en charge">
                         </div>
                     </div>
+                    
                     <div class="DatePrisencharge">
                         <i class="fa-solid fa-calendar-days"></i>
                         <div>
                             <p>Date de prise en charge</p>
-                            <input type="date" onchange="setMinEndDate()">
+                            <input type="date" name="DateDepart" onchange="setMinEndDate()">
                         </div>
                     </div>
                     <div class="HeurePriseencharge">
                         <i class="fa-regular fa-clock"></i>
                         <div>
                             <p>Heure</p>
-                            <input type="time">
+                            <input type="time" name="HeureDepart">
                         </div>
                     </div>
                     <div class="DateRestitution">
                         <i class="fa-solid fa-calendar-days"></i>
                         <div>
                             <p>Date de restitution</p>
-                            <input type="date">
+                            <input type="date" name="DateResti">
                         </div>
                     </div>
                     <div class="LieuRestitution">
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <div>
                             <p>Lieu de prise restitution</p>
-                            <input type="text" placeholder="Lieu de restitution">
+                            <input type="text" name="LieuResti" placeholder="Lieu de restitution">
                         </div>
                     </div>
-                    <!-- <div class="HeureRestitution">
-                        <i class="fa-regular fa-clock"></i>
-                        <div>
-                            <p>Heure</p>
-                            <input type="time">
-                        </div>
-                    </div> -->
-                    <button class="BtnModifier">Chercher</button>
-                </div>
+                    <button class="BtnModifier" type="submit" name="ChercherVeh">Chercher</button>
+                </form>
         </div>
     <!-- </section> -->
     
@@ -297,11 +306,12 @@
 </footer>
 
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/loaders/GLTFLoader.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/controls/OrbitControls.js"></script>
       
 
     <script src="jsFile.js" defer></script>
+
 </body>
 </html>
