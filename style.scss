@@ -40,6 +40,7 @@ header {
     align-items: center;
     justify-content: center;
     z-index: 1;
+    padding-bottom: 400px;
     .contact-info .langHead {
         height: 30px;
         width: 30px;
@@ -170,12 +171,11 @@ nav ul li a:hover {
     gap: 10px;
     justify-content: center;
     align-items: center;
-    // background-color: darkblue;
     z-index: 11 !important;
     margin-top: -2.5rem !important;
     width: fit-content;
-    margin: auto;
-    position: relative;    
+    position: absolute;    
+    top: 0;
         .ContainerTtle{
             display: flex;
             justify-content: space-between;
@@ -361,14 +361,15 @@ nav ul li a:hover {
     flex-wrap: wrap;
     // flex-direction: column;
     position: relative;
-    // margin-top: 33%;
+    //margin-top: 33%;
     
 }
 
 .argumentDiv {
-    padding: 10px;
-    width: 100%;
-    max-width: 500px;
+    // padding: 10px;
+    // width: 100%;
+    // max-width: 500px;
+    // margin-top: 12rem;
 }
 
 .argumentDiv label {
@@ -807,7 +808,7 @@ footer img {
 /* Tablet Devices (768px and up) */
 @media (max-width: 1024px) {
     header {
-        height: 50vh;
+        // height: 50vh;
         position: relative;
     }
     .Homeinputs {
@@ -917,7 +918,9 @@ footer img {
         left: 80%;
         top: 22%; /* Adjust position */
     }
-
+    .argumentDiv{
+        margin-top: 20rem;
+    }
     .argumentHeader  {
         // padding-bottom: 1000px;
         h1 {
@@ -1034,16 +1037,19 @@ footer img {
     }
 }
 
-@media all and (min-width: 1024px) and (max-width: 1280px) { 
+@media all and (min-width: 768px) and (max-width: 900px) { 
     .Contentfooter{
         display: flex;
         gap: 100px;
+    }
+    .argumentDiv{
+        margin-top: 12rem;
     }
 }
 
 @media (max-width: 415px) { 
     .header {
-        padding-bottom: 2000px;
+        // padding-bottom: 200px !important;
         .lastcontHeader {
             i {
                 display: flex !important;
@@ -1052,6 +1058,9 @@ footer img {
     }
 }
 @media (max-width: 390px) { 
+    header{
+        padding-bottom: 80px !important;
+    }
     .sec2 {
         .argumentDiv label h2 {
             font-size: 1.2rem;

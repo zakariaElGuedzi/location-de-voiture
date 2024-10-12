@@ -351,7 +351,7 @@ section {
 .Cariste .Cars .caritem .carDts .voiroffre {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: end;
 }
 .Cariste .Cars .caritem .carDts .voiroffre .carprice {
   display: flex;

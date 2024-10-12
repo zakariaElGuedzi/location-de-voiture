@@ -77,14 +77,15 @@ if(isset($_POST['ChercherVeh'])){
         </div>
 
         <!-- sec inputs -->
-            <div class="container argumentHeader">
-                <h1 >Location de voitures pour tous les types de voyages</h1>
-                <p>De super voitures à des tarifs avantageux, proposées par les plus grandes sociétés de location de voitures.</p>
-            </div>
+        <div class="container argumentHeader">
+            <h1 >Location de voitures pour tous les types de voyages</h1>
+            <p>De super voitures à des tarifs avantageux, proposées par les plus grandes sociétés de location de voitures.</p>
+        </div>
+            
     </header>
 
     <!-- <section class="HomeinputsSection"> -->
-        <div class="Homeinputs ">
+        <!-- <div class="Homeinputs ">
             <form class="Filter2" method="post" novalidate>
                     <div class="LieuPrisenEnCharge">
                         <i class="fa-solid fa-magnifying-glass"></i>
@@ -134,12 +135,62 @@ if(isset($_POST['ChercherVeh'])){
                 }
             ?>
 
-        </div>
+        </div> -->
     <!-- </section> -->
     
     
   
     <section class="sec2">
+        <div class="Homeinputs ">
+            <form class="Filter2" method="post" novalidate>
+                    <div class="LieuPrisenEnCharge">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <div>
+                            <p>Lieu de prise en charge</p>
+                            <input type="text" name="LieuDepart" placeholder="Lieu de prise en charge">
+                        </div>
+                    </div>
+                    
+                    <div class="DatePrisencharge">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <div>
+                            <p>Date de prise en charge</p>
+                            <input type="date" name="DateDepart" onchange="setMinEndDate()">
+                        </div>
+                    </div>
+                    <div class="HeurePriseencharge">
+                        <i class="fa-regular fa-clock"></i>
+                        <div>
+                            <p>Heure</p>
+                            <input type="time" name="HeureDepart">
+                        </div>
+                    </div>
+                    <div class="DateRestitution">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <div>
+                            <p>Date de restitution</p>
+                            <input type="date" name="DateResti">
+                        </div>
+                    </div>
+                    <div class="LieuRestitution">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <div>
+                            <p>Lieu de prise restitution</p>
+                            <input type="text" name="LieuResti" placeholder="Lieu de restitution">
+                        </div>
+                    </div>
+                    <button class="BtnModifier" type="submit" name="ChercherVeh">Chercher</button>
+            </form>
+            <?PHP
+                IF(isset($error)){
+            ?>
+                <div class="ErrorDiv">
+                    <p><?php echo "$error"?></p>
+                </div>
+            <?php
+                }
+            ?>
+        </div>
         <div class="argumentDiv">
             <label for="">
                 <h2>Pourquoi PERLA PLAYA ?</h2>
