@@ -443,4 +443,12 @@ section {
   .Offer {
     flex-direction: column;
   }
+  .Car {
+    flex-direction: column;
+  }
+  .Car .carimg {
+    width: 174px !important;
+    height: 107px;
+    flex: none !important;
+  }
 }/*# sourceMappingURL=SingleVehicle.css.map */
