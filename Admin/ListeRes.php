@@ -4,15 +4,10 @@ include "includes/navbar.php";
 <main class="content">
 			<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
 				<div class="d-block mb-4 mb-md-0">
-					<h2 class="h4">Liste Vendeure</h2>
+					<h2 class="h4">Liste Reservation</h2>
 				</div>
 				<div class="btn-toolbar mb-2 mb-md-0">
-					<a href="AjouterOperateur.php" class="btn btn-sm btn-gray-800 d-inline-flex align-items-center">
-						<svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-						</svg>
-						Ajouter Vendeure
-					</a>
+
 				</div>
 			</div>
 			<div class="card card-body shadow border-0 table-wrapper table-responsive">
@@ -20,56 +15,51 @@ include "includes/navbar.php";
 					<thead>
 						<tr>
 							<th class="border-bottom">ID</th>
+              <th class="border-bottom">Numero Reservation</th>
 							<th class="border-bottom">Nom</th>
-							<th class="border-bottom">Numero Reservation</th>
-                            <th class="border-bottom">Voiture</th>
-                            <!-- <th class="border-bottom">De</th>
-                            <th class="border-bottom">A</th> -->
-                            <th class="border-bottom">Status</th>
-                            <th class="border-bottom">Date Reservation</th>
-                            <th class="border-bottom">Action</th>
+              <th class="border-bottom">Voiture</th>
+              <th class="border-bottom">Status</th>
+              <th class="border-bottom">Date Reservation</th>
+              <th class="border-bottom">Details</th>
 						</tr>
 					</thead>
 					<tbody>
+            <?php
+            $reservations = $pdo->query('SELECT * FROM reservations')->fetchAll(PDO::FETCH_OBJ);
+            foreach($reservations as $res){
+            ?>
               <tr>
-                  <td>1</td>
-                  <td>Adnane</td>
-                  <td>R123456789</td>
-                  <td>BMW , BMW 5 Series</td>
-                  <!-- <td>2024-09-12</td>
-                  <td>2024-09-20</td> -->
-                  <td><span class="badge bg-warning p-2 text-black">Non Confirmé</span></td>
-                  <td>2024-09-29 17:04:05</td>
+                  <td><?php echo  $res->ResID; ?></td>
+                  <td><?php echo  $res->ReservationNum; ?></td>
+                  <td><?php echo  $res->Name; ?></td>
+                  <?php
+                    $CarName = $pdo->prepare('SELECT CarName FROM cars where CarId=?');
+                    $CarName->execute(array($res->CarId));
+                    $CN = $CarName->fetch(PDO::FETCH_OBJ);
+                ?>
+                  <td><?php echo $CN->CarName; ?></td>
+
+                  <?php
+                    if($res->Status == 0){
+                      $STATUS = "En Attente";
+                      $bg = "warning";
+                    }elseif($res->Status == 1){
+                      $STATUS = "Accepté";
+                      $bg = "success";
+                    }else{
+                      $STATUS = "Refusé";
+                      $bg = "danger";
+                    }
+                  ?>
+                  <td><span class="badge bg-<?php echo $bg?> p-2 text-black"><?php echo  $STATUS; ?></span></td>
+                  <td><?php echo  $res->ReservationDate; ?></td>
                   <td>
-                      <a href=""><i class="fa-solid fa-eye"></i></a>
+                      <a href="showbooking.php?id=<?php echo $res->ResID?>"><i class="fa-solid fa-eye"></i></a>
                   </td>
               </tr>
-              <tr>
-                  <td>2</td>
-                  <td>Adnane</td>
-                  <td>R123456789</td>
-                  <td>BMW , BMW 5 Series</td>
-                  <!-- <td>2024-09-12</td>
-                  <td>2024-09-20</td> -->
-                  <td><span class="badge bg-success p-2 ">Confirmé</span></td>
-                  <td>2024-09-29 17:04:05</td>
-                  <td>
-                      <a href=""><i class="fa-solid fa-eye"></i></a>
-                  </td>
-              </tr>
-              <tr>
-                  <td>3</td>
-                  <td>Adnane</td>
-                  <td>R123456789</td>
-                  <td>BMW , BMW 5 Series</td>
-                  <!-- <td>2024-09-12</td>
-                  <td>2024-09-20</td> -->
-                  <td><span class="badge bg-danger p-2">Annulé</span></td>
-                  <td>2024-09-29 17:04:05</td>
-                  <td>
-                      <a href="showbooking.php"><i class="fa-solid fa-eye"></i></a>
-                  </td>
-              </tr>
+              <?php
+                  }
+            ?>
 					</tbody>
 				</table>
 			</div>

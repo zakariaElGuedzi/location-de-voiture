@@ -22,7 +22,7 @@ $cars = $pdo->query('SELECT * FROM cars')->fetchAll(PDO::FETCH_OBJ);
 					<h2 class="h4">Liste Voitures</h2>
 				</div>
 				<div class="btn-toolbar mb-2 mb-md-0">
-					<a href="AjouterOperateur.php" class="btn btn-sm btn-gray-800 d-inline-flex align-items-center">
+					<a href="AjouterVoiture.php" class="btn btn-sm btn-gray-800 d-inline-flex align-items-center">
 						<svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
 						</svg>
@@ -72,7 +72,7 @@ $cars = $pdo->query('SELECT * FROM cars')->fetchAll(PDO::FETCH_OBJ);
                 <td>
                     <!-- <a class="p-1" href="ShowCarDetails.php?id=<?php echo $car->CarId ?>"><i class="fa-solid fa-eye"></i></a> -->
                     <a class="p-1" href="EditCar.php?id=<?php echo $car->CarId ?>"><i class="fa-solid fa-pen"></i></a>
-                    <a class="p-1" href="DeleteCar.php?id=<?php echo $car->CarId ?>"><i class="fa-solid fa-trash"></i></a>
+                    <a class="p-1" data-bs-toggle="modal" data-bs-target="#modal-default" data-car-id="<?php echo $car->CarId ?>"><i class="fa-solid fa-trash"></i></a>
                 </td>
             </tr>
             <?php
@@ -85,15 +85,15 @@ $cars = $pdo->query('SELECT * FROM cars')->fetchAll(PDO::FETCH_OBJ);
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h2 class="h6 modal-title">Supprimer op</h2>
+                  <h2 class="h6 modal-title">Supprimer Voiture</h2>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  <p>Voulez-vous vraiment supprimer ce op ?</p>
+                  <p>Voulez-vous vraiment supprimer cette voiture  ?</p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                  <a href="#" class="btn btn-danger" id="supprimer-op">Supprimer</a>
+                  <a href="#" class="btn btn-danger" id="supprimer-Car">Supprimer</a>
                 </div>
               </div>
             </div>
@@ -120,4 +120,12 @@ function updateCarStatus(carId, isChecked) {
         }
     };
 }
+
+var modal = document.getElementById('modal-default');
+    modal.addEventListener('show.bs.modal', function(event) {
+    var button = event.relatedTarget;
+    var carId = button.getAttribute('data-car-id');
+    var supprimeropButton = modal.querySelector('#supprimer-car');
+    supprimeropButton.href = 'deletecar.php?id=' + carId;
+  });
 </script>

@@ -120,11 +120,11 @@ if(isset($_POST['AjouterMarque'])){
                     </div>
                     <div class="modal-body">
                         <label for="">Nom Marque</label>
-                        <input type="text" class="form-control" id="marque" required placeholder="Exemple :  BMW">
+                        <input type="text" class="form-control" id="Newmarque" placeholder="Exemple :  BMW" required>
 
                     </div>
                     <div class="modal-footer">
-                        <a href="" id="modifier-marque"  class="btn btn-success" type="submit">Modifier</a>
+                        <a id="modifier-marque" href="#"  class="btn btn-success">Modifier</a>
                         <button type="button" class="btn btn-link text-gray ms-auto" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
@@ -141,16 +141,12 @@ if(isset($_POST['AjouterMarque'])){
   });
 
   var modal3 = document.getElementById('modal3-default');
-    modal.addEventListener('show.bs.modal', function(event) {
+    modal3.addEventListener('show.bs.modal', function(event) {
     var button = event.relatedTarget;
     var opId = button.getAttribute('data-marque-id');
-    var modifier = modal.querySelector('#modifier-marque');
-    var marque = document.getElementById("marque")
-    marque.addEventListener("change",function(){
-        marque = marque.value;
-        console.log(marque);
-    })
-    modifier.href = 'modifiermarque.php?id=' + opId + '&newmarque='+ marque;
+    var modifier = modal3.querySelector('#modifier-marque');
+    let marque = document.getElementById("Newmarque").value
+    modifier.href =`modifiermarque.php?id=${opId}&newmarque='${marque}'`
   });
 
 </script>

@@ -4,16 +4,24 @@
     $Cars = $pdo->prepare('SELECT * FROM cars where CarId=?');
     $Cars->execute(array($id));
     $cr = $Cars->fetch(PDO::FETCH_OBJ);
-    // if(isset($_POST['Reserver'])){
-    //     echo "hello worold";
-    // }
+    if(isset($_GET['LD']) || isset($_GET['DD']) || isset($_GET['HD']) || isset($_GET['DR']) || isset($_GET['LR']) || isset($_GET['Search'])){
+        $LD = $_GET['LD'];
+        $DD = $_GET['DD'];
+        $HD = $_GET['HD'];
+        $DR = $_GET['DR'];
+        $LR = $_GET['LR'];
+        $sr = $_GET['Search'];
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Perla Playa | Location de Voiture</title>
+    <link rel="apple-touch-icon" sizes="120x120" href="img/lgBlanc.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/lgBlanc.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/lgBlanc.png">
     <link rel="stylesheet" href="SingleVehicle.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -320,17 +328,23 @@
                         </div>
                     </div>
                 </div> -->
-                <form class="row g-3 needs-validation" method="post" novalidate>
+                <?php if(isset($_GET['Search'])){?>
+                <form class="row g-3 needs-validation" method="post" novalidate action="../Admin/Resa.php?CAR=<?PHP echo $id?>&LD=<?php echo $LD ?>&DD=<?php echo $DD ?>&HD=<?php echo $HD ?>&DR=<?php echo $DR ?>&LR=<?php echo $LR ?>&Search=<?php echo $sr ?>">
+                <?php } else{?>
+                    <form class="row g-3 needs-validation" method="post" novalidate action="../Admin/Resa.php?CAR=<?PHP echo $id?>">
+                <?php
+                }
+                ?>
                     <div class="col-md-12">
                         <label for="validationCustom01" cl  ass="form-label">Nom et Prenom</label>
-                        <input type="text" class="form-control" id="validationCustom01" placeholder="Mark" required>
+                        <input type="text" class="form-control" name="name" id="validationCustom01" placeholder="Mark" required>
                         <div class="invalid-feedback">
                                 Entrer un nom et prenom valide.
                             </div>
                     </div>
                     <div class="col-md-12">
                         <label for="validationCustom02" class="form-label">E-mail</label>
-                        <input type="email" class="form-control" id="validationCustom02" placeholder="email@gmail.com" required>
+                        <input type="email" class="form-control" name="email" id="validationCustom02" placeholder="email@gmail.com" required>
                         <div class="invalid-feedback">
                                 Entrer un email valide.
                             </div>
@@ -338,7 +352,7 @@
                     <div class="col-md-12">
                         <label for="validationCustomUsername" class="form-label">Numero Telephone</label>
                         <div class="input-group has-validation">
-                            <input type="text" class="form-control"  id="validationCustomUsername" placeholder="06 53 73 46 73" aria-describedby="inputGroupPrepend" required>
+                            <input type="text" class="form-control" name="phone"  id="validationCustomUsername" placeholder="06 53 73 46 73" aria-describedby="inputGroupPrepend" required>
                             <div class="invalid-feedback">
                                 Entrer un numero de telephone valide.
                             </div>
@@ -350,7 +364,7 @@
                     <div class="col-md-12">
                             <label for="validationCustomUsername" class="form-label">Lieu Depart</label>
                         <div class="input-group has-validation">
-                            <input type="text" class="form-control"  id="validationCustomUsername" placeholder="Casablanca" aria-describedby="inputGroupPrepend" required>
+                            <input type="text" class="form-control" name="LD"  id="validationCustomUsername" placeholder="Casablanca" aria-describedby="inputGroupPrepend" required>
                             <div class="invalid-feedback">
                                 Entrer un lieu valid
                             </div>
@@ -359,7 +373,7 @@
                     <div class="col-md-12">
                             <label for="validationCustomUsername" class="form-label">Lieu restitution</label>
                         <div class="input-group has-validation">
-                            <input type="text" class="form-control"  id="validationCustomUsername" placeholder="Tanger" aria-describedby="inputGroupPrepend" required>
+                            <input type="text" class="form-control" name="LR"  id="validationCustomUsername" placeholder="Tanger" aria-describedby="inputGroupPrepend" required>
                             <div class="invalid-feedback">
                                 Entrer un lieu valid
                             </div>
@@ -368,7 +382,7 @@
                     <div class="col-md-6">
                             <label for="validationCustomUsername" class="form-label">Date depart</label>
                         <div class="input-group has-validation">
-                            <input type="date" class="form-control"  id="validationCustomUsername" placeholder="Tanger" aria-describedby="inputGroupPrepend" required>
+                            <input type="date" class="form-control" name="DD"  id="validationCustomUsername" placeholder="Tanger" aria-describedby="inputGroupPrepend" required>
                             <div class="invalid-feedback">
                                 Entrer un date valid
                             </div>
@@ -377,7 +391,7 @@
                     <div class="col-md-6">
                             <label for="validationCustomUsername" class="form-label">Date restitution</label>
                         <div class="input-group has-validation">
-                            <input type="date" class="form-control"  id="validationCustomUsername" placeholder="Tanger" aria-describedby="inputGroupPrepend" required>
+                            <input type="date" class="form-control" name="DR"  id="validationCustomUsername" placeholder="Tanger" aria-describedby="inputGroupPrepend" required>
                             <div class="invalid-feedback">
                                 Entrer une date valid
                             </div>
@@ -386,7 +400,7 @@
                     <div class="col-md-12">
                             <label for="validationCustomUsername" class="form-label">Heure Depart</label>
                         <div class="input-group has-validation">
-                            <input type="time" class="form-control"  id="validationCustomUsername" placeholder="Time" aria-describedby="inputGroupPrepend" required>
+                            <input type="time" class="form-control" name="HD"  id="validationCustomUsername" placeholder="Time" aria-describedby="inputGroupPrepend" required>
                             <div class="invalid-feedback">
                                 Entrer une heure valid
                             </div>
