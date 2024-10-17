@@ -22,6 +22,7 @@
         $DR = $_POST['DR'];
         $HD = $_POST['HD'];
         }
+        echo $LD;
     }
 
     function checkDatabaseForCode($code) {
