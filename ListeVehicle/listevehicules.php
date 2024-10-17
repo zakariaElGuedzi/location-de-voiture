@@ -54,12 +54,12 @@
             <div class="Filter">
                 <div>
                     <h5 class="bold"><?php ECHO $_GET['LD']?></h5>
-                    <p>mer. 2 oct. 2024, <?php echo $_GET['HD']?></p>
+                    <p><?php echo $_GET['DD']?>, <?php echo $_GET['HD']?></p>
                 </div>
                 <i class="fa-solid fa-chevron-right"></i>
                 <div>
                     <h5 class="bold"><?php ECHO $_GET['LR']?></h5>
-                    <p>mer. 2 oct. 2024, 10:00</p>
+                    <p><?php echo $_GET['DR']?></p>
                 </div>
             </div>
             <button class="BtnModifier">Modifier</button>

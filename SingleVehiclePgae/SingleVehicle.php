@@ -56,12 +56,12 @@
         <div  class="divCordoneLV">
             <div class="Filter">
                 <div>
-                    <h5 class="bold">Casablanca Mohammed V de casa</h5>
+                    <h5 class="bold"><?php echo $_GET['LD']?></h5>
                     <p>mer. 2 oct. 2024, 10:00</p>
                 </div>
                 <i class="fa-solid fa-chevron-right"></i>
                 <div>
-                    <h5 class="bold">Casablanca Mohammed V de casa</h5>
+                    <h5 class="bold"><?php echo $_GET['LR']?></h5>
                     <p>mer. 2 oct. 2024, 10:00</p>
                 </div>
             </div>
