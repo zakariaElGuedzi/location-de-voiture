@@ -24,8 +24,8 @@
 
     }
         // Retrieve the 'name' field from the form
-    if (isset($_POST['name'])) {
-        $name = htmlspecialchars($_POST['name']);
+    if (isset($_GET['name'])) {
+        $name = htmlspecialchars($_GET['name']);
         echo "Name: " . $name . "<br>";
     }
 
