@@ -11,10 +11,44 @@
         $DR = $_GET['DR'];
         $LR = $_GET['LR'];
         $sr = $_GET['Search'];
+    }else{
+        $LD = $_POST['LD'];
+        $LR = $_POST['LR'];
+        $DD = $_POST['DD'];
+        $DR = $_POST['DR'];
+        $HD = $_POST['HD'];
     }
     if(isset($_POST['Reserver'])){
         $name = $_POST['name'];
-        echo $name;
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+
+        function checkDatabaseForCode($code) {
+            include 'includes/database.php'; 
+            $stmt = $pdo->prepare('SELECT COUNT(*) FROM reservations WHERE ReservationNum = :code');
+            $stmt->bindParam(':code', $code);
+            $stmt->execute();        
+            return $stmt->fetchColumn() > 0;
+        }
+        function generateReservationCode($length = 10) {
+            do {
+                $randomBytes = bin2hex(random_bytes($length / 2));
+                $reservationCode = strtoupper($randomBytes);
+                $isUnique = !checkDatabaseForCode($reservationCode);
+    
+            } while (!$isUnique); 
+    
+            return $reservationCode;
+        }
+        $reservationCode = generateReservationCode(10);
+        $sqlState = $pdo->prepare('INSERT INTO reservations VALUES(NULL,?,?,?,?,?,?,?,?,?,?,?,?)');
+        $rsult = $sqlState->execute(array($reservationCode,$status,$currentDateTime,$id,$name,$email,$phone,$LD,$LR,$DD,$DR,$HD));
+        if($rsult){
+          $SuccesMessage = "Voiture Bien Ajouté";
+              header("location:../ThankYouForBooking.php?ref=$reservationCode");
+        }else{
+          $Error = "Erreur lors de l'ajout de la voiture";
+        }
     }
 ?>
 <!DOCTYPE html>
@@ -313,7 +347,7 @@
                 <?php
                 }
                 ?> -->
-                <form method="post">
+                <form method="post" class="row g-3 needs-validation" method="post" novalidate>
                     <div class="col-md-12">
                         <label for="validationCustom01" cl  ass="form-label">Nom et Prenom</label>
                         <input type="text" class="form-control" name="name" id="validationCustom01" placeholder="Mark" required>
