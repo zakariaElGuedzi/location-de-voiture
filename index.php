@@ -48,7 +48,7 @@ if(isset($_POST['ChercherVeh'])){
             <nav class="navHeader">
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="../ListeVehicle/listevehicules.php" blank>Nos NOS Voitures</a></li>
+                    <li><a href="../ListeVehicle/listevehicules.php" blank>Nos Voitures</a></li>
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="../Admin/index.php">Admin Panel (demo)</a></li>
