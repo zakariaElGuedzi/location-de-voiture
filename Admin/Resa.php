@@ -1,6 +1,10 @@
 <?php
     include_once 'includes/database.php'; 
-    $carId = $_GET['CAR'];
+    // $carId = $_GET['CAR'];
+    $name = $_GET['name'];
+     $email = $_GET['email'];
+     $phone = $_GET['phone'];
+
     $status = 0;
     $currentDateTime = date("Y-m-d H:i:s");
     // $IsFromSearch = $_GET['search']
