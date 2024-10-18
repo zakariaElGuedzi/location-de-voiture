@@ -1,9 +1,6 @@
 <?php
     include_once 'includes/database.php'; 
     $carId = $_GET['CAR'];
-    $name = isset($_GET['name']) ? $_GET['name'] : null;
-    $email = isset($_GET['email']) ? $_GET['email'] : null;
-    $phone = isset($_GET['phone']) ? $_GET['phone'] : null;
     $status = 0;
     $currentDateTime = date("Y-m-d H:i:s");
     // $IsFromSearch = $_GET['search']

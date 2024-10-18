@@ -302,13 +302,15 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                <?php if(isset($_GET['Search'])){?>
+                <!-- <?php if(isset($_GET['Search'])){?>
                 <form class="row g-3 needs-validation" method="get" novalidate action="../Admin/Resa.php?CAR=<?PHP echo $id?>&LD=<?php echo $LD ?>&DD=<?php echo $DD ?>&HD=<?php echo $HD ?>&DR=<?php echo $DR ?>&LR=<?php echo $LR ?>&Search=<?php echo $sr ?>">
                 <?php } else{?>
                     <form class="row g-3 needs-validation" method="get" novalidate action="../Admin/Resa.php?CAR=<?PHP echo $id?>">
                 <?php
                 }
-                ?>
+                ?> -->
+                <form class="row g-3 needs-validation" method="get" novalidate action="../Admin/Resa.php">
+
                     <div class="col-md-12">
                         <label for="validationCustom01" cl  ass="form-label">Nom et Prenom</label>
                         <input type="text" class="form-control" name="name" id="validationCustom01" placeholder="Mark" required>
