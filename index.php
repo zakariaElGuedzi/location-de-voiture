@@ -103,21 +103,21 @@ if(isset($_POST['ChercherVeh'])){
                         <i class="fa-solid fa-calendar-days"></i>
                         <div>
                             <p>Date de prise en charge</p>
-                            <input type="date" name="DateDepart" onchange="setMinEndDate()">
+                            <input type="text" name="DateDepart" onchange="setMinEndDate()">
                         </div>
                     </div>
                     <div class="HeurePriseencharge">
                         <i class="fa-regular fa-clock"></i>
                         <div>
                             <p>Heure</p>
-                            <input type="time" name="HeureDepart">
+                            <input type="text" name="HeureDepart">
                         </div>
                     </div>
                     <div class="DateRestitution">
                         <i class="fa-solid fa-calendar-days"></i>
                         <div>
                             <p>Date de restitution</p>
-                            <input type="date" name="DateResti">
+                            <input type="text" name="DateResti">
                         </div>
                     </div>
                     <div class="LieuRestitution">
