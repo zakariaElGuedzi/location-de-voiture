@@ -24,9 +24,11 @@
 
     }
         // Retrieve the 'name' field from the form
-    if (isset($_GET['name'])) {
+    if (isset($_POST['name'])) {
         $name = htmlspecialchars($_GET['name']);
         echo "Name: " . $name . "<br>";
+    }else{
+        echo "Name is not set";
     }
 
     // Retrieve the 'email' field from the form
