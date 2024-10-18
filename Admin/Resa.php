@@ -46,7 +46,7 @@
     $rsult = $sqlState->execute(array($reservationCode,$status,$currentDateTime,$carId,$name,$email,$phone,$LD,$LR,$DD,$DR,$HD));
     if($rsult){
       $SuccesMessage = "Voiture Bien Ajouté";
-          header("location:../ThankYouForBooking.php?ref=$reservationCode");
+        //   header("location:../ThankYouForBooking.php?ref=$reservationCode");
     }else{
       $Error = "Erreur lors de l'ajout de la voiture";
     }
