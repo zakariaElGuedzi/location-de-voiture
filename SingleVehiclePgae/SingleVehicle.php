@@ -303,9 +303,9 @@
                 </div>
                 <div class="modal-body">
                 <?php if(isset($_GET['Search'])){?>
-                    <form class="row g-3 needs-validation" method="post" novalidate action="../Admin/Resa.php?car=<?php echo htmlspecialchars($id) ?>&LD=<?php echo htmlspecialchars($LD) ?>&DD=<?php echo htmlspecialchars($DD) ?>&HD=<?php echo htmlspecialchars($HD) ?>&DR=<?php echo htmlspecialchars($DR) ?>&LR=<?php echo htmlspecialchars($LR) ?>&Search=<?php echo htmlspecialchars($sr) ?>">
-                    <?php } else{?>
-                    <form class="row g-3 needs-validation" method="post" novalidate action="../Admin/Resa.php?car=<?php echo $id?>">
+                <form class="row g-3 needs-validation" method="post" novalidate action="../Admin/Resa.php?CAR=<?PHP echo $id?>&LD=<?php echo $LD ?>&DD=<?php echo $DD ?>&HD=<?php echo $HD ?>&DR=<?php echo $DR ?>&LR=<?php echo $LR ?>&Search=<?php echo $sr ?>">
+                <?php } else{?>
+                    <form class="row g-3 needs-validation" method="post" novalidate action="../Admin/Resa.php?CAR=<?PHP echo $id?>">
                 <?php
                 }
                 ?>
