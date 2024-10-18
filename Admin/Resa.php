@@ -1,52 +1,27 @@
 <?php
     include_once 'includes/database.php'; 
-
+    $name = isset($_POST['name']) ? $_POST['name'] : null;
+    $email = isset($_POST['email']) ? $_POST['email'] : null;
+    $phone = isset($_POST['phone']) ? $_POST['phone'] : null;
     $status = 0;
     $currentDateTime = date("Y-m-d H:i:s");
     $carId = $_GET['CAR'];
-    if(isset($_GET['Search']) && isset($_POST['name']) && isset($_POST['email']) && isset($_POST['phone'])){
+    // $IsFromSearch = $_GET['search']
+    if(isset($_GET['Search'])){
         $LD = $_GET['LD'];
         $LR = $_GET['LR'];
         $DD = $_GET['DD'];
         $DR = $_GET['DR'];
         $HD = $_GET['HD'];
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $phone = $_POST['phone'];
-        echo "Seeach is Set 2";
-        echo "---------------";
-        echo  $LD;
-        echo  $LR;
-        echo  $DD;
-        echo  $DR;
-        echo  $HD;
-        echo  $name;
-        echo  $email;
-        echo  $phone;
 
-
-    }elseif(isset($_POST['LD']) && isset($_POST['LR']) && isset($_POST['DD']) && isset($_POST['DR']) && isset($_POST['HD']) && isset($_POST['name']) && isset($_POST['email']) && isset($_POST['phone'])){
+    }else{
+        if(isset($_POST['LD']) && isset($_POST['LR']) && isset($_POST['DD']) && isset($_POST['DR']) && isset($_POST['HD'])){
         $LD = $_POST['LD'];
         $LR = $_POST['LR'];
         $DD = $_POST['DD'];
         $DR = $_POST['DR'];
         $HD = $_POST['HD'];
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $phone = $_POST['phone'];
-        echo "Seeach is not Set 2";
-        echo "---------------";
-        echo  $LD;
-        echo  $LR;
-        echo  $DD;
-        echo  $DR;
-        echo  $HD;
-        echo  $name;
-        echo  $email;
-        echo  $phone;
-
-    }else{
-        echo "none of these";
+        }
     }
 
     function checkDatabaseForCode($code) {
@@ -71,7 +46,7 @@
     $rsult = $sqlState->execute(array($reservationCode,$status,$currentDateTime,$carId,$name,$email,$phone,$LD,$LR,$DD,$DR,$HD));
     if($rsult){
       $SuccesMessage = "Voiture Bien Ajouté";
-        //   header("location:../ThankYouForBooking.php?ref=$reservationCode");
+          header("location:../ThankYouForBooking.php?ref=$reservationCode");
     }else{
       $Error = "Erreur lors de l'ajout de la voiture";
     }
