@@ -14,12 +14,12 @@
     }
     if(isset($_POST['Reserver'])){
         $name = $_POST['name'];
-        $email = $_POST['emaiSl'];
+        $email = $_POST['email'];
         $phone = $_POST['phone'];
         echo  $name;
         echo  $email;
         echo  $phone;
-        
+
         // if(!isset($_GET['Search'])){
         //     $LD = $_POST['LD'];
         //     $LR = $_POST['LR'];
