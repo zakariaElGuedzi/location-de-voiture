@@ -13,6 +13,17 @@
         $DD = $_GET['DD'];
         $DR = $_GET['DR'];
         $HD = $_GET['HD'];
+        echo "Seeach is Set";
+        echo "---------------";
+        echo  $LD;
+        echo  $LR;
+        echo  $DD;
+        echo  $DR;
+        echo  $HD;
+        echo  $name;
+        echo  $email;
+        echo  $phone;
+
 
     }else{
         if(isset($_POST['LD']) && isset($_POST['LR']) && isset($_POST['DD']) && isset($_POST['DR']) && isset($_POST['HD'])){
@@ -21,6 +32,18 @@
         $DD = $_POST['DD'];
         $DR = $_POST['DR'];
         $HD = $_POST['HD'];
+        echo "Seeach is not Set";
+        echo "---------------";
+        echo  $LD;
+        echo  $LR;
+        echo  $DD;
+        echo  $DR;
+        echo  $HD;
+
+        echo  $name;
+        echo  $email;
+        echo  $phone;
+
         }
     }
 
@@ -46,7 +69,7 @@
     $rsult = $sqlState->execute(array($reservationCode,$status,$currentDateTime,$carId,$name,$email,$phone,$LD,$LR,$DD,$DR,$HD));
     if($rsult){
       $SuccesMessage = "Voiture Bien Ajouté";
-          header("location:../ThankYouForBooking.php?ref=$reservationCode");
+        //   header("location:../ThankYouForBooking.php?ref=$reservationCode");
     }else{
       $Error = "Erreur lors de l'ajout de la voiture";
     }
