@@ -7,22 +7,21 @@
     $status = 0;
     $currentDateTime = date("Y-m-d H:i:s");
     // $IsFromSearch = $_GET['search']
-    if(isset($_GET['Search'])){
-        $LD = $_GET['LD'];
-        $LR = $_GET['LR'];
-        $DD = $_GET['DD'];
-        $DR = $_GET['DR'];
-        $HD = $_GET['HD'];
+    // if(isset($_GET['Search'])){
+    //     $LD = $_GET['LD'];
+    //     $LR = $_GET['LR'];
+    //     $DD = $_GET['DD'];
+    //     $DR = $_GET['DR'];
+    //     $HD = $_GET['HD'];
 
-    }else{
-        if(isset($_GET['LD']) && isset($_GET['LR']) && isset($_GET['DD']) && isset($_GET['DR']) && isset($_GET['HD'])){
-        $LD = $_GET['LD'];
-        $LR = $_GET['LR'];
-        $DD = $_GET['DD'];
-        $DR = $_GET['DR'];
-        $HD = $_GET['HD'];
-        }
-    }
+    // }else{if(isset($_GET['LD']) && isset($_GET['LR']) && isset($_GET['DD']) && isset($_GET['DR']) && isset($_GET['HD'])){
+    //     $LD = $_GET['LD'];
+    //     $LR = $_GET['LR'];
+    //     $DD = $_GET['DD'];
+    //     $DR = $_GET['DR'];
+    //     $HD = $_GET['HD'];
+    //     }
+    // }
     echo $name;
     echo $email;
     echo  $phone;
