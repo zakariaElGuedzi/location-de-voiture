@@ -1,12 +1,9 @@
 <?php
     include_once 'includes/database.php'; 
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
+
     $status = 0;
     $currentDateTime = date("Y-m-d H:i:s");
     $carId = $_GET['CAR'];
-    // $IsFromSearch = $_GET['search']
     if(isset($_GET['Search'])){
         $LD = $_GET['LD'];
         $LR = $_GET['LR'];
@@ -26,12 +23,15 @@
 
 
     }else{
-        if(isset($_POST['LD']) && isset($_POST['LR']) && isset($_POST['DD']) && isset($_POST['DR']) && isset($_POST['HD'])){
+        if(isset($_POST['LD']) && isset($_POST['LR']) && isset($_POST['DD']) && isset($_POST['DR']) && isset($_POST['HD']) && isset($_POST['name']) && isset($_POST['email']) && isset($_POST['phone'])){
         $LD = $_POST['LD'];
         $LR = $_POST['LR'];
         $DD = $_POST['DD'];
         $DR = $_POST['DR'];
         $HD = $_POST['HD'];
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
         echo "Seeach is not Set";
         echo "---------------";
         echo  $LD;
@@ -39,7 +39,6 @@
         echo  $DD;
         echo  $DR;
         echo  $HD;
-
         echo  $name;
         echo  $email;
         echo  $phone;
