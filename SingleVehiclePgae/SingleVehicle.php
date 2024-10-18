@@ -36,7 +36,6 @@
         }
 
         function checkDatabaseForCode($code) {
-            include_once "../Admin/includes/database.php";
             $stmt = $pdo->prepare('SELECT COUNT(*) FROM reservations WHERE ReservationNum = :code');
             $stmt->bindParam(':code', $code);
             $stmt->execute();        
@@ -52,12 +51,13 @@
     
             return $reservationCode;
         }
+
         $reservationCode = generateReservationCode(10);
         $sqlState = $pdo->prepare('INSERT INTO reservations VALUES(NULL,?,?,?,?,?,?,?,?,?,?,?,?)');
         $rsult = $sqlState->execute(array($reservationCode,$status,$currentDateTime,$id,$name,$email,$phone,$LD,$LR,$DD,$DR,$HD));
         if($rsult){
           $SuccesMessage = "Voiture Bien Ajouté";
-              header("location:../ThankYouForBooking.php?ref=$reservationCode");
+            header("location:../ThankYouForBooking.php?ref=$reservationCode");
         }else{
           $Error = "Erreur lors de l'ajout de la voiture";
           echo  $Error;
