@@ -1,28 +1,46 @@
 <?php
     include_once 'includes/database.php'; 
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
     $status = 0;
     $currentDateTime = date("Y-m-d H:i:s");
     $carId = $_GET['CAR'];
     // $IsFromSearch = $_GET['search']
     if(isset($_GET['Search'])){
-        $LD = $_GET['LD'];
-        $LR = $_GET['LR'];
-        $DD = $_GET['DD'];
-        $DR = $_GET['DR'];
-        $HD = $_GET['HD'];
+        // $LD = $_GET['LD'];
+        // $LR = $_GET['LR'];
+        // $DD = $_GET['DD'];
+        // $DR = $_GET['DR'];
+        // $HD = $_GET['HD'];
+        echo "Search is set";
 
     }else{
-        if(isset($_POST['LD']) && isset($_POST['LR']) && isset($_POST['DD']) && isset($_POST['DR']) && isset($_POST['HD'])){
-        $LD = $_POST['LD'];
-        $LR = $_POST['LR'];
-        $DD = $_POST['DD'];
-        $DR = $_POST['DR'];
-        $HD = $_POST['HD'];
-        }
+        // if(isset($_POST['LD']) && isset($_POST['LR']) && isset($_POST['DD']) && isset($_POST['DR']) && isset($_POST['HD'])){
+        // $LD = $_POST['LD'];
+        // $LR = $_POST['LR'];
+        // $DD = $_POST['DD'];
+        // $DR = $_POST['DR'];
+        // $HD = $_POST['HD'];
+        // }
+        echo "Search is not set";
+
     }
+        // Retrieve the 'name' field from the form
+    if (isset($_POST['name'])) {
+        $name = htmlspecialchars($_POST['name']);
+        echo "Name: " . $name . "<br>";
+    }
+
+    // Retrieve the 'email' field from the form
+    if (isset($_POST['email'])) {
+        $email = htmlspecialchars($_POST['email']);
+        echo "Email: " . $email . "<br>";
+    }
+
+    // Retrieve the 'age' field from the form
+    if (isset($_POST['phone'])) {
+        $phone = htmlspecialchars($_POST['phone']);
+        echo "Age: " . $phone . "<br>";
+    }
+
 
     function checkDatabaseForCode($code) {
         include 'includes/database.php'; 
