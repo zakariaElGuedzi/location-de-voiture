@@ -1,11 +1,11 @@
 <?php
     include_once 'includes/database.php'; 
-    $name = isset($_POST['name']) ? $_POST['name'] : null;
-    $email = isset($_POST['email']) ? $_POST['email'] : null;
-    $phone = isset($_POST['phone']) ? $_POST['phone'] : null;
+    $carId = $_GET['CAR'];
+    $name = isset($_GET['name']) ? $_GET['name'] : null;
+    $email = isset($_GET['email']) ? $_GET['email'] : null;
+    $phone = isset($_GET['phone']) ? $_GET['phone'] : null;
     $status = 0;
     $currentDateTime = date("Y-m-d H:i:s");
-    $carId = $_GET['CAR'];
     // $IsFromSearch = $_GET['search']
     if(isset($_GET['Search'])){
         $LD = $_GET['LD'];
@@ -15,12 +15,12 @@
         $HD = $_GET['HD'];
 
     }else{
-        if(isset($_POST['LD']) && isset($_POST['LR']) && isset($_POST['DD']) && isset($_POST['DR']) && isset($_POST['HD'])){
-        $LD = $_POST['LD'];
-        $LR = $_POST['LR'];
-        $DD = $_POST['DD'];
-        $DR = $_POST['DR'];
-        $HD = $_POST['HD'];
+        if(isset($_GET['LD']) && isset($_GET['LR']) && isset($_GET['DD']) && isset($_GET['DR']) && isset($_GET['HD'])){
+        $LD = $_GET['LD'];
+        $LR = $_GET['LR'];
+        $DD = $_GET['DD'];
+        $DR = $_GET['DR'];
+        $HD = $_GET['HD'];
         }
     }
     echo $name;
