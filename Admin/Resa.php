@@ -1,60 +1,28 @@
 <?php
     include_once 'includes/database.php'; 
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
     $status = 0;
     $currentDateTime = date("Y-m-d H:i:s");
-
-    if (isset($_GET['CAR'])) {
-        $carId = htmlspecialchars($_GET['CAR']);
-        echo  $carId;
+    $carId = $_GET['CAR'];
+    // $IsFromSearch = $_GET['search']
+    if(isset($_GET['Search'])){
+        $LD = $_GET['LD'];
+        $LR = $_GET['LR'];
+        $DD = $_GET['DD'];
+        $DR = $_GET['DR'];
+        $HD = $_GET['HD'];
 
     }else{
-        echo " Car id not net";
+        if(isset($_POST['LD']) && isset($_POST['LR']) && isset($_POST['DD']) && isset($_POST['DR']) && isset($_POST['HD'])){
+        $LD = $_POST['LD'];
+        $LR = $_POST['LR'];
+        $DD = $_POST['DD'];
+        $DR = $_POST['DR'];
+        $HD = $_POST['HD'];
+        }
     }
-
-    if (isset($_GET['LD'])) {
-        $LD = htmlspecialchars($_GET['LD']);
-        echo  $LD;
-
-    }       
-    
-    if (isset($_GET['LR'])) {
-        $LR = htmlspecialchars($_GET['LR']);
-        echo $LR;
-    }       
-    
-    if (isset($_GET['DD'])) {
-        $DD = htmlspecialchars($_GET['DD']);
-        echo  $DD;
-
-    }       
-    
-    if (isset($_GET['DR'])) {
-        $DR = htmlspecialchars($_GET['DR']);
-        echo $DR;
-    }       
-    
-    if (isset($_GET['HD'])) {
-        $HD = htmlspecialchars($_GET['HD']);
-        echo  $HD;
-
-    } 
-
-    if (isset($_GET['name'])) {
-        $name = htmlspecialchars($_GET['name']);
-        echo $name;
-    }
-
-    if (isset($_GET['email'])) {
-        $email = htmlspecialchars($_GET['email']);
-        echo $email;
-    }
-
-    if (isset($_GET['phone'])) {
-        $phone = htmlspecialchars($_GET['phone']);
-        echo $phone;
-    }
-    echo  $carId;
-
 
     function checkDatabaseForCode($code) {
         include 'includes/database.php'; 
@@ -78,7 +46,7 @@
     $rsult = $sqlState->execute(array($reservationCode,$status,$currentDateTime,$carId,$name,$email,$phone,$LD,$LR,$DD,$DR,$HD));
     if($rsult){
       $SuccesMessage = "Voiture Bien Ajouté";
-        //   header("location:../ThankYouForBooking.php?ref=$reservationCode");
+          header("location:../ThankYouForBooking.php?ref=$reservationCode");
     }else{
       $Error = "Erreur lors de l'ajout de la voiture";
     }
