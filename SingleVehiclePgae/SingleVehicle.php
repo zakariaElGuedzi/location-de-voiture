@@ -11,17 +11,16 @@
         $DR = $_GET['DR'];
         $LR = $_GET['LR'];
         $sr = $_GET['Search'];
-    }else{
-        $LD = $_POST['LD'];
-        $LR = $_POST['LR'];
-        $DD = $_POST['DD'];
-        $DR = $_POST['DR'];
-        $HD = $_POST['HD'];
     }
     if(isset($_POST['Reserver'])){
         $name = $_POST['name'];
         $email = $_POST['email'];
         $phone = $_POST['phone'];
+        $LD = $_POST['LD'];
+        $LR = $_POST['LR'];
+        $DD = $_POST['DD'];
+        $DR = $_POST['DR'];
+        $HD = $_POST['HD'];
 
         function checkDatabaseForCode($code) {
             include 'includes/database.php'; 
@@ -340,14 +339,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                <!-- <?php if(isset($_GET['Search'])){?>
-                <form class="row g-3 needs-validation" method="post" novalidate action="../Admin/Resa.php?CAR=<?PHP echo $id?>&LD=<?php echo $LD ?>&DD=<?php echo $DD ?>&HD=<?php echo $HD ?>&DR=<?php echo $DR ?>&LR=<?php echo $LR ?>&Search=<?php echo $sr ?>">
-                <?php } else{?>
-                    <form class="row g-3 needs-validation" method="post" novalidate action="../Admin/Resa.php?CAR=<?PHP echo $id?>">
-                <?php
-                }
-                ?> -->
-                <form method="post" class="row g-3 needs-validation" method="post" novalidate>
+                <form method="post" class="row g-3 needs-validation" novalidate>
                     <div class="col-md-12">
                         <label for="validationCustom01" cl  ass="form-label">Nom et Prenom</label>
                         <input type="text" class="form-control" name="name" id="validationCustom01" placeholder="Mark" required>
