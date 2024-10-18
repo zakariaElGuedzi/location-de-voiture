@@ -82,13 +82,13 @@ LieuPrisenEnCharge.addEventListener('click', function() {
     inputField1.focus();
 });
 DatePrisencharge.addEventListener('click', function() {
-    inputField2.showPicker();
+    inputField2.focus();
 });
 DateRestitution.addEventListener('click', function() {
-    inputField3.showPicker();
+    inputField3.focus();
 });
 HeurePriseencharge.addEventListener('click', function() {
-    inputField4.showPicker();
+    inputField4.focus();
 });
 LieuRestitution.addEventListener('click', function() {
     inputField5.focus();
