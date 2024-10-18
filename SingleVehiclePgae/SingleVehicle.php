@@ -60,6 +60,7 @@
               header("location:../ThankYouForBooking.php?ref=$reservationCode");
         }else{
           $Error = "Erreur lors de l'ajout de la voiture";
+          echo  $Error;
         }
     }
 ?>
