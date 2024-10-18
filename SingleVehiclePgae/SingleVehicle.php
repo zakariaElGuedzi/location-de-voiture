@@ -20,13 +20,19 @@
         echo  $email;
         echo  $phone;
 
-        // if(!isset($_GET['Search'])){
-        //     $LD = $_POST['LD'];
-        //     $LR = $_POST['LR'];
-        //     $DD = $_POST['DD'];
-        //     $DR = $_POST['DR'];
-        //     $HD = $_POST['HD'];
-        // }
+        if(!isset($_GET['Search'])){
+            $LD = $_POST['LD'];
+            $LR = $_POST['LR'];
+            $DD = $_POST['DD'];
+            $DR = $_POST['DR'];
+            $HD = $_POST['HD'];
+            echo  $LD;
+            echo  $LR;
+            echo  $DD;
+            echo  $DR;
+            echo  $HD;
+            
+        }
     }
     //     $reservationCode = generateReservationCode(10);
     //     $sqlState = $pdo->prepare('INSERT INTO reservations VALUES(NULL,?,?,?,?,?,?,?,?,?,?,?,?)');
