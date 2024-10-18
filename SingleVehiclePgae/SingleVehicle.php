@@ -18,7 +18,6 @@
         $phone = $_POST['phone'];
         $status = 0;
         $currentDateTime = date("Y-m-d H:i:s");
-
         echo  $name;
         echo  $email;
         echo  $phone;
@@ -34,9 +33,25 @@
             echo  $DD;
             echo  $DR;
             echo  $HD;
-
         }
 
+        function checkDatabaseForCode($code) {
+            include_once "../Admin/includes/database.php";
+            $stmt = $pdo->prepare('SELECT COUNT(*) FROM reservations WHERE ReservationNum = :code');
+            $stmt->bindParam(':code', $code);
+            $stmt->execute();        
+            return $stmt->fetchColumn() > 0;
+        }
+        function generateReservationCode($length = 10) {
+            do {
+                $randomBytes = bin2hex(random_bytes($length / 2));
+                $reservationCode = strtoupper($randomBytes);
+                $isUnique = !checkDatabaseForCode($reservationCode);
+    
+            } while (!$isUnique); 
+    
+            return $reservationCode;
+        }
         $reservationCode = generateReservationCode(10);
         $sqlState = $pdo->prepare('INSERT INTO reservations VALUES(NULL,?,?,?,?,?,?,?,?,?,?,?,?)');
         $rsult = $sqlState->execute(array($reservationCode,$status,$currentDateTime,$id,$name,$email,$phone,$LD,$LR,$DD,$DR,$HD));
@@ -46,25 +61,6 @@
         }else{
           $Error = "Erreur lors de l'ajout de la voiture";
         }
-    }
-
-    
-    function checkDatabaseForCode($code) {
-        include_once "../Admin/includes/database.php";
-        $stmt = $pdo->prepare('SELECT COUNT(*) FROM reservations WHERE ReservationNum = :code');
-        $stmt->bindParam(':code', $code);
-        $stmt->execute();        
-        return $stmt->fetchColumn() > 0;
-    }
-    function generateReservationCode($length = 10) {
-        do {
-            $randomBytes = bin2hex(random_bytes($length / 2));
-            $reservationCode = strtoupper($randomBytes);
-            $isUnique = !checkDatabaseForCode($reservationCode);
-
-        } while (!$isUnique); 
-
-        return $reservationCode;
     }
 ?>
 <!DOCTYPE html>
