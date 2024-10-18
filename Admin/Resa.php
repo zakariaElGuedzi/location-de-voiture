@@ -10,7 +10,7 @@
         // $DD = $_GET['DD'];
         // $DR = $_GET['DR'];
         // $HD = $_GET['HD'];
-        echo "Search is set";
+        echo "Search is set 2";
 
     }else{
         // if(isset($_POST['LD']) && isset($_POST['LR']) && isset($_POST['DD']) && isset($_POST['DR']) && isset($_POST['HD'])){
@@ -20,7 +20,7 @@
         // $DR = $_POST['DR'];
         // $HD = $_POST['HD'];
         // }
-        echo "Search is not set";
+        echo "Search is not set 2";
 
     }
         // Retrieve the 'name' field from the form
