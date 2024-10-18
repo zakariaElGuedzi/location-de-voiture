@@ -2,7 +2,7 @@
     include_once 'includes/database.php'; 
     $status = 0;
     $currentDateTime = date("Y-m-d H:i:s");
-    $carId = $_GET['CAR'];
+    // $carId = $_GET['CAR'];
     // $IsFromSearch = $_GET['search']
     if(isset($_GET['Search'])){
         // $LD = $_GET['LD'];
@@ -29,8 +29,10 @@
         ECHO  $DD;
         echo  $DR;
         echo   $HD;
-
-
+    }
+    if(isset($_GET['carId'])){
+        $carId = $_GET['carId'];
+        echo  $carId;
 
     }
         // Retrieve the 'name' field from the form
