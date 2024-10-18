@@ -4,12 +4,15 @@
     $status = 0;
     $currentDateTime = date("Y-m-d H:i:s");
     $carId = $_GET['CAR'];
-    if(isset($_GET['Search'])){
+    if(isset($_GET['Search']) && isset($_POST['name']) && isset($_POST['email']) && isset($_POST['phone'])){
         $LD = $_GET['LD'];
         $LR = $_GET['LR'];
         $DD = $_GET['DD'];
         $DR = $_GET['DR'];
         $HD = $_GET['HD'];
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
         echo "Seeach is Set 2";
         echo "---------------";
         echo  $LD;
