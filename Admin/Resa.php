@@ -7,7 +7,9 @@
         $carId = htmlspecialchars($_GET['CAR']);
         echo  $carId;
 
-    } 
+    }else{
+        echo " Car id not net";
+    }
 
     if (isset($_GET['LD'])) {
         $LD = htmlspecialchars($_GET['LD']);
