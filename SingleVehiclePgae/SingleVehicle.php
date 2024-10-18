@@ -305,7 +305,7 @@
                 <?php if(isset($_GET['Search'])){?>
                     <form class="row g-3 needs-validation" method="post" novalidate action="../Admin/Resa.php?car=<?php echo htmlspecialchars($id) ?>&LD=<?php echo htmlspecialchars($LD) ?>&DD=<?php echo htmlspecialchars($DD) ?>&HD=<?php echo htmlspecialchars($HD) ?>&DR=<?php echo htmlspecialchars($DR) ?>&LR=<?php echo htmlspecialchars($LR) ?>&Search=<?php echo htmlspecialchars($sr) ?>">
                     <?php } else{?>
-                    <form class="row g-3 needs-validation" method="get" novalidate action="../Admin/Resa.php?car=<?php echo $id?>">
+                    <form class="row g-3 needs-validation" method="post" novalidate action="../Admin/Resa.php?car=<?php echo $id?>">
                 <?php
                 }
                 ?>
