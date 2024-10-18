@@ -133,7 +133,7 @@ if(isset($_POST['ChercherVeh'])){
                 IF(isset($error)){
             ?>
                 <div class="ErrorDiv">
-                    <p><?php echo "$error"?></p>
+                    <p class="errortext"><?php echo "$error"?></p>
                 </div>
             <?php
                 }

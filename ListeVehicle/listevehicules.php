@@ -54,7 +54,7 @@
             <div class="Filter">
                 <div>
                     <h5 class="bold"><?php ECHO $_GET['LD']?></h5>
-                    <p><?php echo "Le".$_GET['DD']?> A : <?php echo $_GET['HD']?></p>
+                    <p><?php echo "Le : ".$_GET['DD']?> A : <?php echo $_GET['HD']?></p>
                 </div>
                 <i class="fa-solid fa-chevron-right"></i>
                 <div>

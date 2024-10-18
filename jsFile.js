@@ -55,16 +55,6 @@ function closemenu() {
  }
 
 
-// scroll header
-    // document.addEventListener('scroll', function() {
-    //    const header = document.querySelector('.header');
-    //    if (window.scrollY > 50) { // Adjust the scroll position threshold as needed
-    //        header.classList.add('blurred');
-    //    } else {
-    //        header.classList.remove('blurred');
-    //    }
-    // });
-
 //searchbar
 const LieuPrisenEnCharge = document.querySelector('.LieuPrisenEnCharge');
 const DatePrisencharge = document.querySelector('.DatePrisencharge');
@@ -110,39 +100,17 @@ inputField3.addEventListener("change",function(){
 })
 
 function setMinEndDate() {
-    // Get the value of the start date
-    // const startDate = document.getElementById('startDate').value;
-    let startDate = inputField2.value
+    let startDate = inputField2.value; // Get the selected start date
     if (startDate) {
-        // Create a new Date object from the start date
         const start = new Date(startDate);
-        
-        // Add 4 days to the start date
-        start.setDate(start.getDate() + 4);
-
-        // Format the new date to YYYY-MM-DD (required format for input type="date")
-        const minEndDate = start.toISOString().split('T')[0];
-        
-        // Set the min attribute of the end date input
-        inputField3.setAttribute('min', minEndDate);
+        start.setDate(start.getDate() + 4); // Add 4 days to the start date
+        const minEndDate = start.toISOString().split('T')[0]; // Format to 'YYYY-MM-DD'
+        inputField3.setAttribute('min', minEndDate); // Set min attribute for end date
     }
 }
-// function search(){
-// if(inputField1.value == ""){
-//         LieuPrisenEnCharge.classList.add("inputError");
-//     }elseif(inputField2.value == ""){
-//         LieuPrisenEnCharge.classList.add("inputError");
 
-//     }elseif(inputField3.value == ""){
-//         LieuPrisenEnCharge.classList.add("inputError");
+// Call setMinEndDate when the start date changes
+inputField2.addEventListener('change', setMinEndDate);
 
-//     }elseif(inputField4.value == ""){
-//         LieuPrisenEnCharge.classList.add("inputError");
 
-//     }elseif(inputField5.value == ""){
-//         LieuPrisenEnCharge.classList.add("inputError");
-//     }else{
-//         alert("Recherche effectuée avec succès")
-//     }
-// }
 
