@@ -616,7 +616,7 @@ header {
         padding-top: 0;
     }
 }
-@media (max-width:460px){
+@media (min-width:460px){
     .ull{
         display: none;
     }
