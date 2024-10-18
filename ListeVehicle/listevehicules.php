@@ -112,45 +112,6 @@
     <?php
         }
     ?>
-
-    <!-- ad display -->
-    <!-- <div class="addisplay"></div> -->
-
-    <!-- <div class="info-card">
-        <div class="Contain1 ">
-            <div class="hautDiv">
-                <div class="img">
-                </div>
-                <div class="infoauto">
-                    <div class="infosDiv2">
-                        <p class="m-0">Coup de coear</p>
-                        <h3 class="m-0">Dacia Sandero <span>ou petite voiture</span></h3>
-                        <button class="bg-danger px-2">famillial</button>
-                    </div>
-                    <div class="detailsAuto">
-                                <p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.5 6a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0zM18 6A6 6 0 1 0 6 6a6 6 0 0 0 12 0zM3 23.25a9 9 0 1 1 18 0 .75.75 0 0 0 1.5 0c0-5.799-4.701-10.5-10.5-10.5S1.5 17.451 1.5 23.25a.75.75 0 0 0 1.5 0z"></path></svg>
-                                    5 siege</p>
-                                <p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.75 15.292v-.285a2.25 2.25 0 0 1 4.5 0v.285a.75.75 0 0 0 1.5 0v-.285a3.75 3.75 0 1 0-7.5 0v.285a.75.75 0 0 0 1.5 0zM13.54 5.02l-2.25 6.75a.75.75 0 0 0 1.424.474l2.25-6.75a.75.75 0 1 0-1.424-.474zM6.377 6.757a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25.75.75 0 0 0 0 1.5.375.375 0 1 1 0-.75.375.375 0 0 1 0 .75.75.75 0 0 0 0-1.5zm12.75 3.75a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25.75.75 0 0 0 0 1.5.375.375 0 1 1 0-.75.375.375 0 0 1 0 .75.75.75 0 0 0 0-1.5zm-1.496-3.75a1.125 1.125 0 1 0 1.119 1.131v-.006c0-.621-.504-1.125-1.125-1.125a.75.75 0 0 0 0 1.5.375.375 0 0 1-.375-.375V7.88a.375.375 0 1 1 .373.377.75.75 0 1 0 .008-1.5zm-8.254-3a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25.75.75 0 0 0 0 1.5.375.375 0 1 1 0-.75.375.375 0 0 1 0 .75.75.75 0 0 0 0-1.5zM21.88 17.541a16.503 16.503 0 0 0-19.76 0 .75.75 0 1 0 .898 1.202 15.003 15.003 0 0 1 17.964 0 .75.75 0 1 0 .898-1.202zm.62-5.534c0 5.799-4.701 10.5-10.5 10.5s-10.5-4.701-10.5-10.5 4.701-10.5 10.5-10.5 10.5 4.701 10.5 10.5zm1.5 0c0-6.627-5.373-12-12-12s-12 5.373-12 12 5.373 12 12 12 12-5.373 12-12zm-19.123-1.5a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25.75.75 0 0 0 0 1.5.375.375 0 1 1 0-.75.375.375 0 0 1 0 .75.75.75 0 0 0 0-1.5z"></path></svg>
-                                    Unlimited mileage</p>
-
-                                    <p>    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M1.5 6.75v-3a.75.75 0 0 0-1.5 0v3a.75.75 0 0 0 1.5 0m2.85-.45-2.25-3a.75.75 0 1 0-1.2.9l2.25 3a.75.75 0 1 0 1.2-.9m18.9 13.95h-3L21 21v-.75A2.25 2.25 0 0 1 23.25 18l-.75-.75v6a.75.75 0 0 0 1.5 0v-6a.75.75 0 0 0-.75-.75 3.75 3.75 0 0 0-3.75 3.75V21c0 .414.336.75.75.75h3a.75.75 0 0 0 0-1.5M18.024 2.056A.75.75 0 1 1 18.75 3v1.5a.75.75 0 1 1-.722.95.75.75 0 1 0-1.446.4A2.25 2.25 0 1 0 18.75 3c-1 0-1 1.5 0 1.5a2.25 2.25 0 1 0-2.174-2.832.75.75 0 0 0 1.448.388M12 18.75a.75.75 0 0 1 1.5 0c0 .315-.107.622-.304.868l-2.532 3.163A.75.75 0 0 0 11.25 24h3a.75.75 0 0 0 0-1.5h-3l.586 1.219 2.532-3.164c.41-.513.632-1.15.632-1.805a2.25 2.25 0 0 0-4.5 0 .75.75 0 0 0 1.5 0M8.25 1.5H9v5.25a.75.75 0 0 0 1.5 0V1.5A1.5 1.5 0 0 0 9 0h-.75a.75.75 0 0 0 0 1.5m0 6h3a.75.75 0 0 0 0-1.5h-3a.75.75 0 0 0 0 1.5m-6-7.5H.75A.75.75 0 0 0 0 .75v3c0 .414.336.75.75.75h1.5a2.25 2.25 0 0 0 0-4.5m0 1.5a.75.75 0 0 1 0 1.5H.75l.75.75v-3l-.75.75zm8.25 11.25v-3a.75.75 0 0 0-1.5 0v3a.75.75 0 0 0 1.5 0m1.5 0v1.5a.75.75 0 0 0 1.5 0v-1.5a.75.75 0 0 0-1.5 0m7.5 0v-3a.75.75 0 0 0-1.5 0v3a.75.75 0 0 0 1.5 0m3 1.5A2.25 2.25 0 0 0 20.25 12h-15A2.25 2.25 0 0 1 3 9.75a.75.75 0 0 0-1.5 0 3.75 3.75 0 0 0 3.75 3.75h15a.75.75 0 0 1 .75.75.75.75 0 0 0 1.5 0"></path></svg>
-                                        Manual
-                                    </p>                  
-                    </div>
-               </div>
-
-               <div class="prixAuto">
-                    <p>prix pour 24 jours :</p>
-                    <label for="">
-                        <h3 id="secondPrice"></h3>
-                    <s id="firstPrice"></s>
-                    </label>     
-                    <button> <a href="SingleVehicle.html"> Voir l'offre</a></button>
-               </div>
-            </div>
-
-        </div>
-    </div> -->
     <div class="Cariste">
         <div class="CarFilter">
             <form class="FilterConatiner" id="filterForm">
@@ -313,21 +274,15 @@
     </div>
     <script src="Listeveh.js"></script>
     <script>
-// JavaScript to send filter data via AJAX
 function filterCars() {
-    // Create a new FormData object
-    console.log("debuigng");
     var formData = new FormData(document.getElementById('filterForm'));
-    // Create an AJAX request
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'filter_cars.php', true); // Send data to filter_cars.php
+    xhr.open('POST', 'filter_cars.php', true); 
     xhr.onload = function() {
         if (xhr.status === 200) {
-            // Update the car list with the filtered data
             document.getElementById('car').innerHTML = xhr.responseText;
         }
     };
-    // Send the form data
     xhr.send(formData);
 }
 </script>
