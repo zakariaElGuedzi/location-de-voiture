@@ -1,16 +1,14 @@
 <?php
-    // Include database connection
     include_once "../Admin/includes/database.php";
 
-    // Fetch the car ID from GET request
     $id = $_GET['id'];
 
-    // Fetch car details from database based on Car ID
+
     $Cars = $pdo->prepare('SELECT * FROM cars WHERE CarId = ?');
     $Cars->execute(array($id));
     $cr = $Cars->fetch(PDO::FETCH_OBJ);
 
-    // Initialize GET variables if set
+
     $LD = isset($_GET['LD']) ? $_GET['LD'] : '';
     $DD = isset($_GET['DD']) ? $_GET['DD'] : '';
     $HD = isset($_GET['HD']) ? $_GET['HD'] : '';
@@ -18,21 +16,20 @@
     $LR = isset($_GET['LR']) ? $_GET['LR'] : '';
     $sr = isset($_GET['Search']) ? $_GET['Search'] : '';
 
-    // Handle form submission for reservation
+
     if (isset($_POST['Reserver'])) {
-        // Collect POST variables
         $name = $_POST['name'];
         $email = $_POST['email'];
         $phone = $_POST['phone'];
-        $status = 0; // Default status, can be updated later
+        $status = 0;
         $currentDateTime = date("Y-m-d H:i:s");
 
-        // Echo input values for debugging (optional)
+
         echo $name;
         echo $email;
         echo $phone;
 
-        // If 'Search' is not set, retrieve values from POST
+
         if (!isset($_GET['Search'])) {
             $LD = $_POST['LD'];
             $LR = $_POST['LR'];
@@ -40,7 +37,7 @@
             $DR = $_POST['DR'];
             $HD = $_POST['HD'];
 
-            // Echo variables for debugging (optional)
+
             echo $LD;
             echo $LR;
             echo $DD;
@@ -48,7 +45,7 @@
             echo $HD;
         }
 
-        // Function to check if reservation code is unique in the database
+
         function checkDatabaseForCode($code, $pdo) {
             $stmt = $pdo->prepare('SELECT COUNT(*) FROM reservations WHERE ReservationNum = :code');
             $stmt->bindParam(':code', $code);
@@ -56,8 +53,7 @@
             return $stmt->fetchColumn() > 0;
         }
 
-        // Function to generate unique reservation code
-        function generateReservationCode($pdo, $length = 10) {
+         function generateReservationCode($pdo, $length = 10) {
             do {
                 $randomBytes = bin2hex(random_bytes($length / 2));
                 $reservationCode = strtoupper($randomBytes);
@@ -67,18 +63,16 @@
             return $reservationCode;
         }
 
-        // Generate a unique reservation code
-        $reservationCode = generateReservationCode($pdo, 10);
+         $reservationCode = generateReservationCode($pdo, 10);
 
-        // Insert reservation into the database
-        $sqlState = $pdo->prepare('INSERT INTO reservations VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+         $sqlState = $pdo->prepare('INSERT INTO reservations VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
         $result = $sqlState->execute(array($reservationCode, $status, $currentDateTime, $id, $name, $email, $phone, $LD, $LR, $DD, $DR, $HD));
 
-        // Redirect to Thank You page if successful, otherwise display error
+ 
         if ($result) {
             $successMessage = "Voiture Bien Ajouté";
             header("Location: ../ThankYouForBooking.php?ref=$reservationCode");
-            exit(); // Ensure no further code execution after redirect
+            exit(); 
         } else {
             $error = "Erreur lors de l'ajout de la voiture";
             echo $error;
