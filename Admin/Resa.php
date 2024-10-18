@@ -24,7 +24,7 @@
 
     }
         // Retrieve the 'name' field from the form
-    if (isset($_POST['name'])) {
+    if (isset($_GET['name'])) {
         $name = htmlspecialchars($_GET['name']);
         echo "Name: " . $name . "<br>";
     }else{
@@ -32,14 +32,14 @@
     }
 
     // Retrieve the 'email' field from the form
-    if (isset($_POST['email'])) {
-        $email = htmlspecialchars($_POST['email']);
+    if (isset($_GET['email'])) {
+        $email = htmlspecialchars($_GET['email']);
         echo "Email: " . $email . "<br>";
     }
 
     // Retrieve the 'age' field from the form
-    if (isset($_POST['phone'])) {
-        $phone = htmlspecialchars($_POST['phone']);
+    if (isset($_GET['phone'])) {
+        $phone = htmlspecialchars($_GET['phone']);
         echo "Age: " . $phone . "<br>";
     }
 
