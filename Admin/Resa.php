@@ -10,7 +10,7 @@
         $DD = $_GET['DD'];
         $DR = $_GET['DR'];
         $HD = $_GET['HD'];
-        echo "Seeach is Set";
+        echo "Seeach is Set 2";
         echo "---------------";
         echo  $LD;
         echo  $LR;
@@ -32,7 +32,7 @@
         $name = $_POST['name'];
         $email = $_POST['email'];
         $phone = $_POST['phone'];
-        echo "Seeach is not Set";
+        echo "Seeach is not Set 2";
         echo "---------------";
         echo  $LD;
         echo  $LR;
