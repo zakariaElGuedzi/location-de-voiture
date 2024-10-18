@@ -22,6 +22,7 @@
     //     $HD = $_GET['HD'];
     //     }
     // }
+    ECHO "TEST";
     echo $name;
     echo $email;
     echo  $phone;
