@@ -25,8 +25,7 @@
         echo  $phone;
 
 
-    }else{
-        if(isset($_POST['LD']) && isset($_POST['LR']) && isset($_POST['DD']) && isset($_POST['DR']) && isset($_POST['HD']) && isset($_POST['name']) && isset($_POST['email']) && isset($_POST['phone'])){
+    }elseif(isset($_POST['LD']) && isset($_POST['LR']) && isset($_POST['DD']) && isset($_POST['DR']) && isset($_POST['HD']) && isset($_POST['name']) && isset($_POST['email']) && isset($_POST['phone'])){
         $LD = $_POST['LD'];
         $LR = $_POST['LR'];
         $DD = $_POST['DD'];
@@ -46,7 +45,8 @@
         echo  $email;
         echo  $phone;
 
-        }
+    }else{
+        echo "none of these";
     }
 
     function checkDatabaseForCode($code) {
