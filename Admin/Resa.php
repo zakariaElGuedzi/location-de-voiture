@@ -1,32 +1,16 @@
 <?php
     include_once 'includes/database.php'; 
-    // $carId = $_GET['CAR'];
-    $name = $_GET['name'];
-     $email = $_GET['email'];
-     $phone = $_GET['phone'];
 
-    $status = 0;
-    $currentDateTime = date("Y-m-d H:i:s");
-    // $IsFromSearch = $_GET['search']
-    // if(isset($_GET['Search'])){
-    //     $LD = $_GET['LD'];
-    //     $LR = $_GET['LR'];
-    //     $DD = $_GET['DD'];
-    //     $DR = $_GET['DR'];
-    //     $HD = $_GET['HD'];
+    // Check if any GET variables are set
+    if (!empty($_GET)) {
+        // Loop through all GET variables and print the key-value pairs
+        foreach ($_GET as $key => $value) {
+            echo "Field name: " . htmlspecialchars($key) . " - Value: " . htmlspecialchars($value) . "<br>";
+        }
+    } else {
+        echo "No data received via GET method.";
+    }
 
-    // }else{if(isset($_GET['LD']) && isset($_GET['LR']) && isset($_GET['DD']) && isset($_GET['DR']) && isset($_GET['HD'])){
-    //     $LD = $_GET['LD'];
-    //     $LR = $_GET['LR'];
-    //     $DD = $_GET['DD'];
-    //     $DR = $_GET['DR'];
-    //     $HD = $_GET['HD'];
-    //     }
-    // }
-    ECHO "TEST 2";
-    echo $name;
-    echo $email;
-    echo  $phone;
 
     function checkDatabaseForCode($code) {
         include 'includes/database.php'; 
