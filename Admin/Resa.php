@@ -30,11 +30,13 @@
         echo  $DR;
         echo   $HD;
     }
-    if(isset($_GET['carId'])){
-        $carId = $_GET['carId'];
+    if(isset($_GET['car'])){
+        $carId = $_GET['car'];
         echo  $carId;
-
+    }else{
+        echo "carId is not set";
     }
+
         // Retrieve the 'name' field from the form
     if (isset($_GET['name'])) {
         $name = htmlspecialchars($_GET['name']);
