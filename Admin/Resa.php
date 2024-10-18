@@ -13,14 +13,24 @@
         echo "Search is set 2";
 
     }else{
-        // if(isset($_POST['LD']) && isset($_POST['LR']) && isset($_POST['DD']) && isset($_POST['DR']) && isset($_POST['HD'])){
-        // $LD = $_POST['LD'];
-        // $LR = $_POST['LR'];
-        // $DD = $_POST['DD'];
-        // $DR = $_POST['DR'];
-        // $HD = $_POST['HD'];
-        // }
+
         echo "Search is not set 2";
+
+    }
+
+    if(isset($_GET['LD']) && isset($_GET['LR']) && isset($_GET['DD']) && isset($_GET['DR']) && isset($_GET['HD'])){
+        $LD = $_GET['LD'];
+        $LR = $_GET['LR'];
+        $DD = $_GET['DD'];
+        $DR = $_GET['DR'];
+        $HD = $_GET['HD'];
+        echo $LD;
+        ECHO  $LR;
+        ECHO  $DD;
+        echo  $DR;
+        echo   $HD;
+
+
 
     }
         // Retrieve the 'name' field from the form
