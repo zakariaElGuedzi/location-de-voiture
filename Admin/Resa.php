@@ -2,7 +2,12 @@
     include_once 'includes/database.php'; 
     $status = 0;
     $currentDateTime = date("Y-m-d H:i:s");
-    $carId = $_GET['CAR'];
+
+    if (isset($_GET['CAR'])) {
+        $carId = htmlspecialchars($_GET['CAR']);
+        echo  $carId;
+
+    } 
 
     if (isset($_GET['LD'])) {
         $LD = htmlspecialchars($_GET['LD']);
