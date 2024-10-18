@@ -100,17 +100,13 @@ inputField3.addEventListener("change",function(){
 })
 
 function setMinEndDate() {
-    let startDate = inputField2.value; // Get the selected start date
+    let startDate = inputField2.value
     if (startDate) {
         const start = new Date(startDate);
-        start.setDate(start.getDate() + 4); // Add 4 days to the start date
-        const minEndDate = start.toISOString().split('T')[0]; // Format to 'YYYY-MM-DD'
-        inputField3.setAttribute('min', minEndDate); // Set min attribute for end date
+        start.setDate(start.getDate() + 4);
+        const minEndDate = start.toISOString().split('T')[0];
+        inputField3.setAttribute('min', minEndDate);
     }
 }
-
-// Call setMinEndDate when the start date changes
-inputField2.addEventListener('change', setMinEndDate);
-
 
 
