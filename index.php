@@ -39,10 +39,7 @@ if(isset($_POST['ChercherVeh'])){
             <div class="logo d-inline">
                 <h1></h1>
             </div>
-            <!-- <div class="contact-info">
-                <img src="img/fr-lng.png" class="d-inline langHead"></img>
-                <p class="d-inline"><i class="fa-solid fa-phone px-2"></i>0638 38 372 2</p>
-            </div> -->
+
         </div>
         <div class="container container2">
             <nav class="navHeader">
@@ -56,23 +53,28 @@ if(isset($_POST['ChercherVeh'])){
             </nav>
             <div class="lastcontHeader p-2">
                 <i class="sss fa-solid fa-bars"  onclick="afficheMenuPhone()"></i>
-                <button class="callToActionHeader bg-success px-3 py-2">Reserver Maintenant</button>
+                <a href="../ListeVehicle/listevehicules.php" class="callToActionHeader bg-success px-3 py-2">Reserver Maintenant</a>
             </div>
             <!-- menu phone -->
             <div class="menuphone" id="menPhone">
-                <div class="menu1">
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="../ListeVehicle/listevehicules.php" blank>Nos Voitures</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="../Admin/index.php">Admin Panel (demo)</a></li>
-                    </ul>
+                <div class="imagediv">
+                    <img src="img/lgBlack.png"  alt="" srcset="">
                 </div>
-                <div class="closeMenu px-3">
-                    <ul>
-                        <li><i class="fa-solid fa-x" onclick="closemenu()"></i></li>
-                    </ul>
+                <div class="MenuDiv">
+                    <div class="menu1">
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="../ListeVehicle/listevehicules.php" blank>Nos Voitures</a></li>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="../Admin/index.php">Admin Panel (demo)</a></li>
+                        </ul>
+                    </div>
+                    <div class="closeMenu px-3">
+                        <ul>
+                            <li><i class="fa-solid fa-x" onclick="closemenu()"></i></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
@@ -85,62 +87,6 @@ if(isset($_POST['ChercherVeh'])){
         </div>
             
     </header>
-
-    <!-- <section class="HomeinputsSection"> -->
-        <!-- <div class="Homeinputs ">
-            <form class="Filter2" method="post" novalidate>
-                    <div class="LieuPrisenEnCharge">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <div>
-                            <p>Lieu de prise en charge</p>
-                            <input type="text" name="LieuDepart" placeholder="Lieu de prise en charge">
-                        </div>
-                    </div>
-                    
-                    <div class="DatePrisencharge">
-                        <i class="fa-solid fa-calendar-days"></i>
-                        <div>
-                            <p>Date de prise en charge</p>
-                            <input type="date" name="DateDepart" onchange="setMinEndDate()">
-                        </div>
-                    </div>
-                    <div class="HeurePriseencharge">
-                        <i class="fa-regular fa-clock"></i>
-                        <div>
-                            <p>Heure</p>
-                            <input type="time" name="HeureDepart">
-                        </div>
-                    </div>
-                    <div class="DateRestitution">
-                        <i class="fa-solid fa-calendar-days"></i>
-                        <div>
-                            <p>Date de restitution</p>
-                            <input type="date" name="DateResti">
-                        </div>
-                    </div>
-                    <div class="LieuRestitution">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <div>
-                            <p>Lieu de prise restitution</p>
-                            <input type="text" name="LieuResti" placeholder="Lieu de restitution">
-                        </div>
-                    </div>
-                    <button class="BtnModifier" type="submit" name="ChercherVeh">Chercher</button>
-            </form>
-            <?PHP
-                IF(isset($error)){
-            ?>
-                <div class="ErrorDiv">
-                    <p><?php echo "$error"?></p>
-                </div>
-            <?php
-                }
-            ?>
-
-        </div> -->
-    <!-- </section> -->
-    
-    
   
     <section class="sec2">
         <div class="Homeinputs ">
@@ -208,26 +154,6 @@ if(isset($_POST['ChercherVeh'])){
     </section>
     
 
-    <!-- GALERIE SETTING -->
-    <!-- <div class="galleryDiv hidden">
-        <i class="fa-regular fa-images"></i>
-        <div class="divTipgallery">
-            <div class="titlegalry galry">
-                <img src="img/SPLASH-01.png" alt="">
-                <h2 style="color: aliceblue;">Galerie GALERIE</h2>
-            </div>
-            <h1>Notre Galerie De Travail</h1>
-            <p>Notre Workplace Gallery présente des bureaux modernes, une collaboration en équipe et une culture amusante.</p>
-        </div>
-        <div class="galerie">
-            <div alt="1" class="item item1"></div>
-            <div  alt="2" class="item item2"></div>
-            <div alt="3" class="item item3"></div>
-            <div alt="4" class="item item4"></div>
-            <div  alt="5" class="item item5"></div>
-        </div>
-    </div>
- -->
 
  <!-- section dirent -->
  <section class="sectionDirent">
@@ -302,22 +228,6 @@ if(isset($_POST['ChercherVeh'])){
                 </div>
      </section>
    
-
-        <!-- <div class="faq-item">
-            <div class="faq-question">
-                <p>Quels documents dois-je fournir ?</p>
-                <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">Vous pouvez contacter notre service client au numéro indiqué sur votre contrat, ou envoyer un email à support@exemple.com.</div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">
-                <p>Quels documents dois-je fournir ?</p>
-                <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">Oui, une carte de crédit est requise pour couvrir le coût de la location et la caution.</div>
-        </div> -->
     </div>
 
 
@@ -335,18 +245,6 @@ if(isset($_POST['ChercherVeh'])){
             <p>"Roulez vers l'aventure : des prix imbattables et des véhicules prêts à vous emmener partout! "</p>
             <p id="yearFoot"></p>
         </div>
-
-        <!-- <div class="smallContent2">
-            <h1>Media</h1>
-            <h5>Suivez-nous</h5>
-            <div  class="Media">
-                <i class="fa-brands fa-square-instagram" style="cursor: pointer;" ></i>
-                <i class="fa-brands fa-facebook" style="cursor: pointer;"></i>
-                <i class="fa-brands fa-tiktok" style="cursor: pointer;"></i>
-                <i class="fa-brands fa-linkedin" style="cursor: pointer;"></i>
-            </div>
-            <p style="font-size: 1rem;">contact@geniuscenterprive.com</p>
-        </div> -->
 
         <div class="smallContent">
             <h1>Heures de travail</h1>

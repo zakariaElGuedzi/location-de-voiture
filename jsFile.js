@@ -39,11 +39,18 @@ let menphone = document.querySelector('.menuphone');
 function closemenu() {
    if ( menphone.style.display == "flex") {
       menphone.style.display = "none"
+      document.body.style.overflow = 'auto'; // or 'initial'
+      document.querySelector(".Homeinputs").style = "z-index:2"
+
+
    }
 }
  function afficheMenuPhone() {
     if ( menphone.style.display == "none" || menphone.style.display == "" ) {
          menphone.style.display = "flex"
+         document.body.style.overflow = 'hidden';
+         document.querySelector(".Homeinputs").style = "z-index:0"
+
     }
  }
 

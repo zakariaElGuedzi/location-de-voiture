@@ -9,6 +9,7 @@ body {
     font-family: "Poppins", sans-serif !important;
     line-height: 1.6;
     background-color: #f4f4f4;
+    position: relative;
     // background: linear-gradient(153deg, rgba(255, 255, 255, 1) 42%, rgba(7, 14, 25, 0.48) 99%);
 }
 $primary-color :    var( rgb(222, 162, 32) );
@@ -108,24 +109,55 @@ nav ul li a:hover {
         i {
             display: none;
         }
+        a{
+            text-decoration: none !important;
+            color: white !important;
+        }
     }
 
 // menu phone
 .menuphone {
-    height: 30vh;
-    background-color: #354bb1;
-    width: 100vw;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 20px;
+    // height: 100vh;
+    // background-color: #354bb1;
+    // width: 100vw;
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    // display: flex;
+    // align-items: center;
+    // justify-content: space-between;
+    // padding-left: 20px;
     animation: moveRight 1s ease-in-out  1 alternate; 
     display: none;
-    opacity: 0.97;
-    z-index: 2222 !important; 
+    // opacity: 0.97;
+    // z-index: 2222 !important;
+    // overflow: hidden;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 30px;
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+    z-index: 200 !important;
+    .imagediv{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+            width: 170px;
+        }
+    }
+    .MenuDiv{
+        display: flex;
+        margin-top: 30px;
+    }
+    .menu1{
+        width: 100%;
+        z-index: 201;
+        height: 100%;
+    }
     @keyframes moveRight {
         0% {  left: -70%;
             opacity: 0.6;    
@@ -136,23 +168,26 @@ nav ul li a:hover {
     }
     .menu1 ul {
         border-left: 4px solid #223172;
+        height: 100%;
      }
     .menu1 ul li {
         list-style: none;
         padding-left: 20px;
     }
     .menu1 ul li a {
-        color: rgb(255, 250, 250);
         line-height: 40px;
         font-size: larger;
+        color: black;
     }
     .closeMenu {
         opacity: .7;
     }
     .closeMenu ul li i {
-        border-radius: 50%;
+        border-radius: 100%;
         background-color: rgba(32, 28, 28, 0.403);
         padding: 10px;   
+        cursor: pointer;
+
     }
     .closeMenu ul li {
         list-style: none;
@@ -171,7 +206,7 @@ nav ul li a:hover {
     gap: 10px;
     justify-content: center;
     align-items: center;
-    z-index: 11 !important;
+    z-index: 100;
     margin-top: -2.5rem !important;
     width: fit-content;
     position: absolute;    
@@ -361,7 +396,6 @@ nav ul li a:hover {
     flex-wrap: wrap;
     // flex-direction: column;
     position: relative;
-    
 }
 
 .argumentDiv {
@@ -954,6 +988,10 @@ footer img {
             i {
                 display: inline !important;
             }
+            a{
+                text-decoration: none;
+                color: white;
+            }
     }
     .galerie {
         height: 25rem;
@@ -1052,6 +1090,10 @@ footer img {
         .lastcontHeader {
             i {
                 display: flex !important;
+            }
+            a{
+                text-decoration: none;
+                color: white;
             }
         }
     }
