@@ -16,41 +16,45 @@
         $name = $_POST['name'];
         $email = $_POST['emaiSl'];
         $phone = $_POST['phone'];
-        if(!isset($_GET['Search'])){
-            $LD = $_POST['LD'];
-            $LR = $_POST['LR'];
-            $DD = $_POST['DD'];
-            $DR = $_POST['DR'];
-            $HD = $_POST['HD'];
-        }
-
-        $reservationCode = generateReservationCode(10);
-        $sqlState = $pdo->prepare('INSERT INTO reservations VALUES(NULL,?,?,?,?,?,?,?,?,?,?,?,?)');
-        $rsult = $sqlState->execute(array($reservationCode,$status,$currentDateTime,$id,$name,$email,$phone,$LD,$LR,$DD,$DR,$HD));
-        if($rsult){
-          $SuccesMessage = "Voiture Bien Ajouté";
-              header("location:../ThankYouForBooking.php?ref=$reservationCode");
-        }else{
-          $Error = "Erreur lors de l'ajout de la voiture";
-        }
+        echo  $name;
+        echo  $email;
+        echo  $phone;
+        
+        // if(!isset($_GET['Search'])){
+        //     $LD = $_POST['LD'];
+        //     $LR = $_POST['LR'];
+        //     $DD = $_POST['DD'];
+        //     $DR = $_POST['DR'];
+        //     $HD = $_POST['HD'];
+        // }
     }
-    function checkDatabaseForCode($code) {
-        include_once "../Admin/includes/database.php";
-        $stmt = $pdo->prepare('SELECT COUNT(*) FROM reservations WHERE ReservationNum = :code');
-        $stmt->bindParam(':code', $code);
-        $stmt->execute();        
-        return $stmt->fetchColumn() > 0;
-    }
-    function generateReservationCode($length = 10) {
-        do {
-            $randomBytes = bin2hex(random_bytes($length / 2));
-            $reservationCode = strtoupper($randomBytes);
-            $isUnique = !checkDatabaseForCode($reservationCode);
+    //     $reservationCode = generateReservationCode(10);
+    //     $sqlState = $pdo->prepare('INSERT INTO reservations VALUES(NULL,?,?,?,?,?,?,?,?,?,?,?,?)');
+    //     $rsult = $sqlState->execute(array($reservationCode,$status,$currentDateTime,$id,$name,$email,$phone,$LD,$LR,$DD,$DR,$HD));
+    //     if($rsult){
+    //       $SuccesMessage = "Voiture Bien Ajouté";
+    //           header("location:../ThankYouForBooking.php?ref=$reservationCode");
+    //     }else{
+    //       $Error = "Erreur lors de l'ajout de la voiture";
+    //     }
+    // }
+    // function checkDatabaseForCode($code) {
+    //     include_once "../Admin/includes/database.php";
+    //     $stmt = $pdo->prepare('SELECT COUNT(*) FROM reservations WHERE ReservationNum = :code');
+    //     $stmt->bindParam(':code', $code);
+    //     $stmt->execute();        
+    //     return $stmt->fetchColumn() > 0;
+    // }
+    // function generateReservationCode($length = 10) {
+    //     do {
+    //         $randomBytes = bin2hex(random_bytes($length / 2));
+    //         $reservationCode = strtoupper($randomBytes);
+    //         $isUnique = !checkDatabaseForCode($reservationCode);
 
-        } while (!$isUnique); 
+    //     } while (!$isUnique); 
 
-        return $reservationCode;
-    }
+    //     return $reservationCode;
+    // }
 ?>
 <!DOCTYPE html>
 <html lang="en">
