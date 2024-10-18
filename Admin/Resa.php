@@ -6,7 +6,6 @@
     $status = 0;
     $currentDateTime = date("Y-m-d H:i:s");
     $carId = $_GET['CAR'];
-    // $IsFromSearch = $_GET['search']
     if(isset($_GET['Search'])){
         $LD = $_GET['LD'];
         $LR = $_GET['LR'];
