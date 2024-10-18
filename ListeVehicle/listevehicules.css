@@ -482,4 +482,9 @@ svg path {
     margin: 0;
     padding-top: 0;
   }
+}
+@media (max-width: 460px) {
+  .ull {
+    display: none;
+  }
 }/*# sourceMappingURL=listevehicules.css.map */
