@@ -21,7 +21,7 @@
         echo  $name;
         echo  $email;
         echo  $phone;
-
+        echo "Modif 1 ";
         if(!isset($_GET['Search'])){
             $LD = $_POST['LD'];
             $LR = $_POST['LR'];
