@@ -56,7 +56,7 @@ if (isset($_POST['connecter'])) {
                                 <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
                              </svg>
                           </span>
-                          <input type="text" class="form-control" name="Username" id="email" autofocus="" required="">
+                          <input type="text" class="form-control" name="Username" placeholder="Username" id="email" autofocus="" required="">
                        </div>
                     </div>
                     <div class="form-group">

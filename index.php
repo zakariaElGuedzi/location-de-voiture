@@ -51,7 +51,6 @@ if(isset($_POST['ChercherVeh'])){
                     <li><a href="../ListeVehicle/listevehicules.php" blank>Nos Voitures</a></li>
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="../Admin/index.php">Admin Panel (demo)</a></li>
                 </ul>
             </nav>
             <div class="lastcontHeader p-2">
@@ -70,7 +69,6 @@ if(isset($_POST['ChercherVeh'])){
                             <li><a href="../ListeVehicle/listevehicules.php" blank>Nos Voitures</a></li>
                             <li><a href="#about">About Us</a></li>
                             <li><a href="#contact">Contact</a></li>
-                            <li><a href="../Admin/index.php">Admin Panel (demo)</a></li>
                         </ul>
                     </div>
                     <div class="closeMenu px-3">
