@@ -303,7 +303,7 @@
                                     <p>mer. 2 oct. - 10:00</p>
                                 </div>
                                 <div class="location">
-                                    <p class="bold">Casablanca Aéroport</p>
+                                    <p class="bold"><?php echo $_GET['LD']?></p>
                                     <a href="#">Voir les instructions relatives à la prise en charge</a>
                                 </div>
                             </div>
@@ -317,7 +317,7 @@
                                     <p>sam. 5 oct. - 10:00</p>
                                 </div>
                                 <div class="location">
-                                    <p class="bold">Casablanca Aéroport</p>
+                                    <p class="bold"><?php echo $_GET['LR']?></p>
                                     <a href="#">Voir les instructions relatives à la restitution</a>
                                 </div>
                             </div>
