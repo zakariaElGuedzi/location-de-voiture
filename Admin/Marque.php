@@ -140,13 +140,19 @@ if(isset($_POST['AjouterMarque'])){
     supprimeropButton.href = 'supprimermarque.php?id=' + opId;
   });
 
+
+
   var modal3 = document.getElementById('modal3-default');
     modal3.addEventListener('show.bs.modal', function(event) {
     var button = event.relatedTarget;
     var opId = button.getAttribute('data-marque-id');
     var modifier = modal3.querySelector('#modifier-marque');
-    let marque = document.getElementById("Newmarque").value
-    modifier.href =`modifiermarque.php?id=${opId}&newmarque='${marque}'`
-  });
+    var marque = document.getElementById("Newmarque")
+    marque.addEventListener('input', function(event) {
+        console.log(event.target.value);  
+        var NewMarquevalue = event.target.value
+        modifier.href =`modifiermarque.php?id=${opId}&newmarque=${NewMarquevalue}`
 
+    });
+  });
 </script>

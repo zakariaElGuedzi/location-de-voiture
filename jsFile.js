@@ -148,14 +148,14 @@ function setMinEndDate() {
 }
 
 
-function validateEndDate() {
-    const endDate = inputField3.value;
-    const minEndDate = inputField3.getAttribute('min');
+// function validateEndDate() {
+//     const endDate = inputField3.value;
+//     const minEndDate = inputField3.getAttribute('min');
 
-    if (endDate < minEndDate) {
-        alert("End date cannot be before the start date plus 4 days.");
-        inputField3.value = ""; // Clear the invalid input
-    }
-}
+//     if (endDate < minEndDate) {
+//         alert("End date cannot be before the start date plus 4 days.");
+//         inputField3.value = ""; // Clear the invalid input
+//     }
+// }
 
 
