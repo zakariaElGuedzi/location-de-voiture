@@ -146,22 +146,16 @@ function setMinEndDate() {
         inputField3.setAttribute('min', minEndDate);
     }
 }
-// function search(){
-// if(inputField1.value == ""){
-//         LieuPrisenEnCharge.classList.add("inputError");
-//     }elseif(inputField2.value == ""){
-//         LieuPrisenEnCharge.classList.add("inputError");
 
-//     }elseif(inputField3.value == ""){
-//         LieuPrisenEnCharge.classList.add("inputError");
 
-//     }elseif(inputField4.value == ""){
-//         LieuPrisenEnCharge.classList.add("inputError");
+function validateEndDate() {
+    const endDate = inputField3.value;
+    const minEndDate = inputField3.getAttribute('min');
 
-//     }elseif(inputField5.value == ""){
-//         LieuPrisenEnCharge.classList.add("inputError");
-//     }else{
-//         alert("Recherche effectuée avec succès")
-//     }
-// }
+    if (endDate < minEndDate) {
+        alert("End date cannot be before the start date plus 4 days.");
+        inputField3.value = ""; // Clear the invalid input
+    }
+}
+
 
