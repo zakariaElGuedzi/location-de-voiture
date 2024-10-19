@@ -26,7 +26,7 @@ if (isset($_POST['connecter'])) {
   <section class="vh-lg-100 mt-5 mt-lg-0 bg-soft d-flex align-items-center">
      <div class="container">
         <p class="text-center">
-           <a href="../index.php" class="d-flex align-items-center justify-content-center">
+           <a href="https://perlaplaya.site/index.php" class="d-flex align-items-center justify-content-center">
               <svg class="icon icon-xs me-2" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                  <path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd"></path>
               </svg>
@@ -37,7 +37,7 @@ if (isset($_POST['connecter'])) {
            <div class="col-12 d-flex align-items-center justify-content-center">
               <div class="bg-white shadow border-0 rounded border-light p-4 p-lg-5 w-100 fmxw-500">
                  <div class="text-center text-md-center mb-4 mt-md-0">
-                    <img src="../img/lgBlack.png" alt="" width="200px">
+                    <img src="https://perlaplaya.site/img/lgBlack.png" alt="" width="200px">
                  </div>
                  <form  method="post" class="mt-4">
                     <?php
