@@ -81,13 +81,18 @@ const inputField5 = LieuRestitution.querySelector('input');
 LieuPrisenEnCharge.addEventListener('click', function() {
     inputField1.focus();
 });
-DatePrisencharge.addEventListener('touchstart', function() {
+DatePrisencharge.addEventListener('click', function() {
     inputField2.showPicker();
 });
-DateRestitution.addEventListener('touchstart', function() {
-    inputField3.showPicker();
+DateRestitution.addEventListener('click', function() {
+    const mediaQuery = window.matchMedia("(max-width: 468px)");
+    if(mediaQuery.matches){
+        inputField3.focus();
+    }else{
+        inputField3.showPicker();
+    }
 });
-HeurePriseencharge.addEventListener('touchstart', function() {
+HeurePriseencharge.addEventListener('click', function() {
     inputField4.showPicker();
 });
 LieuRestitution.addEventListener('click', function() {
