@@ -337,7 +337,7 @@
                     <div class="Price">
                         <div class="OrgPrice">
                             <p>Montant de la location par <b>4</b> jour :</p>
-                            <p><?php echo $cr->CarOriginalPrice?> MAD</p>
+                            <p class="bold"><?php echo $cr->CarOriginalPrice?> MAD</p>
                         </div>
                         <div class="Reduction">
                             <?php if(!$cr->CarReduction == 0){?>
@@ -346,6 +346,7 @@
                             <?php }?>
                         </div>
                     </div>
+                    <?php if(isset($_GET['Searxh'])){?>
                     <hr>
                     <div class="FinalPrice">
                         <p class="bold">Prix total par <b><?php echo $days?></b> jours :</p>
@@ -353,8 +354,9 @@
                             <p class="bold"><?PHP echo (($cr->CarPricewithReduction * $days)/4)?> MAD</p>
                         <?php }else{?>
                             <p class="bold"><?PHP echo (($cr->CarOriginalPrice * $days)/4)?> MAD</p>
-                            <?php }?>
+                        <?php }?>
                     </div>
+                    <?php }?>
                 </div>
                 <div class="alert alert-success mt-3" role="alert">
                     <h6 class="alert-heading">PAIEMENT A LA LIVRAISON</h6>
@@ -367,7 +369,7 @@
         </div>
     </section>
         <!-- Modal Reservation -->
-        <div class="modal fade" id="modal-default" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+        <div class="modal fade" " id="modal-default" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -402,48 +404,50 @@
                     <?php
                         if(!isset($_GET['Search'])){
                     ?>
-                    <div class="col-md-12">
-                            <label for="validationCustomUsername" class="form-label">Lieu Depart</label>
-                        <div class="input-group has-validation">
-                            <input type="text" class="form-control" name="LD"  id="validationCustomUsername" placeholder="Casablanca" aria-describedby="inputGroupPrepend" required>
-                            <div class="invalid-feedback">
-                                Entrer un lieu valid
+                    <div class="Parcours row">
+                        <div class="col-md-12 mt-3">
+                                <label for="validationCustomUsername" class="form-label">Lieu Depart</label>
+                            <div class="input-group has-validation">
+                                <input type="text" class="form-control" name="LD"  id="validationCustomUsername" placeholder="Casablanca" aria-describedby="inputGroupPrepend" required>
+                                <div class="invalid-feedback">
+                                    Entrer un lieu valid
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-12">
-                            <label for="validationCustomUsername" class="form-label">Lieu restitution</label>
-                        <div class="input-group has-validation">
-                            <input type="text" class="form-control" name="LR"  id="validationCustomUsername" placeholder="Tanger" aria-describedby="inputGroupPrepend" required>
-                            <div class="invalid-feedback">
-                                Entrer un lieu valid
+                        <div class="col-md-12 mt-3">
+                                <label for="validationCustomUsername" class="form-label">Lieu restitution</label>
+                            <div class="input-group has-validation">
+                                <input type="text" class="form-control" name="LR"  id="validationCustomUsername" placeholder="Tanger" aria-describedby="inputGroupPrepend" required>
+                                <div class="invalid-feedback">
+                                    Entrer un lieu valid
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                            <label for="validationCustomUsername" class="form-label">Date depart</label>
-                        <div class="input-group has-validation">
-                            <input type="date" class="form-control" name="DD"  id="validationCustomUsername" placeholder="Tanger" aria-describedby="inputGroupPrepend" required>
-                            <div class="invalid-feedback">
-                                Entrer un date valid
+                        <div class="col-md-6">
+                                <label for="validationCustomUsername" class="form-label">Date depart</label>
+                            <div class="input-group has-validation">
+                                <input type="date" class="form-control DatePrisencharge" name="DD" onchange="setMinEndDate()"  id="DateDepart" placeholder="Tanger" aria-describedby="inputGroupPrepend" required>
+                                <div class="invalid-feedback">
+                                    Entrer un date valid
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                            <label for="validationCustomUsername" class="form-label">Date restitution</label>
-                        <div class="input-group has-validation">
-                            <input type="date" class="form-control" name="DR"  id="validationCustomUsername" placeholder="Tanger" aria-describedby="inputGroupPrepend" required>
-                            <div class="invalid-feedback">
-                                Entrer une date valid
+                        <div class="col-md-6 mt-3">
+                                <label for="validationCustomUsername" class="form-label">Date restitution</label>
+                            <div class="input-group has-validation">
+                                <input type="date" class="form-control DateRestitution" name="DR"   id="validationCustomUsername" placeholder="Tanger" aria-describedby="inputGroupPrepend" required>
+                                <div class="invalid-feedback">
+                                    Entrer une date valid
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-12">
-                            <label for="validationCustomUsername" class="form-label">Heure Depart</label>
-                        <div class="input-group has-validation">
-                            <input type="time" class="form-control" name="HD"  id="validationCustomUsername" placeholder="Time" aria-describedby="inputGroupPrepend" required>
-                            <div class="invalid-feedback">
-                                Entrer une heure valid
+                        <div class="col-md-12 mt-3">
+                                <label for="validationCustomUsername" class="form-label">Heure Depart</label>
+                            <div class="input-group has-validation">
+                                <input type="time" class="form-control" name="HD"  id="validationCustomUsername" placeholder="Time" aria-describedby="inputGroupPrepend" required>
+                                <div class="invalid-feedback">
+                                    Entrer une heure valid
+                                </div>
                             </div>
                         </div>
                     </div>

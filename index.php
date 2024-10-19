@@ -104,7 +104,7 @@ if(isset($_POST['ChercherVeh'])){
                         <i class="fa-solid fa-calendar-days"></i>
                         <div>
                             <p>Date de prise en charge</p>
-                            <input type="date" name="DateDepart" onchange="setMinEndDate()" placeholder="Date Depart">
+                            <input type="date" id="DateDepart" name="DateDepart" onchange="setMinEndDate()" placeholder="Date Depart">
                         </div>
                     </div>
                     <div class="HeurePriseencharge">

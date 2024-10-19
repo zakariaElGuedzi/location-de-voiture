@@ -147,15 +147,11 @@ function setMinEndDate() {
     }
 }
 
+// date before today
 
-// function validateEndDate() {
-//     const endDate = inputField3.value;
-//     const minEndDate = inputField3.getAttribute('min');
+    const today = new Date().toISOString().split('T')[0];
 
-//     if (endDate < minEndDate) {
-//         alert("End date cannot be before the start date plus 4 days.");
-//         inputField3.value = ""; // Clear the invalid input
-//     }
-// }
+    document.getElementById('DateDepart').setAttribute('min', today);
+
 
 
