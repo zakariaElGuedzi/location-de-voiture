@@ -16,6 +16,11 @@
     $LR = isset($_GET['LR']) ? $_GET['LR'] : '';
     $sr = isset($_GET['Search']) ? $_GET['Search'] : '';
 
+    $datetime1 = new DateTime($DD);
+    $datetime2 = new DateTime($DR);
+    $daysbetween = $datetime1->diff($datetime2);
+    $days = $daysbetween->days;
+
 
     if (isset($_POST['Reserver'])) {
         $name = $_POST['name'];
@@ -343,11 +348,11 @@
                     </div>
                     <hr>
                     <div class="FinalPrice">
-                        <p class="bold">Prix total par <b>4</b> jours :</p>
+                        <p class="bold">Prix total par <b><?php echo $days?></b> jours :</p>
                         <?php if(!$cr->CarReduction == 0){?>
-                            <p class="bold"><?PHP echo $cr->CarPricewithReduction?> MAD</p>
+                            <p class="bold"><?PHP echo (($cr->CarPricewithReduction * $days)/4)?> MAD</p>
                         <?php }else{?>
-                            <p class="bold"><?PHP echo $cr->CarOriginalPrice?> MAD</p>
+                            <p class="bold"><?PHP echo (($cr->CarOriginalPrice * $days)/4)?> MAD</p>
                             <?php }?>
                     </div>
                 </div>

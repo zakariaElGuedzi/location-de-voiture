@@ -60,6 +60,15 @@ include "includes/navbar.php";
                            <dd class="col-6"><?php echo  $bk->DepartureDate; ?></dd>
                            <dt class="col-6"><strong>Date restitution:</strong></dt>
                            <dd class="col-6"><?php echo  $bk->ArrivalDate; ?></dd>
+                           <dt class="col-6"><strong>Nombre Jour:</strong></dt>
+
+                           <?php
+                                  $datetime1 = new DateTime($bk->DepartureDate);
+                                  $datetime2 = new DateTime($bk->ArrivalDate);
+                                  $daysbetween = $datetime1->diff($datetime2);
+                                  $days = $daysbetween->days;
+                           ?>
+                           <dd class="col-6"><?php echo $days; ?></dd>
                         </dl>
                      </div>
                   </div>
@@ -71,7 +80,8 @@ include "includes/navbar.php";
                                  <tr>
                                     <th scope="row" class="border-0 text-left">Voiture</th>
                                     <th scope="row" class="border-0">Marque</th>
-                                    <th scope="row" class="border-0">Prix pour 4 jour</th>
+                                    <th scope="row" class="border-0">Prix pour <b class="fw-bolder">4</b> jour</th>
+                                    <th scope="row">Prix Pour <b class="fw-fw-bolder"><?php echo $days?></b> jour</th>
                                  </tr>
                               </thead>
                               <tbody>
@@ -87,7 +97,8 @@ include "includes/navbar.php";
                                  <tr>
                                     <th scope="row" class="text-left fw-bold h6"><?php echo  $cr->CarName; ?></th>
                                     <td><?php echo  $br->Brand; ?></td>
-                                    <td><?php echo  $cr->CarPricewithReduction; ?></td>
+                                    <td><?php echo  $cr->CarOriginalPrice; ?> DH</td>
+                                    <td><?PHP echo (($cr->CarOriginalPrice * $days)/4)?> DH</td>
                                  </tr>
                               </tbody>
                            </table>
@@ -98,7 +109,7 @@ include "includes/navbar.php";
                                  <tbody>
                                     <tr>
                                        <td class="left"><strong>Prix</strong></td>
-                                       <td class="right"><?php echo  $cr->CarOriginalPrice; ?> DH</td>
+                                       <td class="right"><?PHP echo (($cr->CarOriginalPrice * $days)/4)?> DH</td>
                                     </tr>
                                     <tr>
                                        <td class="left"><strong>Reduction (0%)</strong></td>
@@ -106,7 +117,7 @@ include "includes/navbar.php";
                                     </tr>
                                     <tr>
                                        <td class="left"><strong>Total</strong></td>
-                                       <td class="right"><strong><?php echo  $cr->CarPricewithReduction; ?> DH</strong></td>
+                                       <td class="right"><strong><?PHP echo (($cr->CarPricewithReduction * $days)/4)?> DH</strong></td>
                                     </tr>
                                  </tbody>
                               </table>
