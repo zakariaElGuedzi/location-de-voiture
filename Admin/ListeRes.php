@@ -1,6 +1,9 @@
 <?php
 include "includes/navbar.php";
 ?>
+<!-- Include jQuery from a CDN -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <main class="content">
 			<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
 				<div class="d-block mb-4 mb-md-0">
@@ -21,6 +24,7 @@ include "includes/navbar.php";
               <th class="border-bottom">Status</th>
               <th class="border-bottom">Date Reservation</th>
               <th class="border-bottom">Details</th>
+              <th class="border-bottom">Action</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -55,6 +59,16 @@ include "includes/navbar.php";
                   <td><?php echo  $res->ReservationDate; ?></td>
                   <td>
                       <a href="showbooking.php?id=<?php echo $res->ResID?>"><i class="fa-solid fa-eye"></i></a>
+                      <!-- <a href="deleetebooking.php?id=<?php echo $res->ResID?>"><i class="fa-solid fa-eye"></i></a> -->
+
+                  </td>
+                  <td>
+                    <select class="form-control SelectStatus"  onchange="updateCarStatus(<?php echo $res->ResID; ?>, this.value)">                    >
+                      <option value="" selected disabled>Status</option>
+                      <option value="0">En Attente</option>
+                      <option value="1">Accepté</option>
+                      <option value="2">Refusé</option>
+                    </select>
                   </td>
               </tr>
               <?php
@@ -89,4 +103,33 @@ include "includes/navbar.php";
     var supprimeropButton = modal.querySelector('#supprimer-op');
     supprimeropButton.href = 'SupprimerOp.php?id=' + opId;
   });
+
+  function updateCarStatus(ResId, StatusValue) {
+    // Convert the boolean value to 1 or 0
+    let status = StatusValue
+    // Create an AJAX request
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST', 'update_res_status.php', true); // Assuming the script is update_car_status.php
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    
+    // Send the request with the car ID and the new status
+    xhr.send('resid=' + ResId + '&status=' + status);
+
+    // Optional: Handle response (you could show a message or update the UI)
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            console.log('res status updated successfully');
+            refreshTable()
+        } else {
+            console.log('Error updating res status');
+        }
+    };
+
+    const refreshTable = () => {
+    const $dataTable = $('#datatable');
+    $dataTable.load(`${location.href} #datatable`);
+};
+    
+}
+
 </script>

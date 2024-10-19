@@ -29,7 +29,7 @@ include "includes/navbar.php";
                     if($bk->Status == 0){
                       $STATUS = "En Attente";
                       $bg = "warning";
-                    }elseif($res->Status == 1){
+                    }elseif($bk->Status == 1){
                       $STATUS = "Accepté";
                       $bg = "success";
                     }else{
