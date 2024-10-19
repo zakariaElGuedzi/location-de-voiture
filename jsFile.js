@@ -77,15 +77,19 @@ const inputField2 = DatePrisencharge.querySelector('input');
 const inputField3 = DateRestitution.querySelector('input');
 const inputField4 = HeurePriseencharge.querySelector('input');
 const inputField5 = LieuRestitution.querySelector('input');
+const mediaQuery = window.matchMedia("(max-width: 468px)");
 
 LieuPrisenEnCharge.addEventListener('click', function() {
     inputField1.focus();
 });
 DatePrisencharge.addEventListener('click', function() {
-    inputField2.showPicker();
+    if(mediaQuery.matches){
+        inputField2.focus();
+    }else{
+        inputField2.showPicker();
+    }
 });
 DateRestitution.addEventListener('click', function() {
-    const mediaQuery = window.matchMedia("(max-width: 468px)");
     if(mediaQuery.matches){
         inputField3.focus();
     }else{
@@ -93,7 +97,11 @@ DateRestitution.addEventListener('click', function() {
     }
 });
 HeurePriseencharge.addEventListener('click', function() {
-    inputField4.showPicker();
+    if(mediaQuery.matches){
+        inputField4.focus();
+    }else{
+        inputField4.showPicker();
+    }
 });
 LieuRestitution.addEventListener('click', function() {
     inputField5.focus();
