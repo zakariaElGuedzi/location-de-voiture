@@ -45,21 +45,22 @@ header {
 section{
     padding: 0px 10%;
 }
-.divCordoneLV{
+.divCordoneLV {
     border: 2px solid var(--primary-color);
-    padding: 10px 10px;
+    padding: 15px 15px;
     display: flex;
     align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
     border-radius: 10px;
     margin: 15px 0px;
     justify-content: space-between;
-    .Filter,.Filter2{
+    gap: 15px;
+    p{
+        margin: 0;
+    }
+    .Filter{
         display: flex;
         gap: 30px;
         align-items: center;
-        width: 100%;
     }
     h5 {
         margin: 0px;
@@ -71,20 +72,7 @@ section{
         border: none;
         padding: 10px 20px;
         border-radius: 8px;
-    
     }
-    // .modifButtonDiv {
-    //     display: flex;
-    //     align-items: center;
-    //     justify-content: end;
-    //     width: 100%;
-    //     button {
-    //         width: 60%;
-    //         display: flex;
-    //         align-items: center;
-    //         justify-content: center;
-    //     }
-    // }
     button:hover{
         background-color: var(--primary-color);
     }
@@ -190,13 +178,22 @@ section{
             box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
             justify-content: center;
             gap: 20px;
-            .carimg{
-                width: 25%;
-                background-color: rgb(255, 255, 255);
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: 100%;
-                flex: 3;
+            .ImageContainer{
+                // display: flex;
+                // justify-content: center;
+                // align-items: center;
+                display: flex;
+                justify-content: center;
+                align-items: start;   
+                .carimg{
+                    width: 170px;
+                    height: 150px;
+                    background-color: rgb(255, 255, 255);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 100%;
+                    flex: 3;
+                }
             }
             .carDts{
                 flex: 5;
@@ -507,6 +504,18 @@ section{
             height: 107px;
             flex: none !important;
         }
+    }
+    .divCordoneLV{
+        flex-wrap: wrap;
+        .Filter{
+            flex-direction: row;
+        }
+    }
+    .ImageContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
     }
 }
 /////////////////// checkbox style ///////////////////////

@@ -189,8 +189,9 @@
                 <h3>Votre Offre</h3>
             </div>
             <div class="Car">
-                <div class="carimg" style="background-image: url('../Admin/<?php echo $cr->CarImage?>')">
-
+                <div class="ImageContainer">
+                    <div class="carimg" style="background-image: url('../Admin/<?php echo $cr->CarImage?>')">
+                    </div>
                 </div>
                 <div class="carDts">
                     <div class="CarClasses">

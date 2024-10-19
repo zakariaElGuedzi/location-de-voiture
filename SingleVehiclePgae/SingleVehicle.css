@@ -48,20 +48,21 @@ section {
 
 .divCordoneLV {
   border: 2px solid var(--primary-color);
-  padding: 10px 10px;
+  padding: 15px 15px;
   display: flex;
   align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
   border-radius: 10px;
   margin: 15px 0px;
   justify-content: space-between;
+  gap: 15px;
 }
-.divCordoneLV .Filter, .divCordoneLV .Filter2 {
+.divCordoneLV p {
+  margin: 0;
+}
+.divCordoneLV .Filter {
   display: flex;
   gap: 30px;
   align-items: center;
-  width: 100%;
 }
 .divCordoneLV h5 {
   margin: 0px;
@@ -176,8 +177,14 @@ section {
   justify-content: center;
   gap: 20px;
 }
-.Offer .CarDetails .Car .carimg {
-  width: 25%;
+.Offer .CarDetails .Car .ImageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+.Offer .CarDetails .Car .ImageContainer .carimg {
+  width: 170px;
+  height: 150px;
   background-color: rgb(255, 255, 255);
   background-repeat: no-repeat;
   background-position: center;
@@ -456,5 +463,16 @@ section {
     width: 174px !important;
     height: 107px;
     flex: none !important;
+  }
+  .divCordoneLV {
+    flex-wrap: wrap;
+  }
+  .divCordoneLV .Filter {
+    flex-direction: row;
+  }
+  .ImageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }/*# sourceMappingURL=SingleVehicle.css.map */
