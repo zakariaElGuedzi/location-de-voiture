@@ -85,6 +85,8 @@ LieuPrisenEnCharge.addEventListener('click', function() {
 DatePrisencharge.addEventListener('click', function() {
     if(mediaQuery.matches){
         inputField2.focus();
+        console.log("Using focus on mobile");
+
     }else{
         inputField2.showPicker();
     }
@@ -92,6 +94,8 @@ DatePrisencharge.addEventListener('click', function() {
 DateRestitution.addEventListener('click', function() {
     if(mediaQuery.matches){
         inputField3.focus();
+        console.log("Using focus on mobile");
+
     }else{
         inputField3.showPicker();
     }
@@ -99,6 +103,8 @@ DateRestitution.addEventListener('click', function() {
 HeurePriseencharge.addEventListener('click', function() {
     if(mediaQuery.matches){
         inputField4.focus();
+        console.log("Using focus on mobile");
+
     }else{
         inputField4.showPicker();
     }
