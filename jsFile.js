@@ -55,6 +55,16 @@ function closemenu() {
  }
 
 
+// scroll header
+    // document.addEventListener('scroll', function() {
+    //    const header = document.querySelector('.header');
+    //    if (window.scrollY > 50) { // Adjust the scroll position threshold as needed
+    //        header.classList.add('blurred');
+    //    } else {
+    //        header.classList.remove('blurred');
+    //    }
+    // });
+
 //searchbar
 const LieuPrisenEnCharge = document.querySelector('.LieuPrisenEnCharge');
 const DatePrisencharge = document.querySelector('.DatePrisencharge');
@@ -71,14 +81,14 @@ const inputField5 = LieuRestitution.querySelector('input');
 LieuPrisenEnCharge.addEventListener('click', function() {
     inputField1.focus();
 });
-DatePrisencharge.addEventListener('click', function() {
-    inputField2.focus();
+DatePrisencharge.addEventListener('touchstart', function() {
+    inputField2.showPicker();
 });
-DateRestitution.addEventListener('click', function() {
-    inputField3.focus();
+DateRestitution.addEventListener('touchstart', function() {
+    inputField3.showPicker();
 });
-HeurePriseencharge.addEventListener('click', function() {
-    inputField4.focus();
+HeurePriseencharge.addEventListener('touchstart', function() {
+    inputField4.showPicker();
 });
 LieuRestitution.addEventListener('click', function() {
     inputField5.focus();
@@ -100,13 +110,39 @@ inputField3.addEventListener("change",function(){
 })
 
 function setMinEndDate() {
+    // Get the value of the start date
+    // const startDate = document.getElementById('startDate').value;
     let startDate = inputField2.value
     if (startDate) {
+        // Create a new Date object from the start date
         const start = new Date(startDate);
+        
+        // Add 4 days to the start date
         start.setDate(start.getDate() + 4);
+
+        // Format the new date to YYYY-MM-DD (required format for input type="date")
         const minEndDate = start.toISOString().split('T')[0];
+        
+        // Set the min attribute of the end date input
         inputField3.setAttribute('min', minEndDate);
     }
 }
+// function search(){
+// if(inputField1.value == ""){
+//         LieuPrisenEnCharge.classList.add("inputError");
+//     }elseif(inputField2.value == ""){
+//         LieuPrisenEnCharge.classList.add("inputError");
 
+//     }elseif(inputField3.value == ""){
+//         LieuPrisenEnCharge.classList.add("inputError");
+
+//     }elseif(inputField4.value == ""){
+//         LieuPrisenEnCharge.classList.add("inputError");
+
+//     }elseif(inputField5.value == ""){
+//         LieuPrisenEnCharge.classList.add("inputError");
+//     }else{
+//         alert("Recherche effectuée avec succès")
+//     }
+// }
 
