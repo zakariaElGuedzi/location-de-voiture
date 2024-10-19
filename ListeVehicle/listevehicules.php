@@ -32,7 +32,7 @@
 <body>
     <header class="">
         <div class="header d-flex justify-content-between">
-            <a href="../index.php"><img src="/img/lgBlanc.png" width="150px" alt=""></a>
+            <a href="../index.php"><img src="../img/lgBlanc.png" width="150px" alt=""></a>
             <ul class="d-flex align-items-center justify-content-center m-0 ull">
                 <li>
                     <a href="">Home</a>

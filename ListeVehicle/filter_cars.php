@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 include_once "../Admin/includes/database.php";
 $query = "SELECT * FROM cars WHERE 1=1";
 $params = [];
