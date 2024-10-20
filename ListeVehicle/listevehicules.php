@@ -274,23 +274,26 @@
     </div>
     <script src="Listeveh.js"></script>
     <script>
-        function filterCars() {
-            var formData = new FormData(document.getElementById('filterForm'));
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'filter_cars.php', true); 
-            xhr.onload = function() {
-                if (xhr.status === 200) {
-                    console.log("Filtered:");
-                    document.getElementById('car').innerHTML = xhr.responseText;
-                } else {
-                    console.error("Error: ", xhr.status, xhr.statusText);
-                }
-            };
-            xhr.onerror = function() {
-                console.error("Request failed.");
-            };
-            xhr.send(formData);
+async function filterCars() {
+    const formData = new FormData(document.getElementById('filterForm'));
+
+    try {
+        const response = await fetch('filter_cars.php', {
+            method: 'POST',
+            body: formData,
+        });
+
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
         }
+
+        const data = await response.text();
+        document.getElementById('car').innerHTML = data;
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
 
 </script>
 </body>
