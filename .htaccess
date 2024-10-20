@@ -1,12 +1,11 @@
 RewriteEngine On
-# RewriteCond %{THE_REQUEST} \s/([^\.]+)\.php [NC]
-# RewriteRule ^(.*)\.php$ /$1 [R=301,L]
+RewriteCond %{THE_REQUEST} \s/([^\.]+)\.php [NC]
+RewriteRule ^(.*)\.php$ /$1 [R=301,L]
 
-# RewriteCond %{REQUEST_FILENAME} !-d
-# RewriteCond %{REQUEST_FILENAME}\.php -f
-# RewriteRule ^(.*)$ $1.php [L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [L]
 
-<IfModule mod_headers.c>
-Header set Access-Control-Allow-Origin "*"
-</IfModule>
-
+Cache-Control: no-cache, no-store, must-revalidate
+Pragma: no-cache
+Expires: 0
