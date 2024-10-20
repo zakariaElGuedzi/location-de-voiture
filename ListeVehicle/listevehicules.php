@@ -141,7 +141,7 @@
                     <div class="d-flex justify-content-between">
                         <div>
                             <input type="checkbox" name="trans[]" id="" value="manuel" onchange="filterCars()">
-                            <label for="">Manuel</label>
+                            <label >Manuel</label>
                         </div>
                         <?php
                             $sqlstate = $pdo->prepare('SELECT COUNT(*) AS mn FROM cars WHERE CarTransmission = ?');
@@ -153,7 +153,7 @@
                     <div class="d-flex justify-content-between">
                         <div>
                             <input type="checkbox" name="trans[]" value="Automatic" onchange="filterCars()">
-                            <label for="">Automatique</label>
+                            <label >Automatique</label>
                         </div>
                         <?php
                             $sqlstate = $pdo->prepare('SELECT COUNT(*) AS au FROM cars WHERE CarTransmission = ?');
@@ -169,7 +169,7 @@
                     <div class="d-flex justify-content-between">
                         <div>
                             <input type="checkbox" name="fuel[]" value="diesel" onchange="filterCars()">
-                            <label for="">Diesel</label>
+                            <label >Diesel</label>
                         </div>
                         <?php
                             $sqlstate = $pdo->prepare('SELECT COUNT(*) AS ds FROM cars WHERE CarFuelType = ?');
@@ -181,7 +181,7 @@
                     <div class="d-flex justify-content-between">
                         <div>
                             <input type="checkbox" name="fuel[]" value="essence" onchange="filterCars()">
-                            <label for="">Essence</label>
+                            <label >Essence</label>
                         </div>
                         <?php
                             $sqlstate = $pdo->prepare('SELECT COUNT(*) AS es FROM cars WHERE CarFuelType = ?');
