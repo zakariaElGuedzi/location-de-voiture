@@ -286,7 +286,7 @@ function filterCars() {
             console.log("error");
         }
     };
-    xhr.send(formData);
+    // xhr.send(formData);
 }
 </script>
 </body>
