@@ -9,3 +9,6 @@ RewriteRule ^(.*)$ $1.php [L]
 Cache-Control: no-cache, no-store, must-revalidate
 Pragma: no-cache
 Expires: 0
+
+# Rewrite /page/664/xxx to /page?id=664&var=xxx
+RewriteRule ^page/([0-9]+)/([^/]+)$ /page?id=$1&var=$2 [L,QSA]
