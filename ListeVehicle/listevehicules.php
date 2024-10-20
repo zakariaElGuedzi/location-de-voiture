@@ -280,7 +280,7 @@
             xhr.open('POST', 'filter_cars.php', true); 
             xhr.onload = function() {
                 if (xhr.status === 200) {
-                    console.log("Filtered: ", xhr.responseText);
+                    console.log("Filtered:");
                     document.getElementById('car').innerHTML = xhr.responseText;
                 } else {
                     console.error("Error: ", xhr.status, xhr.statusText);
