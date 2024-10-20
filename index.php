@@ -32,6 +32,9 @@ if(isset($_POST['ChercherVeh'])){
     <link rel="icon" type="image/png" sizes="16x16" href="/img/lgBlanc.png">
 </head>
 <body>
+<div id="loader">
+    <div class="spinner"></div>
+</div>
     <!-- First 100vh -->
     <header>
         <div class="container firstIn">

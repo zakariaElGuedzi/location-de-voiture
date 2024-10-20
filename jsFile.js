@@ -155,3 +155,14 @@ function setMinEndDate() {
 
 
 
+// loader
+
+window.addEventListener("beforeunload", function() {
+    // Show the loader
+document.getElementById("loader").style.visibility = "visible";
+});
+
+// Also, hide the loader after the page is fully loaded
+window.addEventListener("load", function() {
+document.getElementById("loader").style.visibility = "hidden";
+});s
