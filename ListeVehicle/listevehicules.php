@@ -274,8 +274,8 @@
     </div>
     <script src="Listeveh.js"></script>
     <script>
-        function filterCars(event) {
-            event.preventDefault();
+        function filterCars() {
+            
             var formData = new FormData(document.getElementById('filterForm'));
             var xhr = new XMLHttpRequest();
             xhr.open('POST', 'filter_cars.php', true); 
