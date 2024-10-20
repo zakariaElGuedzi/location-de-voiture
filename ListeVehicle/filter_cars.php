@@ -31,7 +31,10 @@ $stmt->execute($params);
 
 $cars = $stmt->fetchAll(PDO::FETCH_OBJ);
 if($cars){
-    echo json_encode($cars);
+    foreach($cars as $car){?>
+    <div>Hello world</div>
+       <?php 
+    }
 }
 // if ($cars) {
 //     foreach ($cars as $car) { ?>
