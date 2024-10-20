@@ -281,7 +281,7 @@ function filterCars() {
     xhr.onload = function() {
         if (xhr.status === 200) {
             console.log("filtred");
-            // document.getElementById('car').innerHTML = xhr.responseText;
+            document.getElementById('car').innerHTML = xhr.responseText;
         }else{
             console.log("error");
         }
