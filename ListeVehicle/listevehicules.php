@@ -32,7 +32,7 @@
 <body>
     <header class="">
         <div class="header d-flex justify-content-between">
-            <a href="../index.php"><img src="../img/lgBlanc.png" width="150px" alt=""></a>
+            <a href="../index.php"><img src="/img/lgBlanc.png" width="150px" alt=""></a>
             <ul class="d-flex align-items-center justify-content-center m-0 ull">
                 <li>
                     <a href="">Home</a>
@@ -274,20 +274,17 @@
     </div>
     <script src="Listeveh.js"></script>
     <script>
-    function filterCars() {
-        var formData = new FormData(document.getElementById('filterForm'));
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'filter_cars.php', true); 
-        xhr.onload = function() {
-            if (xhr.status === 200) {
-                console.log("filtred");
-                document.getElementById('car').innerHTML = xhr.responseText;
-            }else{
-                console.log("error");
-            }
-        };
-        xhr.send(formData);
-    }
+function filterCars() {
+    var formData = new FormData(document.getElementById('filterForm'));
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'filter_cars.php', true); 
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            document.getElementById('car').innerHTML = xhr.responseText;
+        }
+    };
+    xhr.send(formData);
+}
 </script>
 </body>
 </html>
