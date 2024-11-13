@@ -40,7 +40,7 @@
               <div class="contact-info-text">
                 <h2>address</h2>
                 <span>1215 Lorem Ipsum, Ch 176080 </span> 
-                <span>Chandigarh , INDIA</span> 
+                <span>Chandigarh , Test</span> 
               </div>
             </div>            
           </div>          
