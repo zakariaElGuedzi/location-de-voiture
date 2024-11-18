@@ -13,9 +13,8 @@
 
 // FAQ Question Home page
    // Sélectionne tous les éléments avec la classe faq-question
-   const questions = document.querySelectorAll('.faq-question');
 
-   questions.forEach(question => {
+   (document.querySelectorAll('.faq-question')).forEach(question => {
        question.addEventListener('click', () => {
            // Sélectionne la réponse associée à cette question
            const answer = question.nextElementSibling;
@@ -34,11 +33,10 @@
 
 
 
-let menphone = document.querySelector('.menuphone');
 
 function closemenu() {
-   if ( menphone.style.display == "flex") {
-      menphone.style.display = "none"
+   if ( (document.querySelector('.menuphone')).style.display == "flex") {
+      (document.querySelector('.menuphone')).style.display = "none"
       document.body.style.overflow = 'auto'; // or 'initial'
       document.querySelector(".Homeinputs").style = "z-index:2"
 
@@ -46,8 +44,8 @@ function closemenu() {
    }
 }
  function afficheMenuPhone() {
-    if ( menphone.style.display == "none" || menphone.style.display == "" ) {
-         menphone.style.display = "flex"
+    if ( (document.querySelector('.menuphone')).style.display == "none" || (document.querySelector('.menuphone')).style.display == "" ) {
+         (document.querySelector('.menuphone')).style.display = "flex"
          document.body.style.overflow = 'hidden';
          document.querySelector(".Homeinputs").style = "z-index:0"
 
@@ -66,67 +64,72 @@ function closemenu() {
     // });
 
 //searchbar
-const LieuPrisenEnCharge = document.querySelector('.LieuPrisenEnCharge');
-const DatePrisencharge = document.querySelector('.DatePrisencharge');
-const DateRestitution = document.querySelector('.DateRestitution');
-const HeurePriseencharge = document.querySelector(".HeurePriseencharge")
-const LieuRestitution = document.querySelector(".LieuRestitution")
+const { inputField2, inputField3 } = newFunction();
 
-const inputField1 = LieuPrisenEnCharge.querySelector('input');
-const inputField2 = DatePrisencharge.querySelector('input');
-const inputField3 = DateRestitution.querySelector('input');
-const inputField4 = HeurePriseencharge.querySelector('input');
-const inputField5 = LieuRestitution.querySelector('input');
-const mediaQuery = window.matchMedia("(max-width: 468px)");
+function newFunction() {
+    const LieuPrisenEnCharge = document.querySelector('.LieuPrisenEnCharge');
+    const DatePrisencharge = document.querySelector('.DatePrisencharge');
+    const DateRestitution = document.querySelector('.DateRestitution');
+    const HeurePriseencharge = document.querySelector(".HeurePriseencharge");
+    const LieuRestitution = document.querySelector(".LieuRestitution");
 
-LieuPrisenEnCharge.addEventListener('click', function() {
-    inputField1.focus();
-});
-DatePrisencharge.addEventListener('click', function() {
-    if(mediaQuery.matches){
-        inputField2.focus();
-        console.log("Using focus on mobile");
+    const inputField1 = LieuPrisenEnCharge.querySelector('input');
+    const inputField2 = DatePrisencharge.querySelector('input');
+    const inputField3 = DateRestitution.querySelector('input');
+    const inputField4 = HeurePriseencharge.querySelector('input');
+    const inputField5 = LieuRestitution.querySelector('input');
+    const mediaQuery = window.matchMedia("(max-width: 468px)");
 
-    }else{
-        inputField2.showPicker();
-    }
-});
-DateRestitution.addEventListener('click', function() {
-    if(mediaQuery.matches){
-        inputField3.focus();
-        console.log("Using focus on mobile");
+    LieuPrisenEnCharge.addEventListener('click', function () {
+        inputField1.focus();
+    });
+    DatePrisencharge.addEventListener('click', function () {
+        if (mediaQuery.matches) {
+            inputField2.focus();
+            console.log("Using focus on mobile");
 
-    }else{
-        inputField3.showPicker();
-    }
-});
-HeurePriseencharge.addEventListener('click', function() {
-    if(mediaQuery.matches){
-        inputField4.focus();
-        console.log("Using focus on mobile");
+        } else {
+            inputField2.showPicker();
+        }
+    });
+    DateRestitution.addEventListener('click', function () {
+        if (mediaQuery.matches) {
+            inputField3.focus();
+            console.log("Using focus on mobile");
 
-    }else{
-        inputField4.showPicker();
-    }
-});
-LieuRestitution.addEventListener('click', function() {
-    inputField5.focus();
-});
+        } else {
+            inputField3.showPicker();
+        }
+    });
+    HeurePriseencharge.addEventListener('click', function () {
+        if (mediaQuery.matches) {
+            inputField4.focus();
+            console.log("Using focus on mobile");
 
-let date1
-inputField2.addEventListener("change",function(){
-    date1 = inputField2.value;
-    console.log(date1);
-    DatePrisencharge.classList.remove("inputError")
+        } else {
+            inputField4.showPicker();
+        }
+    });
+    LieuRestitution.addEventListener('click', function () {
+        inputField5.focus();
+    });
 
-})
-inputField3.addEventListener("change",function(){
-    if(!date1){
-        // alert("Veuillez choisir une date de prise en charge")
-        inputField3.value = ''
-        DatePrisencharge.classList.add("inputError")
-    }
-})
+    let date1;
+    inputField2.addEventListener("change", function () {
+        date1 = inputField2.value;
+        console.log(date1);
+        DatePrisencharge.classList.remove("inputError");
+
+    });
+    inputField3.addEventListener("change", function () {
+        if (!date1) {
+            // alert("Veuillez choisir une date de prise en charge")
+            inputField3.value = '';
+            DatePrisencharge.classList.add("inputError");
+        }
+    });
+    return { inputField2, inputField3 };
+}
 
 function setMinEndDate() {
     // Get the value of the start date
@@ -149,9 +152,8 @@ function setMinEndDate() {
 
 // date before today
 
-    const today = new Date().toISOString().split('T')[0];
 
-    document.getElementById('DateDepart').setAttribute('min', today);
+    document.getElementById('DateDepart').setAttribute('min', new Date().toISOString().split('T')[0]);
 
 
 
