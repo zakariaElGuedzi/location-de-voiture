@@ -32,9 +32,9 @@ if(isset($_POST['ChercherVeh'])){
     <link rel="icon" type="image/png" sizes="16x16" href="/img/lgBlanc.png">
 </head>
 <body>
-<div id="loader">
+<!-- <div id="loader">
     <div class="spinner"></div>
-</div>
+</div> -->
     <!-- First 100vh -->
     <header>
         <div class="container firstIn">
@@ -91,7 +91,7 @@ if(isset($_POST['ChercherVeh'])){
     <section class="sec2">
         <div class="Homeinputs ">
             <form class="Filter2" method="post" novalidate>
-                    <div class="LieuPrisenEnCharge">
+                    <div class="LieuPrisenEnCharge  rounded-0">
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <div>
                             <p>Lieu de prise en charge</p>
@@ -99,35 +99,35 @@ if(isset($_POST['ChercherVeh'])){
                         </div>
                     </div>
                     
-                    <div class="DatePrisencharge">
+                    <div class="DatePrisencharge rounded-0">
                         <i class="fa-solid fa-calendar-days"></i>
                         <div>
                             <p>Date de prise en charge</p>
                             <input type="date" id="DateDepart" name="DateDepart" onchange="setMinEndDate()" placeholder="Date Depart">
                         </div>
                     </div>
-                    <div class="HeurePriseencharge">
+                    <div class="HeurePriseencharge rounded-0">
                         <i class="fa-regular fa-clock"></i>
                         <div>
                             <p>Heure</p>
                             <input type="time" name="HeureDepart" placeholder="Heure Depart">
                         </div>
                     </div>
-                    <div class="DateRestitution">
+                    <div class="DateRestitution rounded-0">
                         <i class="fa-solid fa-calendar-days"></i>
                         <div>
                             <p>Date de restitution</p>
                             <input type="date" name="DateResti" placeholder="Date restitution">
                         </div>
                     </div>
-                    <div class="LieuRestitution">
+                    <div class="LieuRestitution rounded-0">
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <div>
                             <p>Lieu de prise restitution</p>
                             <input type="text" name="LieuResti" placeholder="Lieu de restitution">
                         </div>
                     </div>
-                    <button class="BtnModifier" type="submit" name="ChercherVeh">Chercher</button>
+                    <button class="BtnModifier rounded-0" type="submit" name="ChercherVeh">Chercher</button>
             </form>
             <?PHP
                 IF(isset($error)){
@@ -139,7 +139,7 @@ if(isset($_POST['ChercherVeh'])){
                 }
             ?>
         </div>
-        <div class="argumentDiv">
+        <div class="argumentDiv py-4">
             <label for="">
                 <h2>Pourquoi PERLA PLAYA ?</h2>
                 <p><i class="fa-solid fa-circle-check px-3" style="color: #3ca305;"></i>Assistance routière 24/7</p>
@@ -148,12 +148,37 @@ if(isset($_POST['ChercherVeh'])){
                 <p><i class="fa-solid fa-circle-check px-3" style="color: #3ca305;"></i>Large choix de véhicules</p>
             </label>
         </div>
-        <div class="daciaTransSec2">
-            <img src="img/compact-car-dacia-sport-utility-vehicle-renault-renault-duster-removebg-preview.png" alt="Dacia Car">
+        <div class="daciaTransSec2  d-flex py-3">
+            <div class="imgContentFlyer tucsonFlyer d-flex align-items-center justify-content-between" id="imgContentFlyers" alt="Dacia Car"> 
+               <i class="fa-solid fa-chevron-left px-4" id="previousFlyerVeh"></i>
+               <i class="fa-solid fa-chevron-right px-4" id="nextFlyerVeh"></i>
+            </div>
         </div>
     </section>
     
-
+    <!-- sticky button of whatsapp contact -->
+    <div class="buttonFixedWhatsapp d-flex  p-1">
+        <div class="d-flex wstpContainer align-items-end justify-content-start  ">
+            <div class="border rounded-circle  onlinewtsp"></div>
+            <div  class="p-0 m-0 IconWtspShow" target="_blank">
+                <i class="fa-brands fa-square-whatsapp m-0 p-0" style="color: #4fee51;"></i>
+            </div>
+        </div> 
+        <div class="contentMessagerie">
+            <div class="d-flex headset align-items-center justify-content-start py-2">
+                <i class="fa-solid fa-headset m-0  px-1 d-inline"></i>
+                <p class="p-0 m-0 text-secondary">perla playa service client<div class="border rounded-circle  onlinewtsp onlinewtsp2 p-0"></div></p>
+            </div>
+            <div class="messagesHis  d-flex bg-danger justify-content-end align-items-end">
+                 <!-- i need scrool bar in this div -->
+            </div>
+            <div  class="containerStikcyWhtsp d-flex bg-white p-1 m-0 d-flex align-items-center">
+                <input type="text" name="" id="contentMsg" class="m-0 p-1 py-2 bg-transparent" placeholder="contacter perlaplaya...">
+                <i class="fa-solid fa-paper-plane" id="sendFun"></i>
+            </div>   
+        </div>   
+        <p class=" text-center cl24Sur7 m-0 p-0 fw-bold">24/7</p>
+    </div>
 
  <!-- section dirent -->
  <section class="sectionDirent">
@@ -258,7 +283,10 @@ if(isset($_POST['ChercherVeh'])){
             <ul>
                 <li><i class="fa-brands fa-instagram"></i></li>
                 <li><i class="fa-brands fa-facebook"></i></li>
-                <li><i class="fa-brands fa-whatsapp"></i></li>
+                <li>
+                <a href="https://api.whatsapp.com/send/?phone=212668455918&text&type=phone_number&app_absent=0"><i class="fa-brands fa-whatsapp"></i></a>
+                </li>
+                
             </ul>
         </div>
 

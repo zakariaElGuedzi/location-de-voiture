@@ -165,4 +165,75 @@ document.getElementById("loader").style.visibility = "visible";
 // Also, hide the loader after the page is fully loaded
 window.addEventListener("load", function() {
 document.getElementById("loader").style.visibility = "hidden";
-});s
+});
+
+
+
+
+
+//stikcy wtsp button
+let toggleButtonWtsp = document.querySelector(".IconWtspShow");
+let contentWtspMessagerie = document.querySelector(".contentMessagerie");
+let sender = document.getElementById("sendFun");
+toggleButtonWtsp.addEventListener("click",()=> {
+    contentWtspMessagerie.classList.toggle("contentMessagerieflex")
+})
+
+//function send msg
+sender.addEventListener("click",()=>{
+    let phoneNumber = 212668455918;
+    let contentMessage = document.getElementById("contentMsg").value;
+    console.log(contentMessage) 
+    let url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(contentMessage)}`;
+    // window.open(url, "_blank");
+
+    //get time 
+    const d =  new Date();
+    let zoneTimeH = d.getUTCHours();
+    let zoneTimeM = d.getUTCMinutes();
+
+    let Hismsgerie = document.querySelector(".messagesHis");
+
+    let newMsg = document.createElement("div") ;
+    newMsg.classList.add("newMsgStyle")
+    newMsg.innerHTML= `<p class='p-0 m-0 py-1 px-1 bg-success'>${contentMessage}</p><p class='p-0 m-0 h-100 d-flex bg-dark pb-1 text-secondary timemsgSended'>${zoneTimeH}:${zoneTimeM}</p>` ; 
+    Hismsgerie.appendChild(newMsg);
+
+})
+
+
+
+
+//animation flyer Home Page
+let imgFlyer = document.getElementById("imgContentFlyers");
+let list = imgFlyer.classList;
+let arrClassesFlyer = ["daciaLoganFlyer","tipoFlyer","tucsonFlyer","golfFlyer","jeepFlyer"];
+let nextFlyImg = document.getElementById("nextFlyerVeh");
+let previousFlyImg = document.getElementById("previousFlyerVeh");
+
+
+nextFlyImg.addEventListener("click",() => {
+  let currentIndex = arrClassesFlyer.findIndex(className => list.contains(className));
+  list.remove(...arrClassesFlyer); // Remove all related classes
+  list.add(arrClassesFlyer[(currentIndex + 1) % arrClassesFlyer.length]); // Add the next class
+  console.log(1)
+});
+
+function chngflyer() {
+    let currentIndex = arrClassesFlyer.findIndex(className => list.contains(className));
+  list.remove(...arrClassesFlyer); // Remove all related classes
+  list.add(arrClassesFlyer[(currentIndex + 1) % arrClassesFlyer.length]); // Add the next class
+  console.log(1)
+}
+
+previousFlyImg.addEventListener("click",() => {
+      let currentIndex2 = arrClassesFlyer.findIndex(className => list.contains(className));
+      list.remove(...arrClassesFlyer); // Remove all related classes
+      list.add(arrClassesFlyer[(currentIndex2  +2) % arrClassesFlyer.length]); // Add the next class
+      console.log(2)
+
+   }) ;
+
+//exacute automatic
+window.setInterval(chngflyer, 2500); 
+let df = 2000/59; console.log(df)
