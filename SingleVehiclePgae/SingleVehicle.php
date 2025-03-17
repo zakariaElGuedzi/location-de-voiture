@@ -107,7 +107,7 @@
 <body>
 <header class="">
         <div class="header d-flex justify-content-between">
-            <a href="../"><img src="/img/lgBlanc.png" width="150px" alt=""></a>
+            <a href="../"><img src="/img/lgBlanc.png" width="100px" alt=""></a>
             <ul class="d-flex align-items-center justify-content-center m-0">
                 <li>
                     <a href="">Home</a>

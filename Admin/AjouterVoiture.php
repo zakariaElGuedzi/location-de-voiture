@@ -25,10 +25,7 @@ if(isset($_POST['AjouterVoiture'])){
     // Allow certain file formats
     $allowedTypes = array("jpg", "jpeg", "png","avif","webp");
     if (in_array($imageFileType, $allowedTypes)) {
-        // Move the uploaded file to the server directory
         if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFilePath)) {
-            // Insert file path into the database
-            // $insert = $conn->query("INSERT INTO images (image_path) VALUES ('$targetFilePath')");
             $sqlState = $pdo->prepare('INSERT INTO cars (CarName, BrandId, CarOriginalPrice, CarReduction, CarPricewithReduction, CarModel, CarSeats, CarFuelType, CarTransmission, CarImage,active) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,1)');
             $result = $sqlState->execute(array($carname, $carbrand, $originalcarprice, $reduction, $carpricewithreduction, $carmodel, $carsteats, $carfuel, $cartransmission, $targetFilePath));            
             // if($result){
