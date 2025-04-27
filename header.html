@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+    box-sizing: border-box; /* Ensure padding and border are included in element's total width and height */
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 7%, rgba(9, 9, 121, 1) 52%, rgba(2, 0, 36, 1) 100%);
+    color: white;
+    flex-wrap: wrap; /* Allow flex items to wrap */
+}
+
+header img {
+    width: 110px;
+    aspect-ratio: 2 / 1;
+}
+
+ul {
+    display: flex;
+    gap: 27px;
+    padding: 25px 50px;
+    border-radius: 10px;
+    background-color: rgba(175, 173, 179, 0.134);
+}
+
+li {
+    list-style: none;
+    font-size: 17px;
+    color: rgba(245, 245, 245, 0.827);
+    font-weight: bold;
+}
+
+header button {
+    padding: 20px 40px;
+    border: 1px solid;
+    border-radius: 10px;
+    font-size: 17px;
+    background-color: rgb(237, 218, 9);
+    color: rgb(34, 33, 33);
+    border-color: rgb(237, 232, 232);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack items vertically */
+        height: auto; /* Allow height to adjust */
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    ul {
+        flex-direction: column; /* Stack the menu items */
+        padding: 0; /* Remove padding */
+        gap: 10px; /* Reduce gap between items */
+        align-items: center; /* Center items */
+    }
+
+    header img {
+        margin-bottom: 10px; /* Add space below the logo */
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 5px; /* Further reduce padding */
+    }
+
+    header button {
+        padding: 10px 20px; /* Reduce button padding */
+        font-size: 15px; /* Adjust font size */
+    }
+
+    li {
+        font-size: 15px; /* Adjust font size */
+    }
+}
+    </style>
+</head>
+<body>
+    
+    <header>
+        <div>
+            <img src="img/lgBlanc.png" alt="">
+        </div>
+        <div>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Vehicules</li>
+                <li>Contacter nous</li>
+                <li>Home</li>
+            </ul>
+        </div>
+        <div>
+            <button>Book Now</button>
+        </div>
+    </header>
+
+</body>
+</html>
