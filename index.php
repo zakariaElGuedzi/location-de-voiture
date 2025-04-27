@@ -86,9 +86,9 @@ if(isset($_POST['ChercherVeh'])){
                     <div class="menu1">
                         <ul>
                             <li><a href="#home">Home</a></li>
-                            <li><a href="../ListeVehicle/listevehicules.php" blank>Nos Voitures</a></li>
+                            <li><a href="../ListeVehicle/listevehicules.php" blank>Nos  Voitures</a></li>
                             <li><a href="#about">About Us</a></li>
-                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="Contact.php">Contact</a></li>
                         </ul>
                     </div>
                     <div class="closeMenu px-3">
