@@ -1,6 +1,20 @@
 <?php
+// if(isset($_POST['ChercherVeh'])){
+//     if(empty($_POST['LieuDepart']) || empty($_POST['DateDepart']) || empty($_POST['HeureDepart']) || empty($_POST['DateResti']) || empty($_POST['LieuResti'])){
+//         $error =   "Veuillez remplir tous les champs";
+//         // header("location:../ListeVehicle/listevehicules.php");
+//     }else{
+//         $Search = true;
+//         $LieuDepart = $_POST['LieuDepart'];
+//         $DateDepart = $_POST['DateDepart'];
+//         $HeureDepart = $_POST['HeureDepart'];
+//         $DateResti = $_POST['DateResti'];
+//         $LieuResti = $_POST['LieuResti'];
+//         header("location:../ListeVehicle/listevehicules.php?LD=$LieuDepart&DD=$DateDepart&HD=$HeureDepart&DR=$DateResti&LR=$LieuResti&Search=$Search");
+//     }
+// }
 if(isset($_POST['ChercherVeh'])){
-    if(empty($_POST['LieuDepart']) || empty($_POST['DateDepart']) || empty($_POST['HeureDepart']) || empty($_POST['DateResti']) || empty($_POST['LieuResti'])){
+    if(empty($_POST['LieuDepart']) || empty($_POST['DateDepart']) ){
         $error =   "Veuillez remplir tous les champs";
         // header("location:../ListeVehicle/listevehicules.php");
     }else{

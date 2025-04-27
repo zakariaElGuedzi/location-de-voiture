@@ -9,6 +9,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
 </head>
 <body>
@@ -29,11 +31,34 @@
         </div>
     </header>
     <section class="contact-page-sec">
-    <div class="container">
+    <div class="container bg-">
       <div class="row">
+
+      <div class="my-2">
+      <div class=" cnwtsp rounded-4  py-3  col-12 px-0">
+         <div class="bg- m-0 p-0 col-12 d-flex justify-content-center">
+              <div class="row bg- m-0 col-10 d-flex justify-content-center align-items-center text-center">
+                <p class=" text-start"><i class="fa-solid fa-phone p-0 pe-2"></i>06 68 45 59 18</p>
+                  <div class=" col-10 ">
+                      <p class="m-0 p-0 bg- col-12 col-md-8 fw-bold  fs-5">Contactez nous directement sur Whatsapp</p>
+                      <p class="m-0 p-0 bg- col-12 col-md-8  fw-bold fs-5 text-end">تواصل معنا مباشرة عبر تطبيق واتساب</p>
+                  </div>     
+                  <a href="https://wa.me/212668455918" class="link-success btntowtsp bg-white rounded-1 col-2 linksty d-inline m-0 p-0" target="_blank"><i class="fa-brands d-inline fa-whatsapp fs-1"></i></a> 
+              </div>
+              <hr>
+              
+         </div>   
+         <div class="row  m-0 col-12 pt-4 d-flex justify-content-center text-centerbg-primary ">
+            <button onclick="window.open('https://wa.me/212668455918','_blank');" class="col-8 col-md-4 p-2 border-0  rounded-1 bg-success text-white" _blank>
+              Contacter Nous
+          </button>
+              </div>
+      </div>
+      </div>
+
         <div class="col-md-4">
           <div class="contact-info">
-            <div class="contact-info-item">
+            <div class="contact-info-item ">
               <div class="contact-info-icon">
               <i class="bi bi-geo-alt-fill"></i>
               </div>

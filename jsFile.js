@@ -187,7 +187,7 @@ sender.addEventListener("click",()=>{
     let contentMessage = document.getElementById("contentMsg").value;
     console.log(contentMessage) 
     let url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(contentMessage)}`;
-    // window.open(url, "_blank");
+    window.open(url, "_blank");
 
     //get time 
     const d =  new Date();
