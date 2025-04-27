@@ -47,18 +47,11 @@ if(isset($_POST['ChercherVeh'])){
     <link rel="icon" type="image/png" sizes="16x16" href="/img/lgBlanc.png">
 </head>
 <body>
-<<<<<<< Updated upstream:index.php
 <!-- <div id="loader">
     <div class="spinner"></div>
 </div> -->
     <!-- First 100vh -->
     <header>
-=======
-
-
-        <!-- First 100vh -->
-        <header>
->>>>>>> Stashed changes:index.html
         <div class="container firstIn">
             <div class="logo d-inline">
                 <h1></h1>
@@ -69,13 +62,9 @@ if(isset($_POST['ChercherVeh'])){
             <nav class="navHeader">
                 <ul>
                     <li><a href="#home">Home</a></li>
-<<<<<<< Updated upstream:index.php
-                    <li><a href="../ListeVehicle/listevehicules.php" blank>Nos Voitures</a></li>
-=======
                     <li><a href="../ListeVehicle/listevehicules.php" blank>Services</a></li>
->>>>>>> Stashed changes:index.html
                     <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="Contact.php">Contact</a></li>
                 </ul>
             </nav>
             <div class="lastcontHeader p-2">
@@ -84,10 +73,6 @@ if(isset($_POST['ChercherVeh'])){
             </div>
             <!-- menu phone -->
             <div class="menuphone" id="menPhone">
-<<<<<<< Updated upstream:index.php
-                <div class="imagediv">
-                    <img src="img/lgBlack.png"  alt="" srcset="">
-=======
                 <div class="menu1">
                     <ul>
                         <li><a href="#home">Home</a></li>
@@ -96,7 +81,6 @@ if(isset($_POST['ChercherVeh'])){
                         <li><a href="#contact">Contact</a></li>
                         <li><a href="/Admin/index.php">Admin Panel (demo)</a></li>
                     </ul>
->>>>>>> Stashed changes:index.html
                 </div>
                 <div class="MenuDiv">
                     <div class="menu1">
