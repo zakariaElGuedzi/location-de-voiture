@@ -18,13 +18,13 @@ if(isset($_POST['ChercherVeh'])){
         $error =   "Veuillez remplir tous les champs";
         // header("location:../ListeVehicle/listevehicules.php");
     }else{
-        $Search = true;
+        // $Search = true;
         $LieuDepart = $_POST['LieuDepart'];
         $DateDepart = $_POST['DateDepart'];
         // $HeureDepart = $_POST['HeureDepart'];
         $DateResti = $_POST['DateResti'];
         // $LieuResti = $_POST['LieuResti'];
-        header("location:../ListeVehicle/listevehicules.php?LD=$LieuDepart&Search=$Search");
+        header("location:../ListeVehicle/listevehicules.php?LD=$LieuDepart");
     }
 }
 ?>

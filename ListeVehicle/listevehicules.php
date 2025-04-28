@@ -1,12 +1,12 @@
 <?php
     include_once "../Admin/includes/database.php";
-    if(isset($_GET['LD']) || isset($_GET['DD']) || isset($_GET['HD']) || isset($_GET['DR']) || isset($_GET['LR']) || isset($_GET['Search'])){
+    if(isset($_GET['LD']) ){
         $LD = $_GET['LD'];
         // $DD = $_GET['DD'];
         // $HD = $_GET['HD'];
         // $DR = $_GET['DR'];
         // $LR = $_GET['LR'];
-        $sr = $_GET['Search'];
+        // $sr = $_GET['Search'];
     }
 ?>
 <!DOCTYPE html>
