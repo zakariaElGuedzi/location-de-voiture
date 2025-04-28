@@ -170,7 +170,7 @@ if(isset($_POST['ChercherVeh'])){
             </label>
         </div>
         <div class="daciaTransSec2  d-flex py-3">
-            <div class="imgContentFlyer tucsonFlyer d-flex align-items-center justify-content-between" id="imgContentFlyers" alt="Dacia Car"> 
+            <div class="imgContentFlyer golfFlyer d-flex align-items-center justify-content-between" id="imgContentFlyers" alt="Dacia Car"> 
                <i class="fa-solid fa-chevron-left px-4" id="previousFlyerVeh"></i>
                <i class="fa-solid fa-chevron-right px-4" id="nextFlyerVeh"></i>
             </div>
@@ -321,6 +321,7 @@ if(isset($_POST['ChercherVeh'])){
       
 
     <script src="jsFile.js?v=1.0.3" defer></script>
+    <script src="flyerhome.js" defer></script>
 
 
 </body>
