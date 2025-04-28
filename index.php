@@ -14,17 +14,17 @@
 //     }
 // }
 if(isset($_POST['ChercherVeh'])){
-    if(empty($_POST['LieuDepart']) || empty($_POST['DateDepart']) ){
+    if(empty($_POST['LieuDepart']) ){
         $error =   "Veuillez remplir tous les champs";
         // header("location:../ListeVehicle/listevehicules.php");
     }else{
         $Search = true;
         $LieuDepart = $_POST['LieuDepart'];
         $DateDepart = $_POST['DateDepart'];
-        $HeureDepart = $_POST['HeureDepart'];
+        // $HeureDepart = $_POST['HeureDepart'];
         $DateResti = $_POST['DateResti'];
-        $LieuResti = $_POST['LieuResti'];
-        header("location:../ListeVehicle/listevehicules.php?LD=$LieuDepart&DD=$DateDepart&HD=$HeureDepart&DR=$DateResti&LR=$LieuResti&Search=$Search");
+        // $LieuResti = $_POST['LieuResti'];
+        header("location:../ListeVehicle/listevehicules.php?LD=$LieuDepart&Search=$Search");
     }
 }
 ?>
@@ -127,13 +127,13 @@ if(isset($_POST['ChercherVeh'])){
                             <input type="date" id="DateDepart" name="DateDepart" onchange="setMinEndDate()" placeholder="Date Depart">
                         </div>
                     </div>
-                    <div class="HeurePriseencharge rounded-0">
+                    <!-- <div class="HeurePriseencharge rounded-0">
                         <i class="fa-regular fa-clock"></i>
                         <div>
                             <p>Heure</p>
                             <input type="time" name="HeureDepart" placeholder="Heure Depart">
                         </div>
-                    </div>
+                    </div> -->
                     <div class="DateRestitution rounded-0">
                         <i class="fa-solid fa-calendar-days"></i>
                         <div>
@@ -141,13 +141,13 @@ if(isset($_POST['ChercherVeh'])){
                             <input type="date" name="DateResti" placeholder="Date restitution">
                         </div>
                     </div>
-                    <div class="LieuRestitution rounded-0">
+                    <!-- <div class="LieuRestitution rounded-0">
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <div>
                             <p>Lieu de prise restitution</p>
                             <input type="text" name="LieuResti" placeholder="Lieu de restitution">
                         </div>
-                    </div>
+                    </div> -->
                     <button class="BtnModifier rounded-0" type="submit" name="ChercherVeh">Chercher</button>
             </form>
             <?PHP
