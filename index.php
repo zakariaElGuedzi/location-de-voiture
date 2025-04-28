@@ -190,9 +190,9 @@ if(isset($_POST['ChercherVeh'])){
                 <i class="fa-solid fa-headset m-0  px-1 d-inline"></i>
                 <p class="p-0 m-0 text-secondary">perla playa service client<div class="border rounded-circle  onlinewtsp onlinewtsp2 p-0"></div></p>
             </div>
-            <div class="messagesHis  d-flex bg-danger justify-content-end align-items-end">
-                 <!-- i need scrool bar in this div -->
-            </div>
+            <!-- <div class="messagesHis  d-flex bg-danger justify-content-end align-items-end">
+                 i need scrool bar in this div
+            </div> -->
             <div  class="containerStikcyWhtsp d-flex bg-white p-1 m-0 d-flex align-items-center">
                 <input type="text" name="" id="contentMsg" class="m-0 p-1 py-2 bg-transparent" placeholder="contacter perlaplaya...">
                 <i class="fa-solid fa-paper-plane" id="sendFun"></i>

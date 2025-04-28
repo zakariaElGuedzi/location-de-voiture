@@ -56,21 +56,31 @@
       </div>
       </div>
 
-        <div class="col-md-4">
-          <div class="contact-info">
-            <div class="contact-info-item ">
+        <div class="col-md-8 p-0 m-0 p-md-0">
+          <div class="contact-info row p-md-0   m-0 p-2 p-md-0" style="min-width: fit-content !important;">
+            <!-- adresse 1 -->
+            <div class="contact-info-item col-md-6  rounded-start-1 ">
               <div class="contact-info-icon">
               <i class="bi bi-geo-alt-fill"></i>
               </div>
               <div class="contact-info-text">
-                <h2>address</h2>
-                <span>1215 Lorem Ipsum, Ch 176080 </span> 
-                <span>Chandigarh , Test</span> 
+                <h2>Marrekech Saada adresse 1</h2>
+                <span>marrakech saada</span> 
+                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1375.3927943303058!2d-8.010978999999997!3d31.676585951881464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzHCsDQwJzM2LjAiTiA4wrAwMCczOS41Ilc!5e0!3m2!1sfr!2s!4v1745840486883!5m2!1sfr!2s" width="310" height="200" style="border:0;" allowfullscreen="" loading="lazy" class="rounded-1" referrerpolicy="no-referrer-when-downgrade"></iframe>             </div>
+            </div>     
+            <!-- adresse 2        -->
+            <div class="contact-info-item  col-md-6 m-0 rounded-end-1">
+              <div class="contact-info-icon">
+              <i class="bi bi-geo-alt-fill"></i>
               </div>
+              <div class="contact-info-text">
+                <h2>Marrakech  adresse 2</h2>
+                <span>marrakech hay charaf</span> 
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d596.2538348890747!2d-8.013392580613948!3d31.637862141732295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafefa4cdf089a7%3A0x5f27c02cc9e88d90!2sCentre%20Pluridisciplinaire%20MELGHAGH!5e0!3m2!1sfr!2s!4v1745840212732!5m2!1sfr!2s" width="310" height="200" style="border:0;" class="rounded-1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>              </div>
             </div>            
           </div>          
         </div>          
-        <div class="col-md-4">
+        <!-- <div class="col-md-4">
           <div class="contact-info">
             <div class="contact-info-item">
               <div class="contact-info-icon">
@@ -83,7 +93,7 @@
               </div>
             </div>            
           </div>                
-        </div>                
+        </div>                 -->
         <div class="col-md-4">
           <div class="contact-info">
             <div class="contact-info-item">
@@ -139,7 +149,7 @@
         </div>
         <div class="col-md-4">        
           <div class="contact-page-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d109741.02912911311!2d76.69348873658222!3d30.73506264436677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fed0be66ec96b%3A0xa5ff67f9527319fe!2sChandigarh!5e0!3m2!1sen!2sin!4v1553497921355" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d596.2538348890747!2d-8.013392580613948!3d31.637862141732295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafefa4cdf089a7%3A0x5f27c02cc9e88d90!2sCentre%20Pluridisciplinaire%20MELGHAGH!5e0!3m2!1sfr!2s!4v1745840212732!5m2!1sfr!2s"  width="100%" height="450" frameborder="0" class="rounded-1" style="border:0" allowfullscreen></iframe>
           </div>          
         </div>        
       </div>
