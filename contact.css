@@ -4,14 +4,20 @@
   box-sizing: border-box;
   /* border: 1px solid gray; */
 }
-
+@font-face {
+  font-family: 'MyFont';
+  src:         url('./Admin/includes/Poppins.ttf') format('truetype'),
+  url('./Admin/includes/Poppins/Poppins-SemiBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 :root {
   --primary-color: rgb(235, 171, 35);
   --button-color: rgb(22, 22, 157) ;
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: "MyFont", sans-serif !important;
   background-color: #f8f8f8;
 }
 header {
