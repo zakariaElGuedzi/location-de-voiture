@@ -178,7 +178,8 @@ let toggleButtonWtsp = document.querySelector(".IconWtspShow");
 let contentWtspMessagerie = document.querySelector(".contentMessagerie");
 let sender = document.getElementById("sendFun");
 toggleButtonWtsp.addEventListener("click",()=> {
-    contentWtspMessagerie.classList.toggle("contentMessagerieflex")
+    contentWtspMessagerie.classList.toggle("contentMessagerieflex");
+    console.log("d")
 })
 
 //function send msg
@@ -189,17 +190,17 @@ sender.addEventListener("click",()=>{
     let url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(contentMessage)}`;
     window.open(url, "_blank");
 
-    //get time 
-    // const d =  new Date();
-    // let zoneTimeH = d.getUTCHours();
-    // let zoneTimeM = d.getUTCMinutes();
+    // get time 
+    const d =  new Date();
+    let zoneTimeH = d.getUTCHours();
+    let zoneTimeM = d.getUTCMinutes();
 
-    // let Hismsgerie = document.querySelector(".messagesHis");
+    let Hismsgerie = document.querySelector(".messagesHis");
 
-    // let newMsg = document.createElement("div") ;
-    // newMsg.classList.add("newMsgStyle")
-    // newMsg.innerHTML= `<p class='p-0 m-0 py-1 px-1 bg-success'>${contentMessage}</p><p class='p-0 m-0 h-100 d-flex bg-dark pb-1 text-secondary timemsgSended'>${zoneTimeH}:${zoneTimeM}</p>` ; 
-    // Hismsgerie.appendChild(newMsg);
+    let newMsg = document.createElement("div") ;
+    newMsg.classList.add("newMsgStyle")
+    newMsg.innerHTML= `<p class='p-0 m-0 py-1 px-1 bg-success'>${contentMessage}</p><p class='p-0 m-0 h-100 d-flex bg-dark pb-1 text-secondary timemsgSended'>${zoneTimeH}:${zoneTimeM}</p>` ; 
+    Hismsgerie.appendChild(newMsg);
 
 })
 

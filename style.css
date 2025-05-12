@@ -127,7 +127,7 @@ body {
   display: none;
 }
 .contentMessagerieflex {
-  display: block;
+  display: flex ;
 }
 /* Header Styles */
 header {
