@@ -110,7 +110,7 @@ if(isset($_POST['ChercherVeh'])){
     </header>
   
     <section class="sec2">
-        <div class="Homeinputs py-2  bg-info" >
+        <div class="Homeinputs py-2 " >
             <form class="Filter2" method="post" novalidate>
                     <div class="LieuPrisenEnCharge  rounded-0">
                         <i class="fa-solid fa-magnifying-glass"></i>
