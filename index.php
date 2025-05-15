@@ -72,8 +72,8 @@ if(isset($_POST['ChercherVeh'])){
                 <a href="../ListeVehicle/listevehicules.php" class="callToActionHeader bg-success px-3 py-2">Reserver Maintenant</a>
             </div>
             <!-- menu phone -->
-            <div class="menuphone" id="menPhone">
-                <div class="menu1">
+            <div class="menuphone position-absolute" id="menPhone" style="z-index: 999 !important;">
+                <!-- <div class="menu1">
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="../ListeVehicle/listevehicules.php" blank>Services</a></li>
@@ -81,8 +81,8 @@ if(isset($_POST['ChercherVeh'])){
                         <li><a href="#contact">Contact</a></li>
                         <li><a href="/Admin/index.php">Admin Panel (demo)</a></li>
                     </ul>
-                </div>
-                <div class="MenuDiv">
+                </div> -->
+                <div class="MenuDiv ">
                     <div class="menu1">
                         <ul>
                             <li><a href="#home">Home</a></li>
@@ -110,7 +110,7 @@ if(isset($_POST['ChercherVeh'])){
     </header>
   
     <section class="sec2">
-        <div class="Homeinputs ">
+        <div class="Homeinputs py-2  bg-info" >
             <form class="Filter2" method="post" novalidate>
                     <div class="LieuPrisenEnCharge  rounded-0">
                         <i class="fa-solid fa-magnifying-glass"></i>

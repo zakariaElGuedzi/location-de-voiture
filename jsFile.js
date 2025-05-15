@@ -44,12 +44,19 @@ function closemenu() {
    }
 }
  function afficheMenuPhone() {
+    menuIshide = true ;
     if ( (document.querySelector('.menuphone')).style.display == "none" || (document.querySelector('.menuphone')).style.display == "" ) {
          (document.querySelector('.menuphone')).style.display = "flex"
          document.body.style.overflow = 'hidden';
-         document.querySelector(".Homeinputs").style = "z-index:0"
-
+        //  document.querySelector(".Homeinputs").style = "z-index:0"
+        menuIshide = false ;
     }
+
+    if (menuIshide == false) {
+        document.querySelector(".Homeinputs").style = "display:none"
+        console.log("hide body")
+    }
+
  }
 
 
